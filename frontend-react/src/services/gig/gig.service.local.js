@@ -1,10 +1,12 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId } from '../util.service'
+import { makeId , loadFromStorage , saveToStorage } from '../util.service'
 import { userService } from '../user'
 
 const STORAGE_KEY = 'gig'
 
+_createGigs()
+query()
 export const gigService = {
     query,
     getById,
@@ -17,6 +19,8 @@ window.cs = gigService
 
 async function query(filterBy = { txt: '', price: 0 }) {
     var gigs = await storageService.query(STORAGE_KEY)
+    console.log(gigs);
+    
     const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
     if (txt) {
@@ -26,16 +30,18 @@ async function query(filterBy = { txt: '', price: 0 }) {
     if (minSpeed) {
         gigs = gigs.filter(gig => gig.speed >= minSpeed)
     }
-    if(sortField === 'vendor' || sortField === 'owner'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'vendor' || sortField === 'owner') {
+        gigs.sort((gig1, gig2) =>
             gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
     }
-    if(sortField === 'price' || sortField === 'speed'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'price' || sortField === 'speed') {
+        gigs.sort((gig1, gig2) =>
             (gig1[sortField] - gig2[sortField]) * +sortDir)
     }
+
+    // gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
+    console.log(gigs);
     
-    gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
     return gigs
 }
 
@@ -84,4 +90,142 @@ async function addGigMsg(gigId, txt) {
     await storageService.put(STORAGE_KEY, gig)
 
     return msg
+}
+
+function _createGigs() {
+    let gigs = loadFromStorage(STORAGE_KEY)
+    if (!gigs || !gigs.length) {
+        gigs = [
+            {
+                _id: 'g101',
+                title: 'I will design your logo',
+                price: 12.16,
+                owner: {
+                    _id: 'u101',
+                    fullname: 'Dudu Da',
+                    imgUrl: 'https://via.placeholder.com/50',
+                    level: 'Basic',
+                    rate: 4,
+                },
+                daysToMake: 3,
+                description: 'Make unique logo that stands out for your business or brand.',
+                avgResponseTime: 1,
+                loc: 'Ghana',
+                imgUrls: ['/img/img1.jpg'],
+                tags: ['Arts And Crafts', 'Logo Design'],
+                likedByUsers: ['mini-user'],
+                reviews: [
+                    {
+                        id: 'r101',
+                        txt: 'Did an amazing work! Highly recommended.',
+                        rate: 4,
+                        by: {
+                            _id: 'u102',
+                            fullname: 'User 2',
+                            imgUrl: 'https://via.placeholder.com/50',
+                        },
+                    },
+                ],
+            },
+            {
+                _id: 'g102',
+                title: 'I will write a compelling blog post',
+                price: 20.00,
+                owner: {
+                    _id: 'u103',
+                    fullname: 'Jane Doe',
+                    imgUrl: 'https://via.placeholder.com/50',
+                    level: 'Premium',
+                    rate: 5,
+                },
+                daysToMake: 5,
+                description: 'Get a high-quality, well-researched blog post that engages your audience.',
+                avgResponseTime: 2,
+                loc: 'USA',
+                imgUrls: ['/img/img2.jpg'],
+                tags: ['Writing', 'Blogging'],
+                likedByUsers: ['mini-user', 'user3'],
+                reviews: [
+                    {
+                        id: 'r102',
+                        txt: 'The blog post was exactly what I needed! Very professional.',
+                        rate: 5,
+                        by: {
+                            _id: 'u104',
+                            fullname: 'User 3',
+                            imgUrl: 'https://via.placeholder.com/50',
+                        },
+                    },
+                ],
+            },
+            {
+                _id: 'g103',
+                title: 'I will help you with your social media strategy',
+                price: 50.00,
+                owner: {
+                    _id: 'u105',
+                    fullname: 'Mark Twain',
+                    imgUrl: 'https://via.placeholder.com/50',
+                    level: 'Advanced',
+                    rate: 4.8,
+                },
+                daysToMake: 7,
+                description: 'Boost your online presence and grow your audience with a tailored social media strategy.',
+                avgResponseTime: 3,
+                loc: 'UK',
+                imgUrls: ['/img/img3.jpg'],
+                tags: ['Marketing', 'Social Media'],
+                likedByUsers: ['user4', 'mini-user'],
+                reviews: [
+                    {
+                        id: 'r103',
+                        txt: 'The strategy provided helped me grow my followers significantly.',
+                        rate: 5,
+                        by: {
+                            _id: 'u106',
+                            fullname: 'User 4',
+                            imgUrl: 'https://via.placeholder.com/50',
+                        },
+                    },
+                ],
+            },
+            {
+                _id: 'g104',
+                title: 'I will edit your YouTube video',
+                price: 30.00,
+                owner: {
+                    _id: 'u107',
+                    fullname: 'Sarah Conner',
+                    imgUrl: 'https://via.placeholder.com/50',
+                    level: 'Basic',
+                    rate: 4.5,
+                },
+                daysToMake: 4,
+                description: 'Get professional video editing services for your YouTube content.',
+                avgResponseTime: 2,
+                loc: 'Australia',
+                imgUrls: ['/img/img4.jpg'],
+                tags: ['Video Editing', 'YouTube'],
+                likedByUsers: ['user5'],
+                reviews: [
+                    {
+                        id: 'r104',
+                        txt: 'Great editing! My video looks amazing now!',
+                        rate: 4,
+                        by: {
+                            _id: 'u108',
+                            fullname: 'User 5',
+                            imgUrl: 'https://via.placeholder.com/50',
+                        },
+                    },
+                ],
+            },
+        ];
+
+
+        saveToStorage(STORAGE_KEY, gigs)
+    }
+
+
+
 }

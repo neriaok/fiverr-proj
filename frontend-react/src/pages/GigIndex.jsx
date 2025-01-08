@@ -9,21 +9,24 @@ import { userService } from '../services/user'
 
 import { GigList } from '../cmps/GigList'
 import { GigFilter } from '../cmps/GigFilter'
-import { Gig } from './Gigs'
 
 export function GigIndex() {
 
-    const [ filterBy, setFilterBy ] = useState(gigService.getDefaultFilter())
+
+    const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
 
     useEffect(() => {
         loadGigs(filterBy)
+
     }, [filterBy])
+
+    console.log('Gigs inside useEffect:', gigs)
 
     async function onRemoveGig(gigId) {
         try {
             await removeGig(gigId)
-            showSuccessMsg('Gig removed')            
+            showSuccessMsg('Gig removed')
         } catch (err) {
             showErrorMsg('Cannot remove gig')
         }
@@ -37,12 +40,12 @@ export function GigIndex() {
             showSuccessMsg(`Gig added (id: ${savedGig._id})`)
         } catch (err) {
             showErrorMsg('Cannot add gig')
-        }        
+        }
     }
 
     async function onUpdateGig(gig) {
         const speed = +prompt('New speed?', gig.speed)
-        if(speed === 0 || speed === gig.speed) return
+        if (speed === 0 || speed === gig.speed) return
 
         const gigToSave = { ...gig, speed }
         try {
@@ -50,7 +53,7 @@ export function GigIndex() {
             showSuccessMsg(`Gig updated, new speed: ${savedGig.speed}`)
         } catch (err) {
             showErrorMsg('Cannot update gig')
-        }        
+        }
     }
 
     return (
@@ -60,11 +63,11 @@ export function GigIndex() {
                 {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>}
             </header>
             <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
-            <GigList 
+            {console.log('Rendering gigs:', gigs)}
+            <GigList
                 gigs={gigs}
-                onRemoveGig={onRemoveGig} 
-                onUpdateGig={onUpdateGig}/>
-                <Gig/>
+                onRemoveGig={onRemoveGig}
+                onUpdateGig={onUpdateGig} />
         </main>
     )
 }
