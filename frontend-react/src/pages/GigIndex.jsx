@@ -9,7 +9,7 @@ import { userService } from '../services/user'
 
 import { GigList } from '../cmps/GigList'
 import { GigFilter } from '../cmps/GigFilter'
-import { GigDetails } from './Gigs'
+import { Gig } from './Gigs'
 
 export function GigIndex() {
 
@@ -64,7 +64,7 @@ export function GigIndex() {
                 gigs={gigs}
                 onRemoveGig={onRemoveGig} 
                 onUpdateGig={onUpdateGig}/>
-                <GigDetails/>
+                <Gig/>
         </main>
     )
 }

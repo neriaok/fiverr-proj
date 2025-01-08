@@ -4,7 +4,7 @@ import React from 'react';
 
 
 // Sample gig object as props
-export function GigDetails(gig){
+export function Gig(gig){
     var gig = {
         _id: 'g101',
         title: 'I will design your logo',
