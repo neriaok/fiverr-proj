@@ -1,16 +1,18 @@
 .app-header {
     display: flex;
     min-height: 3.5rem;
-
-    background-color: $clr4;
     padding: rem(10px) 1rem;
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     nav {
         display: flex;
         width: 100%;
         align-items: center;
         gap: 1em;
-        
+        font-weight: bold;
+        color: #333;
+        padding-bottom: 10px; 
+        border-bottom: 0.8px solid rgb(209, 202, 202); 
         font-size: .8em;
 
         .active {
@@ -18,9 +20,17 @@
         }
 
         .logo {
-            font-size: 1.4em;
+            font-family: fantasy;
+            color: #2e372f;
+
+            font-size: 2.5em;
             font-weight: bold;
             margin-inline-end: 2em;
+
+            .point{
+                font-family: 'emoji';
+                color: green;
+            }
         }
 
         .login-link {
@@ -53,7 +63,7 @@
             aspect-ratio: 1;
             border-radius: 50%;
         }
-        
+
         .btn-link {
             color: $clr2;
         }

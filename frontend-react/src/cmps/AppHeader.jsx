@@ -22,7 +22,7 @@ export function AppHeader() {
 		<header className="app-header full">
 			<nav>
 				<NavLink to="/" className="logo">
-					Fiverr
+					fiverr <span className='point'>.</span>
 				</NavLink>
 				<NavLink to="about">About</NavLink>
 				<NavLink to="gig">Gigs</NavLink> 
