@@ -1,3 +1,5 @@
+import { homePageSvgs } from "../cmps/Svgs"
+
 export function HomePage() {
     return (
         <section>
@@ -32,7 +34,32 @@ export function HomePage() {
                 <button className="categories-btn consulting"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/consulting-thin.d5547ff.svg" alt="" />Consulting</button>
             </div>
 
-                <h2>Made on Fivver</h2>
+            <div className="logo-maker-container">
+                <article className="logo-maker">
+                    {homePageSvgs.logoMaker}
+                    
+                    <h2>
+                        Make an incredible
+                        <br />
+                        logo
+                        <em> in seconds</em>
+                    </h2>
+                    
+                    <article className="logo-maker-text">
+                        Pre-designed by top talent. just add 
+                        <br />
+                        your touch
+                    </article>
+
+                    <button>Try Fiverr Logo Maker</button>
+
+                </article>
+                <article className="logo-maker-img">
+                    <img src="/img/logo-maker-lohp.jpg" alt="" />
+                </article>
+            </div>
+
+            <h2>Made on Fivver</h2>
             <div className="made-on-container">
                 <img src="/img/made-on.jpg" alt="" />
                 <img src="/img/made-on-1.jpg" alt="" />
