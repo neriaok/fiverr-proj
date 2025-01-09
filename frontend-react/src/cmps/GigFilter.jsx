@@ -26,7 +26,7 @@ export function GigFilter({ filterBy, setFilterBy }) {
     }
 
     function clearFilter() {
-        setFilterToEdit({ ...filterToEdit, txt: '', minSpeed: '', maxPrice: '' })
+        setFilterToEdit({ ...filterToEdit, txt: '', price: '', maxPrice: '' })
     }
     
     function clearSort() {
@@ -46,16 +46,16 @@ export function GigFilter({ filterBy, setFilterBy }) {
             <input
                 type="number"
                 min="0"
-                name="minSpeed"
-                value={filterToEdit.minSpeed}
-                placeholder="min. speed"
+                name="price"
+                value={filterToEdit.price}
+                placeholder="price"
                 onChange={handleChange}
                 required
             />
             <button 
                 className="btn-clear" 
                 onClick={clearFilter}>Clear</button>
-            <h3>Sort:</h3>
+            {/* <h3>Sort:</h3>
             <div className="sort-field">
                 <label>
                     <span>Speed</span>
@@ -68,12 +68,12 @@ export function GigFilter({ filterBy, setFilterBy }) {
                     />
                 </label>
                 <label>
-                    <span>Vendor</span>
+                    <span>Basic</span>
                     <input
                         type="radio"
                         name="sortField"
-                        value="vendor"
-                        checked={filterToEdit.sortField === 'vendor'}            
+                        value="basic"
+                        checked={filterToEdit.sortField === 'basic'}            
                         onChange={handleChange}
                     />
                 </label>
@@ -112,6 +112,6 @@ export function GigFilter({ filterBy, setFilterBy }) {
             </div>
             <button 
                 className="btn-clear" 
-                onClick={clearSort}>Clear</button>
+                onClick={clearSort}>Clear</button> */}
     </section>
 }

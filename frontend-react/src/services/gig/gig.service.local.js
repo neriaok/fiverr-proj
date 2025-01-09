@@ -19,27 +19,18 @@ window.cs = gigService
 
 async function query(filterBy = { txt: '', price: 0 }) {
     var gigs = await storageService.query(STORAGE_KEY)
-    console.log(gigs);
+    console.log(gigs[0].owner.level);
     
-    const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
+    const { txt, price } = filterBy
 
     if (txt) {
         const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.vendor) || regex.test(gig.description))
+        gigs = gigs.filter(gig => regex.test(gig.owner.fullname) || regex.test(gig.description))
     }
-    if (minSpeed) {
-        gigs = gigs.filter(gig => gig.speed >= minSpeed)
-    }
-    if (sortField === 'vendor' || sortField === 'owner') {
-        gigs.sort((gig1, gig2) =>
-            gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
-    }
-    if (sortField === 'price' || sortField === 'speed') {
-        gigs.sort((gig1, gig2) =>
-            (gig1[sortField] - gig2[sortField]) * +sortDir)
+    if (price) {
+        gigs = gigs.filter(gig => gig.price >= price)
     }
 
-    // gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
     console.log(gigs);
     
     return gigs
@@ -65,7 +56,7 @@ async function save(gig) {
         savedGig = await storageService.put(STORAGE_KEY, gigToSave)
     } else {
         const gigToSave = {
-            vendor: gig.vendor,
+            owner: gig.owner.fullname,
             price: gig.price,
             speed: gig.speed,
             // Later, owner is set by the backend
@@ -197,7 +188,7 @@ function _createGigs() {
                     _id: 'u107',
                     fullname: 'Sarah Conner',
                     imgUrl: 'https://via.placeholder.com/50',
-                    level: 'Basic',
+                    level: 'basic',
                     rate: 4.5,
                 },
                 daysToMake: 4,
