@@ -11,7 +11,11 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
         return gig.owner?._id === user._id
     }
 
-    return <section>
+    return (
+    // <div>{gigs[0]._id}</div>
+    // <div>gig list</div>
+
+    <section>
         <ul className="list">
             {gigs.map(gig =>
                 <li key={gig._id}>
@@ -24,4 +28,5 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
             }
         </ul>
     </section>
+    )
 }

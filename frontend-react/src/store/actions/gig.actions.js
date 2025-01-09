@@ -1,11 +1,14 @@
-import { gigService } from '../../services/gig'
+import { gigService } from '../../services/gig/gig.service.local'
 import { store } from '../store'
 import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG } from '../reducers/gig.reducer'
 
 export async function loadGigs(filterBy) {
     try {
         const gigs = await gigService.query(filterBy)
-        store.dispatch(getCmdSetGigs(gigs))
+        console.log('Fetched gigs in loadGigs:', gigs)
+        // store.dispatch(getCmdSetGigs(gigs))
+        store.dispatch({ type: SET_GIGS, gigs })
+
     } catch (err) {
         console.log('Cannot load gigs', err)
         throw err

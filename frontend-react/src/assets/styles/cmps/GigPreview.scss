@@ -8,3 +8,85 @@
         font-size: .85em;
 	}
 }
+/* Gig Card Layout */
+.preview {
+    width: 200px; /* Card width */
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+  
+    /* Gig Image */
+    .gig-image {
+      width: 100%;
+      height: 220px; /* Image height */
+      overflow: hidden;
+      position: relative;
+  
+      .gig-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-bottom: 2px solid #f0f0f0; /* Border separating image and details */
+      }
+    }
+  
+    /* Gig Info */
+    .gig-info {
+      padding: 20px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+  
+      /* Second Line: Owner Full Name and Level */
+      .owner-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .owner-level {
+          font-size: 14px;
+          color: #9b9b9b; /* Subtle level text */
+          font-weight: 500;
+        }
+  
+        .owner-name {
+          font-size: 16px;
+          color: #2c3e50;
+          font-weight: 600;
+        }
+      }
+  
+      /* Third Line: Title */
+      .gig-title {
+        font-size: 18px;
+        color: #34495e;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 0;
+      }
+  
+      /* Fourth Line: Rating */
+      .gig-rate {
+        font-size: 15px;
+        color: #f39c12; /* Gold color for stars */
+        font-weight: 600;
+      }
+  
+      /* Fifth Line: Price */
+      .gig-price {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e74c3c; /* Red price for emphasis */
+      }
+    }
+  }
+  
