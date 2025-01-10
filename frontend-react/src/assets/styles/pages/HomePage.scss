@@ -184,12 +184,52 @@ section {
     height: 465px;
 
     padding-block: 56px;
-    padding-inline: 40px;
+    padding-inline: 80px;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .logo-maker svg {
     width: 249px;
     height: 34px;
+}
+
+.logo-maker h2 {
+    font-size: 48px;
+    text-align: start;
+    letter-spacing: -0.96px;
+    line-height: 48px;
+    font-weight: normal;
+
+    margin-top: 50px;
+}
+
+em {
+    color: #fc832b;
+}
+
+.logo-maker-text {
+    font-size: 20px;
+    line-height: 28px;
+    color: #62646a;
+}
+
+.logo-maker button {
+    width: 203px;
+    height: 42px;
+
+    padding-block: 8px;
+    padding-inline: 16px;
+    margin-block-start: 40px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+
+    background-color: #222325;
 }
 
 .logo-maker-img {
@@ -205,11 +245,14 @@ section {
 
     padding-inline: 80px;
     padding-block: 48px;
+
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .logo-maker-img img {
-    width: 460px;
-    height: 310px;
+    width: 540px;
+    height: 364px;
     object-fit: cover;
 
     max-width: 100%;
@@ -217,13 +260,23 @@ section {
 }
 
 .made-on-container{
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    
+    max-width: 1400px;
+    max-height: 1557px;
+    
+    margin-top: 40px;
+    // gap: 40px;
+}
 
+.made-on-gigs {
     columns: 4;
     column-gap: 16px;
 }
 
-.made-on-container img {
+.made-on-gigs img {
     max-width: 100%;
     max-height: 100%;
 
@@ -232,6 +285,13 @@ section {
     border-radius: 8px;
 }
 
-h2 {
-    margin-top: 50px;
+.made-on-container h2 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #404145;
+    line-height: 105%;
+    letter-spacing: -1.44px;
+
+    max-width: 720px;
+    margin-block-end: calc(52px);
 }

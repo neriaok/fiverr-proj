@@ -46,9 +46,7 @@ export function HomePage() {
                     </h2>
                     
                     <article className="logo-maker-text">
-                        Pre-designed by top talent. just add 
-                        <br />
-                        your touch
+                        Pre-designed by top talent. just add your touch.
                     </article>
 
                     <button>Try Fiverr Logo Maker</button>
@@ -59,19 +57,22 @@ export function HomePage() {
                 </article>
             </div>
 
-            <h2>Made on Fivver</h2>
             <div className="made-on-container">
-                <img src="/img/made-on.jpg" alt="" />
-                <img src="/img/made-on-1.jpg" alt="" />
-                <img src="/img/made-on-2.jpg" alt="" />
-                <img src="/img/made-on-3.jpg" alt="" />
-                <img src="/img/made-on-4.jpg" alt="" />
-                <img src="/img/made-on-5.jpg" alt="" />
-                <img src="/img/made-on-6.jpg" alt="" />
-                <img src="/img/made-on-7.jpg" alt="" />
-                <img src="/img/made-on-8.jpg" alt="" />
-                <img src="/img/made-on-9.jpg" alt="" />
-                <img src="/img/made-on-10.jpg" alt="" />
+                <h2>Made on Fivver</h2>
+                
+                <ul className="made-on-gigs">
+                    <img src="/img/made-on.jpg" alt="" />
+                    <img src="/img/made-on-1.jpg" alt="" />
+                    <img src="/img/made-on-2.jpg" alt="" />
+                    <img src="/img/made-on-3.jpg" alt="" />
+                    <img src="/img/made-on-4.jpg" alt="" />
+                    <img src="/img/made-on-5.jpg" alt="" />
+                    <img src="/img/made-on-6.jpg" alt="" />
+                    <img src="/img/made-on-7.jpg" alt="" />
+                    <img src="/img/made-on-8.jpg" alt="" />
+                    <img src="/img/made-on-9.jpg" alt="" />
+                    <img src="/img/made-on-10.jpg" alt="" />
+                </ul>
             </div>
         </section >
     )
