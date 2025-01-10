@@ -2,7 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId , loadFromStorage , saveToStorage } from '../util.service'
 import { userService } from '../user'
-
+// localStorage.clear()
 const STORAGE_KEY = 'gig'
 
 _createGigs()
@@ -95,7 +95,7 @@ function _createGigs() {
                     _id: 'u101',
                     fullname: 'Dudu Da',
                     imgUrl: 'https://via.placeholder.com/50',
-                    level: 'Basic',
+                    level: 'Level 2',
                     rate: 4,
                 },
                 daysToMake: 3,
@@ -126,7 +126,7 @@ function _createGigs() {
                     _id: 'u103',
                     fullname: 'Jane Doe',
                     imgUrl: 'https://via.placeholder.com/50',
-                    level: 'Premium',
+                    level: 'Level 2',
                     rate: 5,
                 },
                 daysToMake: 5,
@@ -157,8 +157,8 @@ function _createGigs() {
                     _id: 'u105',
                     fullname: 'Mark Twain',
                     imgUrl: 'https://via.placeholder.com/50',
-                    level: 'Advanced',
-                    rate: 4.8,
+                    level: `Level 1`,
+                    rate: 4.8 ,
                 },
                 daysToMake: 7,
                 description: 'Boost your online presence and grow your audience with a tailored social media strategy.',
@@ -188,7 +188,7 @@ function _createGigs() {
                     _id: 'u107',
                     fullname: 'Sarah Conner',
                     imgUrl: 'https://via.placeholder.com/50',
-                    level: 'basic',
+                    level: 'Top Rated',
                     rate: 4.5,
                 },
                 daysToMake: 4,
