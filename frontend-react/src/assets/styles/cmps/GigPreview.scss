@@ -1,86 +1,143 @@
 .gig-preview {
-    a {
-        color: $clr4;
-        padding: 0;
-    }    
-	p {
-		margin-block: 0 0.2rem;
-        font-size: .85em;
-	}
+  a {
+    color: $clr4;
+    padding: 0;
+  }
+
+  p {
+    margin-block: 0 0.2rem;
+    font-size: .85em;
+  }
 }
 
-
 .preview {
-  font-family: 'Macan', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-  font-size: 17px; 
+  font-family: 'Macan', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
 
-  /* Gig Image */
-  .gig-image {
-    width: 100%;
-    height: 200px; 
-    border-radius: 5px; 
-    overflow: hidden;
-    margin-bottom: 15px; 
+  .gig-image-box {
+    height: 180px;
+    margin-bottom: 10px;
+    position: relative;
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: aliceblue;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      position: absolute;
+      transform: translateY(-50%) translateX(-100%);
+      color: white;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .prev-btn {
+      position: absolute;
+      right: 85%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-100%);
+    }
+
+    .next-btn {
+      position: absolute;
+      left: 85%;
+      top: 50%;
+      transform: translateY(-50%) translateX(100%);
+    }
+
+    &:hover .prev-btn {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover .next-btn {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .gig-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
   }
 
-  .gig-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; // Ensure the image covers the container area
+  svg {
+    margin-left: 2px;
   }
 
-  /* Gig Info Section */
   .gig-info {
     display: flex;
-    flex-direction: column; // Stack the info vertically
+    flex-direction: column;
 
-    /* Owner Info */
     .owner-info {
       display: flex;
-      justify-content: space-between; // Space between owner level and name
+
+      .ad-by {
+        flex-grow: 3;
+      }
+
+      .owner-img {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
 
       .owner-level {
-        font-weight: bold; // Bold the owner level
-        color: #2c3e50; // Dark color for level
+        font-weight: bold;
+        color: #2c3e50;
       }
 
-     .topRated{
-      text-align: center;
-      width: 100px;
-      height: 20px;
-      border-radius: 5px;
-      background-color: #f3c987;
-     }
+      .topRated {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: sans-serif;
+        width: 120px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #f3c987;
+      }
 
       .owner-name {
-        font-weight: bold; // Normal font weight for owner name
-        color: #2c3e50; // Dark color for name
+        font-weight: bold;
+        color: #2c3e50;
       }
     }
 
-    /* Gig Title */
     .gig-title {
-      font-size: 18px; // Larger size for the title
-      color: #2c3e50; // Dark color for the title
+      font-size: 18px;
+      color: #2c3e50;
     }
 
-    /* Rating */
     .gig-rate {
-      font-size: 17px; // Smaller size for the rating
+      font-size: 17px;
       font-weight: bold;
-      color: #121110; // Gold color for stars
-      margin-bottom: 10px; // Add space below the rating
+      color: #121110;
+      margin-bottom: 10px;
 
-      .ratesNum{
-        font-weight:normal;
+      .ratesNum {
+        font-weight: normal;
         color: gray;
       }
     }
 
-    /* Price */
     .gig-price {
-      font-size: 16px; // Price in regular font size
-      font-weight: bold; // Bold price
+      font-size: 16px;
+      font-weight: bold;
       color: rgb(52, 51, 51);
     }
   }
