@@ -161,6 +161,153 @@ section {
     margin-block-end: 17px;
 }
 
+.popular-services-container {
+    display: flex;
+    flex-direction: column;
+    // max-width: 1400px;
+    // min-width: 300px;
+    width: 1400px;
+    max-height: 400px;
+
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+
+    margin-top: calc(86px);
+
+    scrollbar-width: none;
+    position: relative;
+}
+
+.popular-services-container h2 {
+    font-size: 48px;
+    line-height: 50.4px;
+    letter-spacing: -1.44px;
+    font-weight: normal;
+}
+
+.popular-services-carrousel {
+    display: flex;
+    gap: 28px;
+    // margin: 15px;
+    // width: 100%;
+    // overflow: hidden;
+    max-width: 1400px;
+    overflow-x: hidden;
+}
+
+.carrousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    background-color: white;
+
+    display: flex;
+}
+
+.carrousel-nav.next {
+    right: -1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel-nav.previous {
+    left: -1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    padding:0%
+}
+
+.populer-services-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 266px;
+
+    border-radius: 16px;
+    scroll-snap-align: start;
+}
+
+.populer-services-btn span {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: start;
+    font-weight: bold;
+
+    margin-inline: calc(10px);
+    margin-block-start: calc(25px);
+    
+}
+
+.btn-1 {
+    background-color: #00732e;
+}
+
+.btn-1 img {
+    border-radius: 16px;
+}
+
+.btn-2 {
+    background-color: #ff7640;
+}
+
+.btn-2 img {
+    border-radius: 16px;
+}
+
+.btn-3 {
+    background-color: #003912;
+}
+
+.btn-4 {
+    background-color: #4d1727;
+}
+
+.btn-5 {
+    background-color: #687200;
+}
+
+.btn-6 {
+    background-color: #421300;
+}
+
+.btn-7 {
+    background-color: #be5272;
+}
+
+.btn-8 {
+    background-color: #254200;
+}
+
+.btn-9 {
+    background-color: #8f2900;
+}
+
+.btn-10 {
+    background-color: #687200;
+}
+
+.btn-11 {
+    background-color: #00732e;
+}
+
+.btn-12 {
+    background-color: #be5272;
+}
+
 .logo-maker-container {
     display: flex;
     width: 1400px;
@@ -184,12 +331,52 @@ section {
     height: 465px;
 
     padding-block: 56px;
-    padding-inline: 40px;
+    padding-inline: 80px;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .logo-maker svg {
     width: 249px;
     height: 34px;
+}
+
+.logo-maker h2 {
+    font-size: 48px;
+    text-align: start;
+    letter-spacing: -0.96px;
+    line-height: 48px;
+    font-weight: normal;
+
+    margin-top: 50px;
+}
+
+em {
+    color: #fc832b;
+}
+
+.logo-maker-text {
+    font-size: 20px;
+    line-height: 28px;
+    color: #62646a;
+}
+
+.logo-maker button {
+    width: 203px;
+    height: 42px;
+
+    padding-block: 8px;
+    padding-inline: 16px;
+    margin-block-start: 40px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+
+    background-color: #222325;
 }
 
 .logo-maker-img {
@@ -205,11 +392,14 @@ section {
 
     padding-inline: 80px;
     padding-block: 48px;
+
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .logo-maker-img img {
-    width: 460px;
-    height: 310px;
+    width: 540px;
+    height: 364px;
     object-fit: cover;
 
     max-width: 100%;
@@ -217,13 +407,23 @@ section {
 }
 
 .made-on-container{
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    
+    max-width: 1400px;
+    max-height: 1557px;
+    
+    margin-top: 40px;
+    // gap: 40px;
+}
 
+.made-on-gigs {
     columns: 4;
     column-gap: 16px;
 }
 
-.made-on-container img {
+.made-on-gigs img {
     max-width: 100%;
     max-height: 100%;
 
@@ -232,6 +432,13 @@ section {
     border-radius: 8px;
 }
 
-h2 {
-    margin-top: 50px;
+.made-on-container h2 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #404145;
+    line-height: 105%;
+    letter-spacing: -1.44px;
+
+    max-width: 720px;
+    margin-block-end: calc(52px);
 }
