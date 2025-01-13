@@ -161,6 +161,153 @@ section {
     margin-block-end: 17px;
 }
 
+.popular-services-container {
+    display: flex;
+    flex-direction: column;
+    // max-width: 1400px;
+    // min-width: 300px;
+    width: 1400px;
+    max-height: 400px;
+
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+
+    margin-top: calc(86px);
+
+    scrollbar-width: none;
+    position: relative;
+}
+
+.popular-services-container h2 {
+    font-size: 48px;
+    line-height: 50.4px;
+    letter-spacing: -1.44px;
+    font-weight: normal;
+}
+
+.popular-services-carrousel {
+    display: flex;
+    gap: 28px;
+    // margin: 15px;
+    // width: 100%;
+    // overflow: hidden;
+    max-width: 1400px;
+    overflow-x: hidden;
+}
+
+.carrousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    background-color: white;
+
+    display: flex;
+}
+
+.carrousel-nav.next {
+    right: -1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel-nav.previous {
+    left: -1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    padding:0%
+}
+
+.populer-services-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 266px;
+
+    border-radius: 16px;
+    scroll-snap-align: start;
+}
+
+.populer-services-btn span {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: start;
+    font-weight: bold;
+
+    margin-inline: calc(10px);
+    margin-block-start: calc(25px);
+    
+}
+
+.btn-1 {
+    background-color: #00732e;
+}
+
+.btn-1 img {
+    border-radius: 16px;
+}
+
+.btn-2 {
+    background-color: #ff7640;
+}
+
+.btn-2 img {
+    border-radius: 16px;
+}
+
+.btn-3 {
+    background-color: #003912;
+}
+
+.btn-4 {
+    background-color: #4d1727;
+}
+
+.btn-5 {
+    background-color: #687200;
+}
+
+.btn-6 {
+    background-color: #421300;
+}
+
+.btn-7 {
+    background-color: #be5272;
+}
+
+.btn-8 {
+    background-color: #254200;
+}
+
+.btn-9 {
+    background-color: #8f2900;
+}
+
+.btn-10 {
+    background-color: #687200;
+}
+
+.btn-11 {
+    background-color: #00732e;
+}
+
+.btn-12 {
+    background-color: #be5272;
+}
+
 .logo-maker-container {
     display: flex;
     width: 1400px;
