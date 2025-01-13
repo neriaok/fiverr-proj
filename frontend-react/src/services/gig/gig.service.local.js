@@ -102,7 +102,7 @@ function _createGigs() {
               description: 'Make unique logo that stands out for your business or brand.',
               avgResponseTime: 1,
               loc: 'Ghana',
-              imgUrls: ['/img/img1.jpg' ,  '/video/video1.mp4'],
+              imgUrls: ['/img/img1.jpg' ,  '/video/video1.mp4' , '/img/img1second.jpg' ],
               tags: ['Arts And Crafts', 'Logo Design'],
               likedByUsers: ['mini-user'],
               reviews: [
@@ -133,7 +133,7 @@ function _createGigs() {
               description: 'Get a high-quality, well-researched blog post that engages your audience.',
               avgResponseTime: 2,
               loc: 'USA',
-              imgUrls: ['/img/img2.jpg' ,  '/img/img2second.jpg'],
+              imgUrls: ['/img/img2.jpg' ,  '/img/img2second.jpg' , '/img/img2third.jpg'],
               tags: ['Writing', 'Blogging'],
               likedByUsers: ['mini-user', 'user3'],
               reviews: [
@@ -195,7 +195,7 @@ function _createGigs() {
               description: 'Get professional video editing services for your YouTube content.',
               avgResponseTime: 2,
               loc: 'Australia',
-              imgUrls: ['/img/img4.jpg',  '/video/video4.mp4'],
+              imgUrls: ['/img/img4.jpg',  '/video/video4.mp4', '/img/img4second.jpg'],
               tags: ['Video Editing', 'YouTube'],
               likedByUsers: ['user5'],
               reviews: [
@@ -289,7 +289,7 @@ function _createGigs() {
               description: 'Personalized fitness plan for your specific goals, from beginner to advanced.',
               avgResponseTime: 1,
               loc: 'Australia',
-              imgUrls: ['/img/img7.jpg' ,  '/img/img7second.jpg'],
+              imgUrls: ['/img/img7.jpg' ,  '/img/img7second.jpg' , '/img/img7third.jpg'],
               tags: ['Fitness', 'Personal Trainer'],
               likedByUsers: ['user8', 'user6'],
               reviews: [
