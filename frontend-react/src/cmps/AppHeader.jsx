@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
 import { GigFilter } from '../cmps/GigFilter'
-import { loadGigs, addGig, updateGig, removeGig, addGigMsg } from '../store/actions/gig.actions'
+import { loadGigs } from '../store/actions/gig.actions'
+import { appHeaderSvgs } from './Svgs'
 
 
 export function AppHeader() {
@@ -36,10 +37,15 @@ export function AppHeader() {
 					fiverr <span className='point'>.</span>
 				</NavLink>
 				<GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
-
+				<div className='header-svgs'>
+				{appHeaderSvgs.bell}
+				{appHeaderSvgs.envelope}
+				{appHeaderSvgs.heart}	
+				</div>
+				<div className='orders-font'>Orders</div>
 				{user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
-				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
+				{!user && <NavLink to="login" className="login-link">Join</NavLink>}
 				{user && (
 					<div className="user-info">
 						<Link to={`user/${user._id}`}>
@@ -51,6 +57,7 @@ export function AppHeader() {
 					</div>
 				)}
 			</nav>
+			<br />
 		</header>
 
 	)

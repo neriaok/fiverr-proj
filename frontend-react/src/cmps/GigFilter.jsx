@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { appHeaderSvgs } from './Svgs'
 
 export function GigFilter({ filterBy, setFilterBy }) {
     const [ filterToEdit, setFilterToEdit ] = useState(structuredClone(filterBy))
@@ -35,6 +36,7 @@ export function GigFilter({ filterBy, setFilterBy }) {
 
     return <section className="gig-filter">
             <input
+            className='filter-input'
                 type="text"
                 name="txt"
                 value={filterToEdit.txt}
@@ -42,5 +44,9 @@ export function GigFilter({ filterBy, setFilterBy }) {
                 onChange={handleChange}
                 required
             />
+            <div className='search-svg'>
+            {appHeaderSvgs.magnifyingGlass}
+            </div>
+
     </section>
 }

@@ -51,7 +51,6 @@ export function GigIndex() {
     return (
         <main className="gig-index">
             <header>
-                <h2>Gigs</h2>
                 {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>}
             </header>
             {console.log('Rendering gigs:', gigs)}
