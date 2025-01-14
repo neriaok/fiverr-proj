@@ -34,84 +34,13 @@ export function GigFilter({ filterBy, setFilterBy }) {
     }
 
     return <section className="gig-filter">
-            <h3>Filter:</h3>
             <input
                 type="text"
                 name="txt"
                 value={filterToEdit.txt}
-                placeholder="Free text"
+                placeholder="What service are you looking for today?"
                 onChange={handleChange}
                 required
             />
-            <input
-                type="number"
-                min="0"
-                name="price"
-                value={filterToEdit.price}
-                placeholder="price"
-                onChange={handleChange}
-                required
-            />
-            <button 
-                className="btn-clear" 
-                onClick={clearFilter}>Clear</button>
-            {/* <h3>Sort:</h3>
-            <div className="sort-field">
-                <label>
-                    <span>Speed</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="speed"
-                        checked={filterToEdit.sortField === 'speed'}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Basic</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="basic"
-                        checked={filterToEdit.sortField === 'basic'}            
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Owner</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="owner"
-                        checked={filterToEdit.sortField === 'owner'}                        
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
-            <div className="sort-dir">
-                <label>
-                    <span>Asce</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="1"
-                        checked={filterToEdit.sortDir === 1}                        
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Desc</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="-1"
-                        onChange={handleChange}
-                        checked={filterToEdit.sortDir === -1}                        
-                    />
-                </label>
-            </div>
-            <button 
-                className="btn-clear" 
-                onClick={clearSort}>Clear</button> */}
     </section>
 }

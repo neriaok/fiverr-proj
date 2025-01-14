@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 5em 5em auto;
     align-items: center;
+    width: 20%;
     gap: 0 .5em;
 
     padding: .5em;
@@ -17,9 +18,9 @@
     }
 
     input:is([type="text"], [type="number"]){
-        height: 1.8em;
-        border: none;
-        border-block-end: 1px solid $gray1;
+        height: 3em;
+        border: 1px solid #dcdbdb;
+        border-radius: 5px;
     
         &:focus {
             outline: none;

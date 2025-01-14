@@ -13,6 +13,7 @@ import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
+import { AppRoute } from './cmps/AppRoute.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
@@ -20,11 +21,12 @@ import { Signup } from './pages/Signup.jsx'
 
 export function RootCmp() {
     return (
-        <div className="main-container">
+        <div>
             <AppHeader />
+            <AppRoute />
             <UserMsg />
 
-            <main>
+            <main className="main-container">
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="about" element={<AboutUs />}>

@@ -1,12 +1,23 @@
+import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
+import { GigFilter } from '../cmps/GigFilter'
+import { loadGigs, addGig, updateGig, removeGig, addGigMsg } from '../store/actions/gig.actions'
+
 
 export function AppHeader() {
+	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
+
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
+
+	  useEffect(() => {
+			loadGigs(filterBy)
+	
+		}, [filterBy])
 
 	async function onLogout() {
 		try {
@@ -24,12 +35,9 @@ export function AppHeader() {
 				<NavLink to="/" className="logo">
 					fiverr <span className='point'>.</span>
 				</NavLink>
-				<NavLink to="about">About</NavLink>
-				<NavLink to="gig">Gigs</NavLink> 
-				<NavLink to="chat">Chat</NavLink>
-				<NavLink to="review">Review</NavLink>
+				<GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 
-                {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
+				{user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
 				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
 				{user && (
@@ -44,5 +52,6 @@ export function AppHeader() {
 				)}
 			</nav>
 		</header>
+
 	)
 }
