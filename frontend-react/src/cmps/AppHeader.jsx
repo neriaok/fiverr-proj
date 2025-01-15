@@ -11,14 +11,20 @@ import { appHeaderSvgs } from './Svgs'
 
 export function AppHeader() {
 	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
 
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 
-	  useEffect(() => {
-			loadGigs(filterBy)
-	
-		}, [filterBy])
+
+
+
+	useEffect(() => {
+		loadGigs(filterBy)
+
+	}, [filterBy])
 
 	async function onLogout() {
 		try {
@@ -38,9 +44,9 @@ export function AppHeader() {
 				</NavLink>
 				<GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 				<div className='header-svgs'>
-				{appHeaderSvgs.bell}
-				{appHeaderSvgs.envelope}
-				{appHeaderSvgs.heart}	
+					{appHeaderSvgs.bell}
+					{appHeaderSvgs.envelope}
+					{appHeaderSvgs.heart}
 				</div>
 				<div className='orders-font'>Orders</div>
 				{user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
@@ -48,16 +54,25 @@ export function AppHeader() {
 				{!user && <NavLink to="login" className="login-link">Join</NavLink>}
 				{user && (
 					<div className="user-info">
-						<Link to={`user/${user._id}`}>
+						<Link className='user-letter' onClick={toggleMenu} to={`user/${user._id}`}>
 							{/* {user.imgUrl && <img src={user.imgUrl} />} */}
-							{user.fullname}
+							{user.fullname.charAt(0).toUpperCase()}
 						</Link>
 						{/* <span className="score">{user.score?.toLocaleString()}</span> */}
-						<button onClick={onLogout}>logout</button>
-					</div>
+
+
+							{isMenuOpen && (
+								<nav className="menu">
+									<ul>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Setting</a></li>
+										<li><a onClick={onLogout} href="#">logout</a></li>
+									</ul>
+								</nav>
+							)}
+						</div>
 				)}
 			</nav>
-			<br />
 		</header>
 
 	)

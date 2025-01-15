@@ -10,9 +10,10 @@
         gap: 1em;
         font-weight: bold;
         color: #333;
-        padding-bottom: 10px; 
-        border-bottom: 0.8px solid rgb(209, 202, 202); 
-        font-size: .8em;
+        padding-bottom: 10px;
+        border-bottom: 0.8px solid rgb(209, 202, 202);
+        font-size: 0.8em;
+        position: relative; /* To position dropdown relative to nav */
 
         .active {
             color: $clr1;
@@ -22,12 +23,11 @@
             font-family: fantasy;
             color: #2e372f;
             padding: rem(10px) 1rem;
-
             font-size: 2.5em;
             font-weight: bold;
             margin-inline-end: 0.03em;
 
-            .point{
+            .point {
                 font-family: 'emoji';
                 color: green;
             }
@@ -36,25 +36,22 @@
         .login-link {
             margin-inline-start: auto;
             margin-inline-end: 2em;
-
         }
 
         button {
             margin-inline-end: 0;
         }
 
-        .header-svgs{
-            margin-left: 15em;
+        .header-svgs {
             display: flex;
-            
-            svg{
+            margin-left: auto; /* Adjusted from '10em' for better layout */
+            svg {
                 fill: gray;
                 margin-left: 23px;
             }
-
         }
 
-        .orders-font{
+        .orders-font {
             margin-left: 1em;
             font-family: math;
             font-size: large;
@@ -65,27 +62,84 @@
     .user-info {
         display: flex;
         align-items: center;
-        margin-inline-start: auto;
-
+        position: relative;
+        margin-left: 0.8em;
         color: $clr1;
 
-        .score {
-            padding: 8px;
-            background-color: $clr2;
-            border-radius: 50%;
-            margin: 10px;
-
-            color: $clr6;
-        }
-
-        img {
+        .user-letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
             width: 32px;
-            aspect-ratio: 1;
+            font-size: 16px;
             border-radius: 50%;
+            background-color: #C43333;
+            color: white;
+            cursor: pointer; /* Added pointer cursor for better UX */
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #A12B2B; /* Darker red on hover */
+            }
         }
 
-        .btn-link {
-            color: $clr2;
+        .menu {
+            position: absolute;
+            top: 100%; /* Position the menu directly below the user letter */
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            border-radius: 8px;
+            z-index: 10;
+            padding: 0.5rem 0;
+
+            &.open {
+                display: block; 
+                animation: fadeIn 0.3s ease;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding: 10px 15px;
+                    border-bottom: 1px solid #eee;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 1em;
+                        display: block;
+                        padding: 5px 0;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #f0f0f0;
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+/* Keyframe animation for smooth fading effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
