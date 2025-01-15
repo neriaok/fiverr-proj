@@ -69,6 +69,7 @@ section {
 .gig-search-container button {
     background-color: #003912;
     
+    display: flex;
     position: absolute;
     align-self:flex-end;
 
@@ -79,6 +80,10 @@ section {
     padding-inline: 16px;
     margin: 6px;
     border-radius: 8px;
+    border: none;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .trusted-by {
@@ -91,23 +96,19 @@ section {
     gap: 40px;
 
     font-size: 12px;
-    font-weight: bolder;
     line-height: 24px;
     text-align: start;
     white-space: nowrap;
 
     align-items: center;
     justify-content: center;
-    // align-self: center;
 
     color: white;
     opacity: 0.5;
 }
 
+
 .trusted-by img {
-    // aspect-ratio: auto 70 / 14;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     overflow: visible;
 }
@@ -138,6 +139,7 @@ section {
     background-color: white;
 
     border-radius: 16px;
+    border: none;
     box-shadow: rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px;
 
     padding: 16px 12px;
@@ -150,6 +152,15 @@ section {
     fill: #222325;
 }
 
+.categories-btn:hover {
+    background: radial-gradient(63.44% 63.44% at 50% 50%, #c2ffe2 0, #fff 100%), #fff;
+    
+}
+
+.categories-container a:hover {
+    text-decoration: none;
+}
+
 .categories-btn img {
     max-width: 100%;
     max-height: 100%;
@@ -159,6 +170,7 @@ section {
 
     align-self: flex-start;
     margin-block-end: 17px;
+
 }
 
 .popular-services-container {
@@ -166,7 +178,7 @@ section {
     flex-direction: column;
     // max-width: 1400px;
     // min-width: 300px;
-    width: 1400px;
+    width: 87.5rem;
     max-height: 400px;
 
     align-self: center;
@@ -192,7 +204,7 @@ section {
     // margin: 15px;
     // width: 100%;
     // overflow: hidden;
-    max-width: 1400px;
+    max-width: 87.5rem;
     overflow-x: hidden;
 }
 
@@ -211,6 +223,7 @@ section {
 .carrousel-nav.next {
     right: -1.5rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
+    border: none;
 
     display: flex;
     justify-content: center;
@@ -220,7 +233,8 @@ section {
 .carrousel-nav.previous {
     left: -1.5rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3.68135px 0px, rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
-    
+    border: none;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,8 +251,16 @@ ul {
     width: 200px;
     height: 266px;
 
+    color: white;
+
     border-radius: 16px;
     scroll-snap-align: start;
+    border: none;
+    padding-block-end: 6px;
+}
+
+.populer-services-btn:hover {
+    opacity: 0.85;
 }
 
 .populer-services-btn span {
@@ -366,8 +388,8 @@ em {
     width: 203px;
     height: 42px;
 
-    padding-block: 8px;
-    padding-inline: 16px;
+    color: white;
+
     margin-block-start: 40px;
 
     border-radius: 8px;
@@ -375,6 +397,7 @@ em {
     font-size: 16px;
     font-weight: bold;
     line-height: 24px;
+    text-align: center;
 
     background-color: #222325;
 }

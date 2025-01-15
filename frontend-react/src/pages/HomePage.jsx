@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom"
 import { homePageSvgs } from "../cmps/Svgs"
 import React, { useState, useEffect, useRef } from "react"
 
@@ -73,15 +74,15 @@ export function HomePage() {
             </div>
 
             <div className="categories-container">
-                <button className="categories-btn prog&tech"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/programming-tech-thin.56382a2.svg" alt="" /> Programing & Tech</button>
-                <button className="categories-btn graph&design"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/graphics-design-thin.ff38893.svg" alt="" /> Graphics & Design</button>
-                <button className="categories-btn marketing"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/digital-marketing-thin.68edb44.svg" alt="" />Digital Marketing</button>
-                <button className="categories-btn writing&trans"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/writing-translation-thin.fd3699b.svg" alt="" />Writing & Translation</button>
-                <button className="categories-btn video&animation"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/video-animation-thin.9d3f24d.svg" alt="" />Video & Animation</button>
-                <button className="categories-btn ai"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/ai-services-thin.104f389.svg" alt="" />AI Services</button>
-                <button className="categories-btn music"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/music-audio-thin.43a9801.svg" alt="" />Music & Audio</button>
-                <button className="categories-btn business"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/business-thin.885e68e.svg" alt="" />Business</button>
-                <button className="categories-btn consulting"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/consulting-thin.d5547ff.svg" alt="" />Consulting</button>
+                <NavLink to="gig/programing&tech"><button className="categories-btn prog&tech"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/programming-tech-thin.56382a2.svg" alt="" />Programing & Tech</button></NavLink>
+                <NavLink to="gig/graphics&design"><button className="categories-btn graph&design"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/graphics-design-thin.ff38893.svg" alt="" /> Graphics & Design</button></NavLink>
+                <NavLink to="gig/digital-marketing"><button className="categories-btn marketing"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/digital-marketing-thin.68edb44.svg" alt="" />Digital Marketing</button></NavLink>
+                <NavLink to="gig/writing&translation"><button className="categories-btn writing&trans"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/writing-translation-thin.fd3699b.svg" alt="" />Writing & Translation</button></NavLink>
+                <NavLink to="gig/video&animation"><button className="categories-btn video&animation"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/video-animation-thin.9d3f24d.svg" alt="" />Video & Animation</button></NavLink>
+                <NavLink to="gig/ai-services"><button className="categories-btn ai"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/ai-services-thin.104f389.svg" alt="" />AI Services</button></NavLink>
+                <NavLink to="gig/music&audio"><button className="categories-btn music"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/music-audio-thin.43a9801.svg" alt="" />Music & Audio</button></NavLink>
+                <NavLink to="gig/business"><button className="categories-btn business"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/business-thin.885e68e.svg" alt="" />Business</button></NavLink>
+                <NavLink to="gig/consulting"><button className="categories-btn consulting"><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/consulting-thin.d5547ff.svg" alt="" />Consulting</button></NavLink>
             </div>
 
             <div className="popular-services-container" ref={containerRef}>

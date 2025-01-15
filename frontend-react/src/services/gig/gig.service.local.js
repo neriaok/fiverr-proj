@@ -7,6 +7,7 @@ const STORAGE_KEY = 'gig'
 
 _createGigs()
 query()
+console.log(query({tag: 'logo design'}))
 export const gigService = {
     query,
     getById,
@@ -17,21 +18,23 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { txt: '', price: 0, tag: ''}) {
     var gigs = await storageService.query(STORAGE_KEY)
     console.log(gigs[0].owner.level);
     
-    const { txt, price } = filterBy
+    const { txt, price, tag } = filterBy
 
-    if (txt) {
+    if (txt && txt !== '') {
         const regex = new RegExp(filterBy.txt, 'i')
         gigs = gigs.filter(gig => regex.test(gig.owner.fullname) || regex.test(gig.description))
     }
-    if (price) {
+    if (price && price !== 0) {
         gigs = gigs.filter(gig => gig.price >= price)
     }
-
-    console.log(gigs);
+    if (tag && tag !== '') {
+        const regex = new RegExp(filterBy.tag, 'i')
+        gigs = gigs.filter(gig => regex.test(gig.tags))
+    }
     
     return gigs
 }
