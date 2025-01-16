@@ -20,7 +20,7 @@ window.cs = gigService
 
 async function query(filterBy = { txt: '', price: 0, tag: ''}) {
     var gigs = await storageService.query(STORAGE_KEY)
-    console.log(gigs[0].owner.level);
+    // console.log(gigs[0].owner.level);
     
     const { txt, price, tag } = filterBy
 
@@ -36,6 +36,8 @@ async function query(filterBy = { txt: '', price: 0, tag: ''}) {
         gigs = gigs.filter(gig => regex.test(gig.tags))
     }
     
+    
+
     return gigs
 }
 
@@ -199,7 +201,7 @@ function _createGigs() {
               avgResponseTime: 2,
               loc: 'Australia',
               imgUrls: ['/img/img4.jpg',  '/video/video4.mp4', '/img/img4second.jpg'],
-              tags: ['Video Editing', 'YouTube'],
+              tags: ['Marketing', 'Video Editing', 'YouTube'],
               likedByUsers: ['user5'],
               reviews: [
                 {
@@ -231,7 +233,7 @@ function _createGigs() {
               avgResponseTime: 1,
               loc: 'Canada',
               imgUrls: ['/img/img5.jpg' , '/img/img5second.jpg'],
-              tags: ['Web Development', 'Design'],
+              tags: ['Web Development', 'Design', 'Marketing'],
               likedByUsers: ['user2', 'user4'],
               reviews: [
                 {

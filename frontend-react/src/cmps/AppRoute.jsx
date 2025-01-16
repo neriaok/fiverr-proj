@@ -7,7 +7,7 @@ export function AppRoute(){
     return(
         <div className='routs'>
         <NavLink to="about">About</NavLink>
-        <NavLink to="gig">Gigs</NavLink> 
+        <NavLink to="gigs">Gigs</NavLink> {/* gigs = gig*/}
         <NavLink to="chat">Chat</NavLink>
         <NavLink to="review">Review</NavLink>
 

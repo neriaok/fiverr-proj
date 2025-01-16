@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom' // 
 
-import { addGig, updateGig, removeGig, addGigMsg } from '../store/actions/gig.actions'
+import { addGig, updateGig, removeGig, addGigMsg, loadGigs } from '../store/actions/gig.actions' // loadgigs
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig'
@@ -10,9 +11,13 @@ import { userService } from '../services/user'
 import { GigList } from '../cmps/GigList'
 
 export function GigIndex() {
-
+    const {gigTag} = useParams() //
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-
+    //
+      useEffect(() => {
+        loadGigs({tag: gigTag})
+      }, [gigTag])
+      //
     console.log('Gigs inside useEffect:', gigs)
 
     async function onRemoveGig(gigId) {
