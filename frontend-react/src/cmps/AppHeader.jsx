@@ -48,7 +48,7 @@ export function AppHeader() {
 					{appHeaderSvgs.envelope}
 					{appHeaderSvgs.heart}
 				</div>
-				<div className='orders-font'>Orders</div>
+				<label className='orders-font'>Orders</label>
 				{user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
 				{!user && <NavLink to="login" className="login-link">Join</NavLink>}
@@ -61,16 +61,20 @@ export function AppHeader() {
 						{/* <span className="score">{user.score?.toLocaleString()}</span> */}
 
 
-							{isMenuOpen && (
-								<nav className="menu">
-									<ul>
-										<li><a href="#">Profile</a></li>
-										<li><a href="#">Setting</a></li>
-										<li><a onClick={onLogout} href="#">logout</a></li>
-									</ul>
-								</nav>
-							)}
-						</div>
+						{isMenuOpen && (
+
+							<div className="menu">
+								<div class="triangle-border">
+									<div className="white-triangle"></div>
+								</div>
+								<ul>
+									<li><a href="#">Profile</a></li>
+									<li><a href="#">Setting</a></li>
+									<li><a onClick={onLogout} href="#">logout</a></li>
+								</ul>
+							</div>
+						)}
+					</div>
 				)}
 			</nav>
 		</header>

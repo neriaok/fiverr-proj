@@ -8,12 +8,12 @@
         width: 100%;
         align-items: center;
         gap: 1em;
-        font-weight: bold;
         color: #333;
-        padding-bottom: 10px;
         border-bottom: 0.8px solid rgb(209, 202, 202);
         font-size: 0.8em;
-        position: relative; /* To position dropdown relative to nav */
+        padding: 0px 20px 10px 20px;
+        position: relative;
+        /* To position dropdown relative to nav */
 
         .active {
             color: $clr1;
@@ -44,7 +44,9 @@
 
         .header-svgs {
             display: flex;
-            margin-left: auto; /* Adjusted from '10em' for better layout */
+            margin-left: auto;
+
+            /* Adjusted from '10em' for better layout */
             svg {
                 fill: gray;
                 margin-left: 23px;
@@ -56,6 +58,24 @@
             font-family: math;
             font-size: large;
             color: gray;
+        }
+
+        .login-link {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 35px;
+            border: 1px solid #1dbf73;
+            border-radius: 5px;
+            color: #1dbf73 ;
+            transition: color .5s ease, border .5s ease;;
+        }
+
+        .login-link:hover{
+            background-color: #1dbf73;
+            color: white;
         }
     }
 
@@ -76,50 +96,81 @@
             border-radius: 50%;
             background-color: #C43333;
             color: white;
-            cursor: pointer; /* Added pointer cursor for better UX */
+            cursor: pointer;
+            /* Added pointer cursor for better UX */
             transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: #A12B2B; /* Darker red on hover */
+                background-color: #A12B2B;
+                /* Darker red on hover */
             }
         }
 
         .menu {
             position: absolute;
-            top: 100%; /* Position the menu directly below the user letter */
-            right: 0;
+            top: 155%;
+            right: 3%;
             background-color: white;
             border: 1px solid #ddd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            border-radius: 8px;
+            width: 265px;
+            border-radius: 3px;
             z-index: 10;
-            padding: 0.5rem 0;
+
+            .triangle-border {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 100%;
+                left: 90.5%;
+                width: 0;
+                height: 10px;
+                border-left: 11px solid transparent;
+                border-right: 11px solid transparent;
+                border-bottom: 12px solid gray;
+                /* Gray border for triangle edges */
+                background-color: white;
+                /* White fill color */
+
+                .white-triangle {
+                    width: 0;
+                    height: 10px;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 12px solid white;
+                    /* Gray border for triangle edges */
+                }
+            }
+
 
             &.open {
-                display: block; 
+                display: block;
                 animation: fadeIn 0.3s ease;
             }
 
             ul {
+                width: 100%;
                 list-style: none;
                 padding: 0;
-                margin: 0;
+                margin: 10px;
 
                 li {
-                    padding: 10px 15px;
+
                     border-bottom: 1px solid #eee;
 
                     &:last-child {
                         border-bottom: none;
+                        padding-bottom: none;
+
                     }
 
                     a {
+                        padding-bottom: 10px;
+                        padding-top: 10px;
                         text-decoration: none;
-                        color: #333;
-                        font-size: 1em;
+                        color: gray;
+                        font-size: 1.3em;
                         display: block;
-                        padding: 5px 0;
                         transition: background-color 0.3s ease;
 
                         &:hover {
@@ -138,6 +189,7 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
