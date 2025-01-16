@@ -1,11 +1,29 @@
 .gig-filter {
-    display: grid;
-    grid-template-columns: 1fr 5em 5em auto;
-    align-items: center;
-    width: 20%;
     gap: 0 .5em;
-
     padding: .5em;
+    color: red;
+    position: relative;
+
+    .search-svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 3.2em;
+        height: 2.8em;
+
+        border: 10px solid black;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        
+        background-color: black;
+        fill: white;
+
+        position: absolute;
+        top: 13%;
+        right: 0%;
+    }
+
 
     h3 {
         grid-column: 1 / -1;
@@ -17,11 +35,19 @@
         cursor: pointer;
     }
 
-    input:is([type="text"], [type="number"]){
-        height: 3em;
-        border: 1px solid #dcdbdb;
+    .filter-input {
+        color: red;
+    }
+
+    input:is([type="text"], [type="number"]) {
+        width: 40em;
+        height: 2.8em;
+        color: gray;
+        border: 1px solid #c0bcbc;
         border-radius: 5px;
-    
+        font-size: medium;
+        padding: 15px;
+
         &:focus {
             outline: none;
             background-color: $gray1;
@@ -33,7 +59,8 @@
         grid-column: 4;
     }
 
-    .sort-field, .sort-dir {
+    .sort-field,
+    .sort-dir {
         display: flex;
         align-items: center;
         gap: 1em;
@@ -58,7 +85,7 @@
             outline: 1px solid $gray1;
         }
 
-        &:has(:checked) span  {
+        &:has(:checked) span {
             background-color: $clr3;
             color: $gray1;
         }

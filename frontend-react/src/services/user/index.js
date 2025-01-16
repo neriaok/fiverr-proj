@@ -13,7 +13,11 @@ function getEmptyUser() {
     }
 }
 
-const service = VITE_LOCAL === 'true' ? local : remote
+// 'while we didnt want to work with ajax asks to backend:'
+const service = local
+
+// else:
+// const service = VITE_LOCAL === 'true' ? local : remote
 export const userService = { ...service, getEmptyUser }
 
 // Easy access to this service from the dev tools console
