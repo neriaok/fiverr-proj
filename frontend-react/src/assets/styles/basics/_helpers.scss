@@ -38,3 +38,12 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+//color
+
+.black{
+    color: black;
+}
+
+.gray{
+    color: gray;
+}

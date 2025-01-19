@@ -27,17 +27,18 @@ export function GigDetails() {
 }
 
   return (
-    <section className="gig-details">
-      <Link to="/gig">Back to list</Link>
-      <h1>Gig Details</h1>
-      {gig && <div>
-        <h3>{gig.vendor}</h3>
-        <h4>${gig.price}</h4>
-        <pre> {JSON.stringify(gig, null, 2)} </pre>
-      </div>
-      }
-      <button onClick={() => { onAddGigMsg(gig._id) }}>Add gig msg</button>
+    <div>{gigId}details</div>
+    // <section className="gig-details">
+    //   <Link to="/gig">Back to list</Link>
+    //   <h1>Gig Details</h1>
+    //   {gig && <div>
+    //     <h3>{gig.vendor}</h3>
+    //     <h4>${gig.price}</h4>
+    //     <pre> {JSON.stringify(gig, null, 2)} </pre>
+    //   </div>
+    //   }
+    //   <button onClick={() => { onAddGigMsg(gig._id) }}>Add gig msg</button>
 
-    </section>
+    // </section>
   )
 }

@@ -132,7 +132,7 @@ function _createGigs() {
                 fullname: 'Jane Doe',
                 imgUrl: '/img/img2.jpg',
                 level: 'Level 2',
-                rate: 5,
+                rate: 7,
               },
               daysToMake: 5,
               description: 'Get a high-quality, well-researched blog post that engages your audience.',
@@ -145,7 +145,7 @@ function _createGigs() {
                 {
                   id: 'r102',
                   txt: 'The blog post was exactly what I needed! Very professional.',
-                  rate: 5,
+                  rate: 7,
                   by: {
                     _id: 'u104',
                     fullname: 'User 3',
@@ -226,7 +226,7 @@ function _createGigs() {
                 fullname: 'Saar Lee',
                 imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHkQFT4WKaduMz0dAab_wSnD-Wah2EEmrybYyKjKPw9vvFBoE1uYjrjI&s',
                 level: 'Level 2',
-                rate: 4.9,
+                rate: 6,
               },
               daysToMake: 10,
               description: 'Custom website design that fits your needs and goals.',
@@ -239,7 +239,7 @@ function _createGigs() {
                 {
                   id: 'r105',
                   txt: 'Fantastic service! The website is exactly what I wanted.',
-                  rate: 5,
+                  rate: 6.5,
                   by: {
                     _id: 'u110',
                     fullname: 'User 6',
