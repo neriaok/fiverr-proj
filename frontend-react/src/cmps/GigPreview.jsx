@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { levelService } from './Level.service.jsx';
 import { getRandomIntInclusive } from '../services/util.service.js';
 
@@ -50,9 +51,10 @@ export function GigPreview({ gig }) {
 
   // Ensure there are valid images/videos before rendering
   const currentUrl = gig.imgUrls[currentImageIndex];
+  const toLink = `/gig/:${gig._id}`
 
   return (
-    
+    <NavLink to = {toLink}>
     <div className="preview">
       <div className="gig-image-box">
         {isImage(currentUrl) ? (
@@ -126,5 +128,6 @@ export function GigPreview({ gig }) {
         <p className="gig-price">From ${gig.price}</p>
       </div>
     </div>
+    </NavLink>
   );
 }
