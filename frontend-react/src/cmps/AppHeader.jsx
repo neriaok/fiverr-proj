@@ -37,7 +37,7 @@ export function AppHeader() {
 	}
 
 	return (
-		<header className="app-header full">
+		<header className="app-header full main-container">
 			<nav>
 				<NavLink to="/" className="logo">
 					fiverr <span className='point'>.</span>

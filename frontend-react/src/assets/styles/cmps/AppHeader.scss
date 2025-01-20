@@ -1,5 +1,5 @@
 .app-header {
-    display: flex;
+    // display: flex;
     min-height: 3.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -9,9 +9,9 @@
         align-items: center;
         gap: 1em;
         color: #333;
-        border-bottom: 0.8px solid rgb(209, 202, 202);
+        // border-bottom: 0.8px solid rgb(209, 202, 202);
         font-size: 0.8em;
-        padding: 0px 20px 10px 20px;
+        // padding: 0px 20px 10px 20px;
         position: relative;
         /* To position dropdown relative to nav */
 
@@ -22,7 +22,8 @@
         .logo {
             font-family: fantasy;
             color: #2e372f;
-            padding: rem(10px) 1rem;
+            // padding: rem(10px) 1rem;
+            padding: 0;
             font-size: 2.5em;
             font-weight: bold;
             margin-inline-end: 0.03em;
@@ -35,7 +36,7 @@
 
         .login-link {
             margin-inline-start: auto;
-            margin-inline-end: 2em;
+            // margin-inline-end: 2em;
         }
 
         button {
@@ -181,6 +182,11 @@
             }
         }
     }
+}
+
+.app-header.full {
+    grid-column: 1 / -1;
+    border-bottom: 0.8px solid rgb(209, 202, 202);
 }
 
 /* Keyframe animation for smooth fading effect */
