@@ -111,7 +111,7 @@ export function GigPreview({ gig }) {
         <div className="owner-info">
           <img className="owner-img" src={gig.owner.imgUrl} alt={gig.owner.fullname} />
           <p className="ad-by">
-            Ad by <span className="owner-name">{gig.owner.fullname}</span>
+            <span className="owner-name">{gig.owner.fullname}</span>
           </p>
           <p className={ownerLevel}>
             {gig.owner.level}

@@ -75,10 +75,8 @@ export function AppHeader() {
 				{!user && (
 					<div className="log-out-container">
 						<div className="labels-container">
-							<label className='black'>Fiverr Pro</label>
 							<label ><NavLink className='gray' to="gigs">Explore</NavLink></label>
 							<span>
-							<label>English</label>
 							<label>Become a Seller</label>
 							<label>Sign in</label>
 							</span>
