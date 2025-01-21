@@ -7,17 +7,22 @@ import { addGig, updateGig, removeGig, addGigMsg, loadGigs } from '../store/acti
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig'
 import { userService } from '../services/user'
-
+import { FilterBar } from '../cmps/FilterBar'
 import { GigList } from '../cmps/GigList'
-
 export function GigIndex() {
-    const {gigTag} = useParams() //
+    const { gigTag } = useParams() //
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
+    const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter());
+
     //
-      useEffect(() => {
-        loadGigs({tag: gigTag})
-      }, [gigTag])
-      //
+    useEffect(() => {
+        loadGigs(filterBy);
+    }, [filterBy]);
+
+    useEffect(() => {
+        loadGigs({ tag: gigTag })
+    }, [gigTag])
+    //
     console.log('Gigs inside useEffect:', gigs)
 
     async function onRemoveGig(gigId) {
@@ -59,6 +64,7 @@ export function GigIndex() {
                 {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>}
             </header>
             {console.log('Rendering gigs:', gigs)}
+            {/* <FilterBar filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <GigList
                 gigs={gigs}
                 onRemoveGig={onRemoveGig}
