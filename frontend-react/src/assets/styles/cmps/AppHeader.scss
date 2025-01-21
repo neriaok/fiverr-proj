@@ -33,7 +33,25 @@
         .login-link {
             margin-inline-start: auto;
             // margin-inline-end: 2em;
-        }
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 35px;
+                border: 1px solid #1dbf73;
+                border-radius: 5px;
+                color: #1dbf73;
+                transition: color 0.5s ease, border 0.5s ease;
+                text-align: center;
+                margin-left: 2em;
+            }
+    
+            .login-link:hover {
+                background-color: #1dbf73;
+                color: white;
+            }
+        
 
         button {
             margin-inline-end: 0;
@@ -64,7 +82,7 @@
             .labels-container {
                 display: flex;
                 gap: 11em;
-                margin-left: 12em;
+                margin-left: 13em;
                 color: gray;
 
                 span {
