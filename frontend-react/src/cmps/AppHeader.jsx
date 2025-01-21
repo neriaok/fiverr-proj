@@ -31,7 +31,7 @@ export function AppHeader() {
 	};
 
 	return (
-		<header className="app-header">
+		<header className="app-header full main-container">
 			<nav>
 				{/* Logo */}
 				<NavLink to="/" className="logo">

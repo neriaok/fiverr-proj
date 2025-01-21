@@ -1,6 +1,5 @@
 .app-header {
-    position: sticky;
-    display: flex;
+    // display: flex;
     min-height: 3.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -10,16 +9,17 @@
         align-items: center;
         gap: 1em;
         color: #333;
-        border-bottom: 0.8px solid rgb(209, 202, 202);
+        // border-bottom: 0.8px solid rgb(209, 202, 202);
         font-size: 0.8em;
-        padding: 10px 20px 10px 20px;
+        // padding: 0px 20px 10px 20px;
         position: relative;
 
 
         .logo {
             font-family: fantasy;
             color: #2e372f;
-            padding: rem(10px) 1rem;
+            // padding: rem(10px) 1rem;
+            padding: 0;
             font-size: 2.5em;
             font-weight: bold;
             margin-inline-end: 0.03em;
@@ -31,23 +31,12 @@
         }
 
         .login-link {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 35px;
-            border: 1px solid #1dbf73;
-            border-radius: 5px;
-            color: #1dbf73;
-            transition: color 0.5s ease, border 0.5s ease;
-            text-align: center;
-            margin-left: 2em;
+            margin-inline-start: auto;
+            // margin-inline-end: 2em;
         }
 
-        .login-link:hover {
-            background-color: #1dbf73;
-            color: white;
+        button {
+            margin-inline-end: 0;
         }
 
         .header-svgs {
@@ -183,6 +172,11 @@
             }
         }
     }
+}
+
+.app-header.full {
+    grid-column: 1 / -1;
+    border-bottom: 0.8px solid rgb(209, 202, 202);
 }
 
 /* Keyframe animation for smooth fading effect */
