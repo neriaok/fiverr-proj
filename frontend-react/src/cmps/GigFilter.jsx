@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react'
 import { appHeaderSvgs } from './Svgs'
 
-export function GigFilter({ filterBy, setFilterBy }) {
-    const [ filterToEdit, setFilterToEdit ] = useState(structuredClone(filterBy))
+export function GigFilter({ user, filterBy, setFilterBy }) {
+    const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy))
+    const [inputWidth, setInputWidth] = useState('25em')
+    // var setWidth = user? "currentFill" : '25em'
 
+    useEffect(() => {
+        handleWidth();
+    }, [user]);
+  
     useEffect(() => {
         setFilterBy(filterToEdit)
     }, [filterToEdit])
+
+    const handleWidth = () => {
+        setInputWidth(user ? '40em' : '23em');
+    };
 
     function handleChange(ev) {
         const type = ev.target.type
@@ -17,7 +27,7 @@ export function GigFilter({ filterBy, setFilterBy }) {
             case 'text':
             case 'radio':
                 value = field === 'sortDir' ? +ev.target.value : ev.target.value
-                if(!filterToEdit.sortDir) filterToEdit.sortDir = 1
+                if (!filterToEdit.sortDir) filterToEdit.sortDir = 1
                 break
             case 'number':
                 value = +ev.target.value || ''
@@ -29,24 +39,25 @@ export function GigFilter({ filterBy, setFilterBy }) {
     function clearFilter() {
         setFilterToEdit({ ...filterToEdit, txt: '', price: '', maxPrice: '' })
     }
-    
+
     function clearSort() {
         setFilterToEdit({ ...filterToEdit, sortField: '', sortDir: '' })
     }
 
     return <section className="gig-filter">
-            <input
+        <input
+            style={{ width: inputWidth }}
             className='filter-input'
-                type="text"
-                name="txt"
-                value={filterToEdit.txt}
-                placeholder="What service are you looking for today?"
-                onChange={handleChange}
-                required
-            />
-            <div className='search-svg'>
+            type="text"
+            name="txt"
+            value={filterToEdit.txt}
+            placeholder="What service are you looking for today?"
+            onChange={handleChange}
+            required
+        />
+        <div className='search-svg'>
             {appHeaderSvgs.magnifyingGlass}
-            </div>
+        </div>
 
     </section>
 }

@@ -10,7 +10,7 @@
         align-items: center;
 
         width: 3.2em;
-        height: 2.8em;
+        height: 2.5em;
 
         border: 10px solid black;
         border-top-right-radius: 5px;
@@ -20,7 +20,7 @@
         fill: white;
 
         position: absolute;
-        top: 13%;
+        top: 15%;
         right: 0%;
     }
 
@@ -40,8 +40,7 @@
     }
 
     input:is([type="text"], [type="number"]) {
-        width: 40em;
-        height: 2.8em;
+        height: 2.5em;
         color: gray;
         border: 1px solid #c0bcbc;
         border-radius: 5px;

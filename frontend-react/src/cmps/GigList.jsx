@@ -16,6 +16,7 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
     // <div>gig list</div>
 
     <section>
+        <div className='results'>{gigs.length} results</div>
         <ul className="list">
             {gigs.map(gig =>
                 <li key={gig._id}>

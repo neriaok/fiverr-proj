@@ -13,11 +13,7 @@
         font-size: 0.8em;
         // padding: 0px 20px 10px 20px;
         position: relative;
-        /* To position dropdown relative to nav */
 
-        .active {
-            color: $clr1;
-        }
 
         .logo {
             font-family: fantasy;
@@ -47,7 +43,6 @@
             display: flex;
             margin-left: auto;
 
-            /* Adjusted from '10em' for better layout */
             svg {
                 fill: gray;
                 margin-left: 23px;
@@ -61,22 +56,27 @@
             color: gray;
         }
 
-        .login-link {
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* Styling for logged-out state */
+        .log-out-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 35px;
-            border: 1px solid #1dbf73;
-            border-radius: 5px;
-            color: #1dbf73 ;
-            transition: color .5s ease, border .5s ease;;
-        }
 
-        .login-link:hover{
-            background-color: #1dbf73;
-            color: white;
+            .labels-container {
+                display: flex;
+                gap: 11em;
+                margin-left: 12em;
+                color: gray;
+
+                span {
+                    display: flex;
+                    gap: 2em;
+                }
+
+                label {
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
         }
     }
 
@@ -98,12 +98,10 @@
             background-color: #C43333;
             color: white;
             cursor: pointer;
-            /* Added pointer cursor for better UX */
             transition: background-color 0.3s ease;
 
             &:hover {
                 background-color: #A12B2B;
-                /* Darker red on hover */
             }
         }
 
@@ -129,9 +127,7 @@
                 border-left: 11px solid transparent;
                 border-right: 11px solid transparent;
                 border-bottom: 12px solid gray;
-                /* Gray border for triangle edges */
                 background-color: white;
-                /* White fill color */
 
                 .white-triangle {
                     width: 0;
@@ -139,10 +135,8 @@
                     border-left: 10px solid transparent;
                     border-right: 10px solid transparent;
                     border-bottom: 12px solid white;
-                    /* Gray border for triangle edges */
                 }
             }
-
 
             &.open {
                 display: block;
@@ -156,18 +150,14 @@
                 margin: 10px;
 
                 li {
-
                     border-bottom: 1px solid #eee;
 
                     &:last-child {
                         border-bottom: none;
-                        padding-bottom: none;
-
                     }
 
                     a {
-                        padding-bottom: 10px;
-                        padding-top: 10px;
+                        padding: 10px;
                         text-decoration: none;
                         color: gray;
                         font-size: 1.3em;
