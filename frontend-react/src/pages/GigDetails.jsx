@@ -6,6 +6,8 @@ import { levelIcons } from '../cmps/LevelIcons.jsx'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
+import { OrderGig } from '../cmps/OrderGig.jsx'
+
 
 export function GigDetails() {
 

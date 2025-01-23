@@ -23,6 +23,7 @@
 @import "pages/TaskDetails";
 @import "pages/LoginSignup";
 @import "pages/HomePage.scss";
+@import "pages/GigDetails.scss";
 
 // Components
 @import "cmps/list";
@@ -37,4 +38,6 @@
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
 @import "cmps/GigDetails";
+@import "cmps/OrderGig";
+// @import "cmps/GigList";
 @import "cmps/GigPreview";
