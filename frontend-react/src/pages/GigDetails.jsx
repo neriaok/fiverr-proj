@@ -67,111 +67,115 @@ export function GigDetails() {
   const currentUrl = gig.imgUrls[currentImageIndex];
 
   return (
-    <div className="details-container">
-      <h1 className='black'>{gig.title}</h1>
-      <div className="card-details">
-        <img className='owner-img' src={gig.owner.imgUrl} alt="" />
-        <div className="gig-info">
-          <div className='flex-info'>
-            <p>{gig.owner.fullname}</p>
-            <p className={ownerLevel}>{gig.owner.level}{ownerLevelIcon}</p><span className='gray'>|</span>
-            <p className='gray'>{gig.reviews.length} orders in queue</p>
-          </div>
-          <p>{gig.owner.rate} <span className='gray'>35 reviews</span></p>
-        </div>
-      </div>
-      <div className="gig-gallery-container">
-        <div className="white-background">
-          <div className="gig-image-box">
-            {isImage(currentUrl) ? (
-              <img
-                src={currentUrl}
-                alt="Gig"
-                className="gig-img"
-                loading="lazy" // Adds lazy loading for performance
-              />
-            ) : isVideo(currentUrl) ? (
-              <video
-                src={currentUrl}
-                controls
-                className="gig-img"
-                aria-label="Gig video"
-              />
-            ) : (
-              <div className="no-media">No valid media available</div>
-            )}
-
-            <label className="prev-btn" onClick={handlePrev} aria-label="Previous image">
-              {levelIcons.leftSign}
-            </label>
-
-            <label className="next-btn" onClick={handleNext} aria-label="Next image">
-              {levelIcons.rightSign}
-            </label>
+    <div className="gig-details-container">
+      <OrderGig gig = {gig}/>
+      <div className="details-container">
+        <h1 className='black'>{gig.title}</h1>
+        <div className="card-details">
+          <img className='owner-img' src={gig.owner.imgUrl} alt="" />
+          <div className="gig-info">
+            <div className='flex-info'>
+              <p>{gig.owner.fullname}</p>
+              <p className={ownerLevel}>{gig.owner.level}{ownerLevelIcon}</p><span className='gray'>|</span>
+              <p className='gray'>{gig.reviews.length} orders in queue</p>
+            </div>
+            <p>{gig.owner.rate} <span className='gray'>35 reviews</span></p>
           </div>
         </div>
-
-        {/* Thumbnail Gallery */}
-        <div className="thumbnail-container">
-          <div className="thumbnail-gallery">
-            {gig.imgUrls.map((url, index) => (
-              <div
-                key={index}
-                className={`thumbnail-item ${currentImageIndex === index ? 'active' : ''}`}
-                onClick={() => setCurrentImageIndex(index)}
-              >
+        <div className="gig-gallery-container">
+          <div className="white-background">
+            <div className="gig-image-box">
+              {isImage(currentUrl) ? (
                 <img
-                  src={url}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail-img ${currentImageIndex === index ? 'highlight' : ''}`}
+                  src={currentUrl}
+                  alt="Gig"
+                  className="gig-img"
+                  loading="lazy" // Adds lazy loading for performance
                 />
-              </div>
-            ))}
+              ) : isVideo(currentUrl) ? (
+                <video
+                  src={currentUrl}
+                  controls
+                  className="gig-img"
+                  aria-label="Gig video"
+                />
+              ) : (
+                <div className="no-media">No valid media available</div>
+              )}
+
+              <label className="prev-btn" onClick={handlePrev} aria-label="Previous image">
+                {levelIcons.leftSign}
+              </label>
+
+              <label className="next-btn" onClick={handleNext} aria-label="Next image">
+                {levelIcons.rightSign}
+              </label>
+            </div>
+          </div>
+
+          {/* Thumbnail Gallery */}
+          <div className="thumbnail-container">
+            <div className="thumbnail-gallery">
+              {gig.imgUrls.map((url, index) => (
+                <div
+                  key={index}
+                  className={`thumbnail-item ${currentImageIndex === index ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                >
+                  <img
+                    src={url}
+                    alt={`Thumbnail ${index + 1}`}
+                    className={`thumbnail-img ${currentImageIndex === index ? 'highlight' : ''}`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+        <div className="reviews-container">
+          <h2 className="reviews-title">What people loved about this freelancer</h2>
+          <p className='review'>{gig.reviews[0].txt}</p>
+
+        </div>
+        {/* About this gig Section */}
+        <div className="about-this-gig">
+          <h2 className="section-title">About this gig</h2>
+
+          {/* Example structure rendering */}
+          <p>************ {gig.aboutThisGig?.overview} ************</p>
+
+          <h3>My Services:</h3>
+          <ul>
+            {gig.aboutThisGig?.services?.map((service, index) => (
+              <li key={index}>• {service}</li>
+            ))}
+          </ul>
+
+          <h3>You will get:</h3>
+          <ul>
+            {gig.aboutThisGig?.deliverables?.map((deliverable, index) => (
+              <li key={index}>• {deliverable}</li>
+            ))}
+          </ul>
+
+          <h3>Why me:</h3>
+          <ul>
+            {gig.aboutThisGig?.whyMe?.map((reason, index) => (
+              <li key={index}>• {reason}</li>
+            ))}
+          </ul>
+
+          <h3>Note:</h3>
+          <p>{gig.aboutThisGig?.note}</p>
+
+          <h3>Thank You:</h3>
+          <p>{gig.aboutThisGig?.thankYou}</p>
+        </div>
+
+        {/* Add Gig Message */}
+        {/* <button onClick={() => onAddGigMsg(gig._id)}>Add Gig Message</button> */}
       </div>
-      <div className="reviews-container">
-        <h2 className="reviews-title">What people loved about this freelancer</h2>
-        <p className='review'>{gig.reviews[0].txt}</p>
-
-      </div>
-      {/* About this gig Section */}
-      <div className="about-this-gig">
-        <h2 className="section-title">About this gig</h2>
-
-        {/* Example structure rendering */}
-        <p>************ {gig.aboutThisGig?.overview} ************</p>
-
-        <h3>My Services:</h3>
-        <ul>
-          {gig.aboutThisGig?.services?.map((service, index) => (
-            <li key={index}>• {service}</li>
-          ))}
-        </ul>
-
-        <h3>You will get:</h3>
-        <ul>
-          {gig.aboutThisGig?.deliverables?.map((deliverable, index) => (
-            <li key={index}>• {deliverable}</li>
-          ))}
-        </ul>
-
-        <h3>Why me:</h3>
-        <ul>
-          {gig.aboutThisGig?.whyMe?.map((reason, index) => (
-            <li key={index}>• {reason}</li>
-          ))}
-        </ul>
-
-        <h3>Note:</h3>
-        <p>{gig.aboutThisGig?.note}</p>
-
-        <h3>Thank You:</h3>
-        <p>{gig.aboutThisGig?.thankYou}</p>
-      </div>
-
-      {/* Add Gig Message */}
-      {/* <button onClick={() => onAddGigMsg(gig._id)}>Add Gig Message</button> */}
     </div>
+
   )
 }
