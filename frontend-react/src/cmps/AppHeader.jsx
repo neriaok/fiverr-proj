@@ -31,15 +31,17 @@ export function AppHeader() {
 	};
 
 	return (
-		<header className="app-header full main-container">
+		<header className="app-header full">
+		{/* <header className="app-header full main-container"> */}
 			<nav>
+				 <div className="right-header">
 				{/* Logo */}
 				<NavLink to="/" className="logo">
 					fiverr <span className='point'>.</span>
 				</NavLink>
 
 				<GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />
-
+				</div>
 				{user && (
 					<>
 						<div className='header-svgs'>
