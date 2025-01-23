@@ -1,4 +1,9 @@
 .main-container main {
     min-height: calc(100vh - 7rem);
     // overflow: hidden; // Quick fix for JSONs in <pre>
+   
+}
+.buttom-line{
+    grid-column: 1 / -1;
+    border-bottom: 0.5px solid rgb(203, 197, 197);
 }

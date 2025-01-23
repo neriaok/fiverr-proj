@@ -75,7 +75,7 @@ export function GigDetails() {
           <img className='owner-img' src={gig.owner.imgUrl} alt="" />
           <div className="gig-info">
             <div className='flex-info'>
-              <p>{gig.owner.fullname}</p>
+              <p className='owner-name'>{gig.owner.fullname}</p>
               <p className={ownerLevel}>{gig.owner.level}{ownerLevelIcon}</p><span className='gray'>|</span>
               <p className='gray'>{gig.reviews.length} orders in queue</p>
             </div>

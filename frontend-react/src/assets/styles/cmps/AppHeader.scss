@@ -11,6 +11,15 @@
         font-size: 0.8em;
         padding: 10px 0 10px 0;
         position: relative;
+        justify-content: space-between;
+       
+        .right-header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.4em
+
+        }
 
 
         .logo {
@@ -31,25 +40,25 @@
         .login-link {
             margin-inline-start: auto;
             // margin-inline-end: 2em;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 60px;
-                height: 35px;
-                border: 1px solid #1dbf73;
-                border-radius: 5px;
-                color: #1dbf73;
-                transition: color 0.5s ease, border 0.5s ease;
-                text-align: center;
-                margin-left: 2em;
-            }
-    
-            .login-link:hover {
-                background-color: #1dbf73;
-                color: white;
-            }
-        
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 35px;
+            border: 1px solid #1dbf73;
+            border-radius: 5px;
+            color: #1dbf73;
+            transition: color 0.5s ease, border 0.5s ease;
+            text-align: center;
+            margin-left: 2em;
+        }
+
+        .login-link:hover {
+            background-color: #1dbf73;
+            color: white;
+        }
+
 
         button {
             margin-inline-end: 0;
@@ -76,6 +85,7 @@
         .log-out-container {
             display: flex;
             align-items: center;
+            // margin-left: 14.3em;
 
             .labels-container {
                 display: flex;
@@ -190,10 +200,10 @@
     }
 }
 
-.app-header.full {
-    grid-column: 1 / -1;
-    border-bottom: 0.8px solid rgb(209, 202, 202);
-}
+// .app-header.full {
+//     grid-column: 1 / -1;
+//     border-bottom: 0.8px solid rgb(209, 202, 202);
+// }
 
 /* Keyframe animation for smooth fading effect */
 @keyframes fadeIn {

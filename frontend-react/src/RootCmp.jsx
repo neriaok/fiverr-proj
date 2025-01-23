@@ -23,6 +23,7 @@ export function RootCmp() {
     return (
         <div className='main-container'>
             <AppHeader />
+            <div className="buttom-line"></div>
             <AppRoute />
             <UserMsg />
 
