@@ -54,7 +54,7 @@ export function OrderGig({gig}) {
                         </ul>
                     </article>
                     <footer className="order-footer">
-                        <button className="order-footer-btn order">Continue <span>{orderGigSvgs.arrow}</span></button>
+                        <NavLink to={`/gig/:${gig._id}/checkout`}><button className="order-footer-btn order">Continue <span>{orderGigSvgs.arrow}</span></button></NavLink>
                         <button className="order-footer-btn compare">Compare packages</button>
                     </footer> 
                 </div>

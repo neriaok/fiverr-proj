@@ -1,11 +1,11 @@
 .order-main-container {
-    // width: minmax(300px, 414px);
+    width: minmax(300px, 414px);
     min-width: 300px;
     width: 100%;
     max-width: 414px;
     height: 850px;
 
-    position: sticky;
+    position: fixed;
     // align-self: start;
     grid-column: 3;
     justify-self: end;
@@ -144,9 +144,14 @@
     padding-bottom: 1.25rem;
 }
 
+.order-footer a {
+    text-decoration: none;
+}
+
 .order-footer-btn.order{
     height: 42px;
     max-height: 42px;
+    width: 100%;
     background-color: black;
 
     border: 1px solid transparent;
@@ -159,6 +164,17 @@
     color: white;
 
     padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    // position: relative;
+    
+    
+}
+
+.order-footer-btn.order span{
+    margin-left: 7rem;
+    
 }
 
 .order-footer-btn.order:hover {

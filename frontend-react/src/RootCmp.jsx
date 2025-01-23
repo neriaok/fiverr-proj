@@ -10,6 +10,7 @@ import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { GigDetails } from './pages/GigDetails.jsx'
 import { UserDetails } from './pages/UserDetails'
+import { GigCheckout } from './pages/GigCheckout.jsx'
 
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
@@ -36,6 +37,7 @@ export function RootCmp() {
                     <Route path="gigs" element={<GigIndex />} />
                     <Route path="gigs/:gigTag" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
+                    <Route path="gig/:gigId/checkout" element={<GigCheckout/>} />
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
