@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
+import { OrderGig } from '../cmps/OrderGig.jsx'
 
 
 export function GigDetails() {
@@ -66,6 +67,10 @@ if (loading) return <div>Loading...</div>
 if (!gig) return <div>Wait a second..</div>
 
   return (
-    <div>{gig.title}</div>
+    <div className='gig-details-container'>
+      <div>{gig.title}</div>
+      <OrderGig gig={gig}/>
+
+    </div>
   )
 }
