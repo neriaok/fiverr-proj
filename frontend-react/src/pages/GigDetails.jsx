@@ -3,14 +3,11 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { levelService } from '../services/level.service.js'
 import { levelIcons } from '../cmps/LevelIcons.jsx'
-
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
 import { OrderGig } from '../cmps/OrderGig.jsx'
 
-
 export function GigDetails() {
-
   const { gigId } = useParams()
   const clearGigId = gigId.replace(":", "")
 
@@ -30,56 +27,69 @@ export function GigDetails() {
     }
   }
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Helper function to check if the URL is an image
   const isImage = (url) => {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.jfif'];
-    return imageExtensions.some((ext) => url.toLowerCase().endsWith(ext));
-  };
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.jfif']
+    return imageExtensions.some((ext) => url.toLowerCase().endsWith(ext))
+  }
 
   // Helper function to check if the URL is a video
   const isVideo = (url) => {
-    const videoExtensions = ['.mp4', '.webm', '.ogg'];
-    return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext));
-  };
+    const videoExtensions = ['.mp4', '.webm', '.ogg']
+    return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext))
+  }
 
   // Navigate to the previous image/video
   const handlePrev = () => {
     if (currentImageIndex > 0) {
-      setCurrentImageIndex(currentImageIndex - 1);
+      setCurrentImageIndex(currentImageIndex - 1)
     }
-  };
+  }
 
   // Navigate to the next image/video
   const handleNext = () => {
     if (currentImageIndex < gig.imgUrls.length - 1) {
-      setCurrentImageIndex(currentImageIndex + 1);
+      setCurrentImageIndex(currentImageIndex + 1)
     }
-  };
+  }
 
   if (loading) return <div>Loading...</div>
 
   if (!gig) return <div>Wait a second..</div>
 
-  const ownerLevelIcon = levelService.setIcon(gig.owner.level);
-  const ownerLevel = gig.owner.level === 'Top Rated' ? 'topRated' : 'owner-level';
-  const currentUrl = gig.imgUrls[currentImageIndex];
+  const ownerLevelIcon = levelService.setIcon(gig.owner.level)
+  const ownerLevel = gig.owner.level === 'Top Rated' ? 'level topRated' : 'level owner-level'
+  const currentUrl = gig.imgUrls[currentImageIndex]
 
   return (
     <div className="gig-details-container">
-      <OrderGig gig = {gig}/>
+      <OrderGig gig={gig} />
       <div className="details-container">
-        <h1 className='black'>{gig.title}</h1>
+        <h1 className="black">{gig.title}</h1>
         <div className="card-details">
-          <img className='owner-img' src={gig.owner.imgUrl} alt="" />
+          <img className="owner-img" src={gig.owner.imgUrl} alt={`${gig.owner.fullname} profile`} />
           <div className="gig-info">
-            <div className='flex-info'>
-              <p className='owner-name'>{gig.owner.fullname}</p>
-              <p className={ownerLevel}>{gig.owner.level}{ownerLevelIcon}</p><span className='gray'>|</span>
-              <p className='gray'>{gig.reviews.length} orders in queue</p>
+            <div className="flex-info">
+              <p className="owner-name">{gig.owner.fullname}</p>
+              <p className={ownerLevel}>
+                {gig.owner.level}
+                {ownerLevelIcon}
+              </p>
+              <span className="line">|</span>
+              <p className="order-num gray">{gig.reviews.length} orders in queue</p>
             </div>
-            <p>{gig.owner.rate} <span className='gray'>35 reviews</span></p>
+            <p>
+              {/* Round the rate value to the nearest whole number */}
+              {Array.from({ length: Math.round(gig.owner.rate) }).map((_, index) => (
+                <span key={index} className="star">
+                  {levelIcons.blackStar} {/* Full Star */}
+                </span>
+              ))}
+              <span className="black bold">{gig.owner.rate}</span>
+              <span className="gray"> (35 reviews)</span>
+            </p>
           </div>
         </div>
         <div className="gig-gallery-container">
@@ -116,33 +126,57 @@ export function GigDetails() {
           {/* Thumbnail Gallery */}
           <div className="thumbnail-container">
             <div className="thumbnail-gallery">
-              {gig.imgUrls.map((url, index) => (
-                <div
-                  key={index}
-                  className={`thumbnail-item ${currentImageIndex === index ? 'active' : ''}`}
-                  onClick={() => setCurrentImageIndex(index)}
-                >
-                  <img
-                    src={url}
-                    alt={`Thumbnail ${index + 1}`}
-                    className={`thumbnail-img ${currentImageIndex === index ? 'highlight' : ''}`}
-                  />
-                </div>
-              ))}
+              {gig.imgUrls.map((url, index) => {
+                // Check if the URL is a valid image, otherwise fallback to a default image
+                const imageUrl = isImage(url) ? url : '/img/gigdetails.jpg';
+
+                return (
+                  <div
+                    key={index}
+                    className={`thumbnail-item ${currentImageIndex === index ? 'active' : ''}`}
+                    onClick={() => setCurrentImageIndex(index)}
+                  >
+                    <img
+                      src={imageUrl}
+                      alt={`Thumbnail ${index + 1}`}
+                      className={`thumbnail-img ${currentImageIndex === index ? 'highlight' : ''}`}
+                      loading="lazy"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div className="reviews-container">
-          <h2 className="reviews-title">What people loved about this freelancer</h2>
-          <p className='review'>{gig.reviews[0].txt}</p>
-
+          <h2 className="title">What people loved about this freelancer</h2>
+          <div className="review">
+            <div className='reviewer-letter'>
+								{gig.reviews[0].by.fullname.charAt(0).toUpperCase()}
+							</div>
+              <div>
+          <div className="reviewer-info">
+            <p className='bold'>{gig.reviews[0].by.fullname}</p>
+            <p className='location gray'>{gig.reviews[0].by.location}</p> 
+            <div className='line'>|</div>
+            <p>
+            {Array.from({ length: Math.round(gig.reviews[0].rate) }).map((_, index) => (
+                <span key={index} className="star">
+                  {levelIcons.blackStar} {/* Full Star */}
+                </span>
+              ))}
+              {gig.reviews[0].rate}</p>
+          </div>
+          <p>{gig.reviews[0].txt}</p>
+        </div>
+        </div>
         </div>
         {/* About this gig Section */}
-        <div className="about-this-gig">
-          <h2 className="section-title">About this gig</h2>
+        <div className="about-gig">
+          <h2 className="title">About this gig</h2>
 
           {/* Example structure rendering */}
-          <p>************ {gig.aboutThisGig?.overview} ************</p>
+          <p>{gig.aboutThisGig?.overview}</p>
 
           <h3>My Services:</h3>
           <ul>
@@ -168,7 +202,6 @@ export function GigDetails() {
           <h3>Note:</h3>
           <p>{gig.aboutThisGig?.note}</p>
 
-          <h3>Thank You:</h3>
           <p>{gig.aboutThisGig?.thankYou}</p>
         </div>
 
@@ -176,6 +209,5 @@ export function GigDetails() {
         {/* <button onClick={() => onAddGigMsg(gig._id)}>Add Gig Message</button> */}
       </div>
     </div>
-
   )
 }

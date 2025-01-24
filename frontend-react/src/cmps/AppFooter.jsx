@@ -1,16 +1,22 @@
 import { useSelector } from 'react-redux'
+import { appFooterSvgs } from './Svgs';
+
 
 export function AppFooter() {
-	const count = useSelector(storeState => storeState.userModule.count)
+	// const count = useSelector(storeState => storeState.userModule.count)
 
 	return (
 		<footer className="app-footer full">
-			<p>Coffeerights &copy; 2024</p>
-			<p>Count: {count}</p>
-            
-            {import.meta.env.VITE_LOCAL ? 
-                <span className="local-services">Local Services</span> : 
-                <span className="remote-services">Remote Services</span>}
+			<div className="left-footer">
+				<p>Avnerr &copy; </p>
+				<p className='second-line'> Avnerr International Ltd. 2025</p>
+			</div>
+			<div className="right-footer-svgs">
+				<label >{appFooterSvgs.tiktokLogo}</label>
+				<label >{appFooterSvgs.instagramLogo}</label>
+				<label >{appFooterSvgs.facebookLogo}</label>
+			</div>
+
 		</footer>
 	)
 }

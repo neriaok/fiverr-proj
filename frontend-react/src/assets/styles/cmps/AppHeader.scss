@@ -23,7 +23,6 @@
 
 
         .logo {
-            font-family: fantasy;
             color: #2e372f;
             // padding: rem(10px) 1rem;
             padding: 0;
@@ -89,14 +88,10 @@
 
             .labels-container {
                 display: flex;
-                gap: 11em;
+                gap: 3em;
                 margin-left: 13em;
                 color: gray;
 
-                span {
-                    display: flex;
-                    gap: 2em;
-                }
 
                 label {
                     font-size: 18px;

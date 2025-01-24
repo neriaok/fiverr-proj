@@ -119,6 +119,7 @@ function _createGigs() {
                 _id: 'u102',
                 fullname: 'User 2',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'USA',
               },
             },
           ],
@@ -171,6 +172,7 @@ function _createGigs() {
                 _id: 'u104',
                 fullname: 'User 3',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'Canada',
               },
             },
           ],
@@ -223,6 +225,7 @@ function _createGigs() {
                 _id: 'u106',
                 fullname: 'User 4',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'Germany',
               },
             },
           ],
@@ -275,6 +278,7 @@ function _createGigs() {
                 _id: 'u108',
                 fullname: 'User 5',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'Australia',
               },
             },
           ],
@@ -326,6 +330,7 @@ function _createGigs() {
                 _id: 'u110',
                 fullname: 'User 6',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'India',
               },
             },
           ],
@@ -377,6 +382,7 @@ function _createGigs() {
                 _id: 'u112',
                 fullname: 'User 7',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'UK',
               },
             },
           ],
@@ -428,6 +434,7 @@ function _createGigs() {
                 _id: 'u114',
                 fullname: 'User 8',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'USA',
               },
             },
           ],
@@ -479,6 +486,7 @@ function _createGigs() {
                 _id: 'u116',
                 fullname: 'User 9',
                 imgUrl: 'https://via.placeholder.com/50',
+                location: 'France',
               },
             },
           ],
@@ -503,6 +511,7 @@ function _createGigs() {
           },
         },
       ];
+      
       
       saveToStorage(STORAGE_KEY, gigs);
       
