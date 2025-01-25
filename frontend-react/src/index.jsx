@@ -10,6 +10,8 @@ import { store } from './store/store'
 import { RootCmp } from './RootCmp'
 
 import './assets/styles/main.scss'
+import "./fonts/DomaineDisplay/TestDomaineDisplay-RegularItalic.otf"
+// import './fonts/DomaineDisplay/TestDomaineDisplay-MediumItalic.otf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

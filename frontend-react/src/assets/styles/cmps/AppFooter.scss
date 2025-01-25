@@ -6,7 +6,25 @@
     min-height: 3.5rem;
 
     padding: rem(10px) 1rem;
-    background-color: $clr4;
+    background-color: white;
+    border-top: 1px solid gray;
+    margin-top: 2em;
+
+    .left-footer{
+        display: flex;
+        gap: 1em;
+
+        .second-line{
+            font-size: medium;
+        }
+
+    }
+
+    .right-footer-svgs{
+        display: flex;
+        gap: 2em;
+    }
+
 
     p {
         margin: 0;

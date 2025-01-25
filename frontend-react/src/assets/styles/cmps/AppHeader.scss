@@ -1,5 +1,4 @@
 .app-header {
-    // display: flex;
     min-height: 3.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -9,14 +8,21 @@
         align-items: center;
         gap: 1em;
         color: #333;
-        // border-bottom: 0.8px solid rgb(209, 202, 202);
         font-size: 0.8em;
-        // padding: 0px 20px 10px 20px;
+        padding: 10px 0 10px 0;
         position: relative;
+        justify-content: space-between;
+       
+        .right-header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.4em
+
+        }
 
 
         .logo {
-            font-family: fantasy;
             color: #2e372f;
             // padding: rem(10px) 1rem;
             padding: 0;
@@ -33,25 +39,25 @@
         .login-link {
             margin-inline-start: auto;
             // margin-inline-end: 2em;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 60px;
-                height: 35px;
-                border: 1px solid #1dbf73;
-                border-radius: 5px;
-                color: #1dbf73;
-                transition: color 0.5s ease, border 0.5s ease;
-                text-align: center;
-                margin-left: 2em;
-            }
-    
-            .login-link:hover {
-                background-color: #1dbf73;
-                color: white;
-            }
-        
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 35px;
+            border: 1px solid #1dbf73;
+            border-radius: 5px;
+            color: #1dbf73;
+            transition: color 0.5s ease, border 0.5s ease;
+            text-align: center;
+            margin-left: 2em;
+        }
+
+        .login-link:hover {
+            background-color: #1dbf73;
+            color: white;
+        }
+
 
         button {
             margin-inline-end: 0;
@@ -78,17 +84,14 @@
         .log-out-container {
             display: flex;
             align-items: center;
+            // margin-left: 14.3em;
 
             .labels-container {
                 display: flex;
-                gap: 11em;
+                gap: 3em;
                 margin-left: 13em;
                 color: gray;
 
-                span {
-                    display: flex;
-                    gap: 2em;
-                }
 
                 label {
                     font-size: 18px;
@@ -192,10 +195,10 @@
     }
 }
 
-.app-header.full {
-    grid-column: 1 / -1;
-    border-bottom: 0.8px solid rgb(209, 202, 202);
-}
+// .app-header.full {
+//     grid-column: 1 / -1;
+//     border-bottom: 0.8px solid rgb(209, 202, 202);
+// }
 
 /* Keyframe animation for smooth fading effect */
 @keyframes fadeIn {

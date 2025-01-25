@@ -31,15 +31,17 @@ export function AppHeader() {
 	};
 
 	return (
-		<header className="app-header full main-container">
+		<header className="app-header full">
+			{/* <header className="app-header full main-container"> */}
 			<nav>
-				{/* Logo */}
-				<NavLink to="/" className="logo">
-					fiverr <span className='point'>.</span>
-				</NavLink>
+				<div className="right-header">
+					{/* Logo */}
+					<NavLink to="/" className="logo">
+						Avnerr <span className='point'>.</span>
+					</NavLink>
 
-				<GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />
-
+					<GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />
+				</div>
 				{user && (
 					<>
 						<div className='header-svgs'>
@@ -51,9 +53,9 @@ export function AppHeader() {
 						{user.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
 						<div className="user-info">
-							<Link className='user-letter' onClick={toggleMenu} to={`user/${user._id}`}>
+							<div className='user-letter' onClick={toggleMenu}>
 								{user.fullname.charAt(0).toUpperCase()}
-							</Link>
+							</div>
 
 							{isMenuOpen && (
 								<div className="menu">
@@ -76,10 +78,8 @@ export function AppHeader() {
 					<div className="log-out-container">
 						<div className="labels-container">
 							<label ><NavLink className='gray' to="gigs">Explore</NavLink></label>
-							<span>
 							<label>Become a Seller</label>
 							<label>Sign in</label>
-							</span>
 						</div>
 						<NavLink to="login" className="login-link">Join</NavLink>
 					</div>
