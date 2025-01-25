@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
-import { appHeaderSvgs } from './Svgs'
 
-export function FilterBar({ user, filterBy, setFilterBy }) {
+export function FilterBar({ filterBy, setFilterBy }) {
     const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy))
-	const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
-	const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
+    const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
+    const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
 
-	const toggleBudgetMenu = () => setIsBudgetMenuOpen(prevState => !prevState);
-	const toggleDeliveryMenu = () => setIsDeliveryMenuOpen(prevState => !prevState);
+    const toggleBudgetMenu = () => setIsBudgetMenuOpen(prevState => !prevState);
+    const toggleDeliveryMenu = () => setIsDeliveryMenuOpen(prevState => !prevState);
 
-    
+
     useEffect(() => {
         setFilterBy(filterToEdit)
     }, [filterToEdit])
@@ -46,71 +45,82 @@ export function FilterBar({ user, filterBy, setFilterBy }) {
             <label onClick={toggleBudgetMenu}>Budget</label>
             <label onClick={toggleDeliveryMenu}>Delivery time</label>
         </div>
-        
+
         <div className="sort-field">
 
-        {isMenuOpen && (
-                <label>
-                    <span>Speed</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="speed"
-                        checked={filterToEdit.sortField === 'speed'}
-                        onChange={handleChange}
-                    />
-                </label>
-                )}
+            {isBudgetMenuOpen && (
+                <div className='sort-budget'>
+                    <label>
+                        <span>Value</span>
+                        <input
+                            type="radio"
+                            name="sortField"
+                            value="speed"
+                            checked={filterToEdit.sortField === 'speed'}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        <span>Mid-range</span>
+                        <input
+                            type="radio"
+                            name="sortField"
+                            value="owner"
+                            checked={filterToEdit.sortField === 'owner'}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        <span>High-end</span>
+                        <input
+                            type="radio"
+                            name="sortDir"
+                            value="-1"
+                            onChange={handleChange}
+                            checked={filterToEdit.sortDir === -1}
+                        />
+                    </label>
+                </div>
+            )}
+            {isDeliveryMenuOpen && (
+                <div className='sort-delivery'>
+                    <label>
+                        <span>Up to 3 days</span>
+                        <input
+                            type="radio"
+                            name="sortField"
+                            value="vendor"
+                            checked={filterToEdit.sortField === 'vendor'}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        <span>Up to 7 days</span>
+                        <input
+                            type="radio"
+                            name="sortDir"
+                            value="1"
+                            checked={filterToEdit.sortDir === 1}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        <span>Anytime</span>
+                        <input
+                            type="radio"
+                            name="sortDir"
+                            value="1"
+                            checked={filterToEdit.sortDir === 1}
+                            onChange={handleChange}
+                        />
+                    </label>
+                </div>
+            )}
+        </div>
+        <button
+            className="btn-clear"
+            onClick={clearSort}>Clear</button>
 
-                <label>
-                    <span>Vendor</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="vendor"
-                        checked={filterToEdit.sortField === 'vendor'}            
-                        onChange={handleChange}
-                    />
-                </label>
-                
-                <label>
-                    <span>Owner</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="owner"
-                        checked={filterToEdit.sortField === 'owner'}                        
-                        onChange={handleChange}
-                    />
-                </label>
-                
-            </div>
-            <div className="sort-dir">
-                <label>
-                    <span>Asce</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="1"
-                        checked={filterToEdit.sortDir === 1}                        
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Desc</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="-1"
-                        onChange={handleChange}
-                        checked={filterToEdit.sortDir === -1}                        
-                    />
-                </label>
-            </div>
-            <button 
-                className="btn-clear" 
-                onClick={clearSort}>Clear</button>
-                
     </section>
 
 }

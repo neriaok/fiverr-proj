@@ -64,7 +64,7 @@ export function GigIndex() {
                 {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>}
             </header>
             {console.log('Rendering gigs:', gigs)}
-            {/* <FilterBar filterBy={filterBy} setFilterBy={setFilterBy} /> */}
+            <FilterBar filterBy={filterBy} setFilterBy={setFilterBy} />
             <GigList
                 gigs={gigs}
                 onRemoveGig={onRemoveGig}
