@@ -18,28 +18,50 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', price: 0, tag: ''}) {
-    var gigs = await storageService.query(STORAGE_KEY)
-    // console.log(gigs[0].owner.level);
-    
-    const { txt, price, tag } = filterBy
+async function query(filterBy = { txt: '', price: 0, tag: '', deliveryTime: '' }) {
+  let gigs;
 
-    if (txt && txt !== '') {
-        const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.owner.fullname) || regex.test(gig.description))
-    }
-    if (price && price !== 0) {
-        gigs = gigs.filter(gig => gig.price >= price)
-    }
-    if (tag && tag !== '') {
-        const regex = new RegExp(filterBy.tag, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.tags))
-    }
-    
-    
+  try {
+      gigs = await storageService.query(STORAGE_KEY); // Fetch gigs from storage or API
+  } catch (error) {
+      console.error('Error fetching gigs:', error);
+      return [];
+  }
 
-    return gigs
+  const { txt, price, tag, deliveryTime } = filterBy;
+
+  // Creating regex for txt and tag filter if they exist
+  const txtRegex = txt ? new RegExp(txt, 'i') : null;
+  const tagRegex = tag ? new RegExp(tag, 'i') : null;
+
+  gigs = gigs.filter(gig => {
+      // Check if 'txt' is in the owner's fullname or gig description
+      const matchesTxt = txtRegex ? txtRegex.test(gig.owner.fullname) || txtRegex.test(gig.description) : true;
+
+      // Check if 'price' filter is met (based on value, mid-range, or high-end)
+      const matchesPrice = price ? (
+          (price === 'value' && gig.price < 451) ||
+          (price === 'mid-range' && gig.price >= 451 && gig.price <= 846) ||
+          (price === 'high-end' && gig.price > 846)
+      ) : true;
+
+      // Check if 'tag' is in the gig tags array
+      const matchesTag = tagRegex ? gig.tags.some(t => tagRegex.test(t)) : true;
+
+      // Check if 'deliveryTime' filter is met
+      const matchesDeliveryTime = deliveryTime ? (
+          (deliveryTime === 'up-to-3' && gig.daysToMake <= 3) ||
+          (deliveryTime === 'up-to-7' && gig.daysToMake <= 7) ||
+          (deliveryTime === 'anytime')
+      ) : true;
+
+      // Return the gig if all filters match
+      return matchesTxt && matchesPrice && matchesTag && matchesDeliveryTime;
+  });
+
+  return gigs;
 }
+
 
 function getById(gigId) {
     return storageService.get(STORAGE_KEY, gigId)
