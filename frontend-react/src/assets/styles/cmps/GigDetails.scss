@@ -9,7 +9,38 @@
         align-items: center;
         padding: 2em 0 2em 0;
 
-        span{
+        .home-icon-wrapper {
+            display: flex;
+            position: relative;
+            color: #121110;
+            padding: 10px;
+            cursor: pointer;
+          
+            &:hover {
+              &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: rgba(121, 117, 117, 0.1);
+                opacity: 1;
+                pointer-events: none;
+              }
+          
+              svg {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+              }
+            }
+          }
+          
+           
+
+        span {
             color: #c8c4c4;
         }
 
@@ -213,6 +244,14 @@
         flex-direction: column;
         gap: 1em;
         color: rgb(92, 88, 88);
+
+        ul{
+            h4{
+                background: #ffecd1;
+                width: fit-content;
+                text-decoration: none;
+            }
+        }
     }
 }
 
