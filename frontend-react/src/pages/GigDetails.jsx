@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom';
+
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { levelService } from '../services/level.service.js'
@@ -6,6 +8,7 @@ import { levelIcons } from '../cmps/LevelIcons.jsx'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
 import { OrderGig } from '../cmps/OrderGig.jsx'
+import { gigDetailsSvg } from '../cmps/Svgs.jsx'
 
 export function GigDetails() {
   const { gigId } = useParams()
@@ -67,6 +70,11 @@ export function GigDetails() {
     <div className="gig-details-container">
       <OrderGig gig={gig} />
       <div className="details-container">
+        <div className='category-line'>
+          <NavLink to="/gigs"><a>{gigDetailsSvg.homeIcon}</a></NavLink>
+          <span>/</span>
+          <p>{gig.tags[0]}</p>
+        </div>
         <h1 className="black">{gig.title}</h1>
         <div className="card-details">
           <img className="owner-img" src={gig.owner.imgUrl} alt={`${gig.owner.fullname} profile`} />
@@ -152,24 +160,24 @@ export function GigDetails() {
           <h2 className="title">What people loved about this freelancer</h2>
           <div className="review">
             <div className='reviewer-letter'>
-								{gig.reviews[0].by.fullname.charAt(0).toUpperCase()}
-							</div>
-              <div>
-          <div className="reviewer-info">
-            <p className='bold'>{gig.reviews[0].by.fullname}</p>
-            <p className='location gray'>{gig.reviews[0].by.location}</p> 
-            <div className='line'>|</div>
-            <p>
-            {Array.from({ length: Math.round(gig.reviews[0].rate) }).map((_, index) => (
-                <span key={index} className="star">
-                  {levelIcons.blackStar} {/* Full Star */}
-                </span>
-              ))}
-              {gig.reviews[0].rate}</p>
+              {gig.reviews[0].by.fullname.charAt(0).toUpperCase()}
+            </div>
+            <div>
+              <div className="reviewer-info">
+                <p className='bold'>{gig.reviews[0].by.fullname}</p>
+                <p className='location gray'>{gig.reviews[0].by.location}</p>
+                <div className='line'>|</div>
+                <p>
+                  {Array.from({ length: Math.round(gig.reviews[0].rate) }).map((_, index) => (
+                    <span key={index} className="star">
+                      {levelIcons.blackStar} {/* Full Star */}
+                    </span>
+                  ))}
+                  {gig.reviews[0].rate}</p>
+              </div>
+              <p>{gig.reviews[0].txt}</p>
+            </div>
           </div>
-          <p>{gig.reviews[0].txt}</p>
-        </div>
-        </div>
         </div>
         {/* About this gig Section */}
         <div className="about-gig">

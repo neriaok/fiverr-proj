@@ -2,9 +2,23 @@
     color: black;
     grid-row: 1/4;
 
+    .category-line {
+        font-size: medium;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 2em 0 2em 0;
+
+        span{
+            color: #c8c4c4;
+        }
+
+    }
+
     .card-details {
         display: flex;
         gap: 10px;
+        border-bottom: 1px solid #e8e8e8;
 
         .gig-info {
             display: flex;
@@ -154,7 +168,7 @@
         flex-direction: column;
         margin: 0 0 4em 0;
 
-      
+
         .review {
             display: flex;
             gap: 1em;
@@ -193,7 +207,8 @@
             }
         }
     }
-    .about-gig{
+
+    .about-gig {
         display: flex;
         flex-direction: column;
         gap: 1em;

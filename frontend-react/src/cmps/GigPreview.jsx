@@ -127,7 +127,7 @@ export function GigPreview({ gig }) {
             {levelIcons.blackStar} {gig.owner.rate} <span className="ratesNum">{rendRateNum}</span>
           </p>
 
-          <p className="gig-price">From ${gig.price}</p>
+          <p className="gig-price">From ₪{gig.price}</p>
         </div>
       </div>
     </NavLink>

@@ -117,7 +117,7 @@ function _createGigs() {
         {
           _id: 'g101',
           title: 'I will design your logo',
-          price: 12.16,
+          price: 100.00,  // Updated price: Budget
           owner: {
             _id: 'u101',
             fullname: 'Dudu Da',
@@ -170,7 +170,7 @@ function _createGigs() {
         {
           _id: 'g102',
           title: 'I will write a compelling blog post',
-          price: 20.00,
+          price: 250.00,  // Updated price: Mid-range
           owner: {
             _id: 'u103',
             fullname: 'Jane Doe',
@@ -223,7 +223,7 @@ function _createGigs() {
         {
           _id: 'g103',
           title: 'I will help you with your social media strategy',
-          price: 50.00,
+          price: 400.00,  // Updated price: High-end
           owner: {
             _id: 'u105',
             fullname: 'Mark Twain',
@@ -276,7 +276,7 @@ function _createGigs() {
         {
           _id: 'g104',
           title: 'I will edit your YouTube song video',
-          price: 30.00,
+          price: 150.00,  // Updated price: Mid-range
           owner: {
             _id: 'u107',
             fullname: 'Lugas V',
@@ -328,7 +328,7 @@ function _createGigs() {
         {
           _id: 'g105',
           title: 'I will create a professional website for you',
-          price: 150.00,
+          price: 800.00,  // Updated price: High-end
           owner: {
             _id: 'u109',
             fullname: 'Saar Lee',
@@ -380,7 +380,7 @@ function _createGigs() {
         {
           _id: 'g106',
           title: 'I will teach you guitar lessons online',
-          price: 40.00,
+          price: 60.00,  // Updated price: Mid-range
           owner: {
             _id: 'u111',
             fullname: 'David Smith',
@@ -432,7 +432,7 @@ function _createGigs() {
         {
           _id: 'g107',
           title: 'I will make a personalized fitness plan',
-          price: 75.00,
+          price: 150.00,  // Updated price: High-end
           owner: {
             _id: 'u113',
             fullname: 'Emily Ray',
@@ -484,7 +484,7 @@ function _createGigs() {
         {
           _id: 'g108',
           title: 'I will translate your documents',
-          price: 25.00,
+          price: 80.00,  // Updated price: Mid-range
           owner: {
             _id: 'u115',
             fullname: 'John Miller',
@@ -534,11 +534,7 @@ function _createGigs() {
         },
       ];
       
-      
       saveToStorage(STORAGE_KEY, gigs);
-      
-    }
-
-
+    }      
 
 }
