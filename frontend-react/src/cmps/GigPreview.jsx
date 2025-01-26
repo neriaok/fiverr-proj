@@ -56,7 +56,7 @@ export function GigPreview({ gig }) {
   const toLink = `/gig/:${gig._id}`;
 
   return (
-    <NavLink to={toLink}>
+    <NavLink className= 'black active' to={toLink}>
       <div className="preview">
         <div className="gig-image-box">
           {isImage(currentUrl) ? (
