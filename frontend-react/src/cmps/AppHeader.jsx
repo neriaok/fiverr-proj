@@ -78,7 +78,7 @@ export function AppHeader() {
 					<div className="log-out-container">
 						<div className="labels-container">
 							<label ><NavLink className='gray' to="gigs">Explore</NavLink></label>
-							<label>Sign in</label>
+							<label><NavLink className='gray' to="/login/signup">Sign in</NavLink></label>
 						</div>
 						<NavLink to="login" className="login-link">Join</NavLink>
 					</div>
