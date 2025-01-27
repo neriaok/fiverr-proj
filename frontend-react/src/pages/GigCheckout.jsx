@@ -93,13 +93,16 @@ export function GigCheckout () {
                         <h4 className="pack-price">${gig.price}</h4>
                     </div>
                     <ul className="feature-list">
-                        <li>{orderGigSvgs.check} <span>Functional website</span></li>
+                        {/* <li>{orderGigSvgs.check} <span>Functional website</span></li>
                         <li>{orderGigSvgs.check} <span>5 pages</span></li>
                         <li>{orderGigSvgs.check} <span>Responsive design</span></li>
                         <li>{orderGigSvgs.check} <span>Content upload</span></li>
                         <li>{orderGigSvgs.check} <span>5 plugins/extensions</span></li>
                         <li>{orderGigSvgs.check} <span>E-commerce functionality</span></li>
-                        <li>{orderGigSvgs.check} <span>15 products</span></li>
+                        <li>{orderGigSvgs.check} <span>15 products</span></li> */}
+                        {gig.aboutThisGig.services.map(service => (
+                            <li>{orderGigSvgs.check} <span>{service}</span></li>
+                        ))}
                     </ul>
                 </article>
                 <div className="summary">

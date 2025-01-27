@@ -164,7 +164,42 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please provide details about your brand and any design preferences before placing an order.",
-            thankYou: "Thank you for visiting my gig!"
+            thankYou: "Thank you for visiting my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom logo design",
+                  "3 design concepts to choose from",
+                  "High-quality files for print and digital use",
+                  "Unlimited revisions"
+                ],
+                price: 100.00
+              },
+              standard: {
+                services: [
+                  "Custom logo design",
+                  "5 design concepts to choose from",
+                  "High-quality files for print and digital use",
+                  "Unlimited revisions",
+                  "Brand style revisions",
+                  "Social media kit"
+                ],
+                price: 250.00
+              },
+              premium: {
+                services: [
+                  "Custom logo design",
+                  "10 design concepts to choose from",
+                  "High-quality files for print and digital use",
+                  "Unlimited revisions",
+                  "Brand style revisions",
+                  "Social media kit",
+                  "Business card design",
+                  "Additional graphic element designs"
+                ],
+                price: 400.00
+              }
+            }
           },
         },
         {
@@ -217,7 +252,42 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please share the topic and any specific instructions before placing an order.",
-            thankYou: "Thank you for considering my gig!"
+            thankYou: "Thank you for considering my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "SEO optimized content",
+                  "Informative and engaging writing",
+                  "Targeted keyword usage for better ranking",
+                  "Plagiarism-free content"
+                ],
+                price: 250.00
+              },
+              standard: {
+                services: [
+                  "SEO optimized content",
+                  "Informative and engaging writing",
+                  "Targeted keyword usage for better ranking",
+                  "Plagiarism-free content",
+                  "In-depth keyword research",
+                  "Competitor analysis"
+                ],
+                price: 400.00
+              },
+              premium: {
+                services: [
+                  "SEO optimized content",
+                  "Informative and engaging writing",
+                  "Targeted keyword usage for better ranking",
+                  "Plagiarism-free content",
+                  "In-depth keyword research",
+                  "Competitor analysis",
+                  "Comprehensive SEO audit",
+                  "Content marketing plan"
+                ],
+                price: 600.00
+              }
+            }
           },
         },
         {
@@ -270,7 +340,42 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please message me with your business goals and current social media status before placing an order.",
-            thankYou: "Thank you for considering my gig!"
+            thankYou: "Thank you for considering my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Social media audit",
+                  "Tailored social media strategy",
+                  "Content calendar creation",
+                  "Growth tactics (followers, engagement, and brand awareness)"
+                ],
+                price: 400.00
+              },
+              standard: {
+                services: [
+                  "Social media audit",
+                  "Tailored social media strategy",
+                  "Content calendar creation",
+                  "Growth tactics (followers, engagement, and brand awareness)",
+                  "Monthly performance reports",
+                  "Competitor analysis"
+                ],
+                price: 550.00
+              },
+              premium: {
+                services: [
+                  "Social media audit",
+                  "Tailored social media strategy",
+                  "Content calendar creation",
+                  "Growth tactics (followers, engagement, and brand awareness)",
+                  "Monthly performance reports",
+                  "Competitor analysis",
+                  "Advanced advertising strategy",
+                  "Crisis management plan"
+                ],
+                price: 650.00
+              }
+            }
           },
         },
         {
@@ -322,7 +427,39 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please contact me with your video footage and any specific requests before placing an order.",
-            thankYou: "Thank you for visiting my gig!"
+            thankYou: "Thank you for visiting my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Video editing for music videos, vlogs, or other content",
+                  "Audio synchronization and enhancement",
+                  "Color correction and effects"
+                ],
+                price: 150.00
+              },
+              standard: {
+                services: [
+                  "Video editing for music videos, vlogs, or other content",
+                  "Audio synchronization and enhancement",
+                  "Color correction and effects",
+                  "Custom graphics and animation",
+                  "Social media optimization"
+                ],
+                price: 200.00
+              },
+              premium: {
+                services: [
+                  "Video editing for music videos, vlogs, or other content",
+                  "Audio synchronization and enhancement",
+                  "Color correction and effects",
+                  "Custom graphics and animation",
+                  "Social media optimization",
+                  "Multi-cam editing",
+                  "Video marketing strategy consultation"
+                ],
+                price: 250.00
+              }
+            }
           },
         },
         {
@@ -374,7 +511,39 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please contact me before placing an order to discuss your project requirements.",
-            thankYou: "Thank you for choosing my gig!"
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom website design (Responsive)",
+                  "E-commerce websites",
+                  "WordPress or HTML-based websites"
+                ],
+                price: 800.00
+              },
+              standard: {
+                services: [
+                  "Custom website design (Responsive)",
+                  "E-commerce websites",
+                  "WordPress or HTML-based websites",
+                  "SEO optimization",
+                  "Content management system (CMS) integration"
+                ],
+                price: 1200.00
+              },
+              premium: {
+                services: [
+                  "Custom website design (Responsive)",
+                  "E-commerce websites",
+                  "WordPress or HTML-based websites",
+                  "SEO optimization",
+                  "Content management system (CMS) integration",
+                  "Advanced E-commerce features",
+                  "Website maintenance plan"
+                ],
+                price: 1500.00
+              }
+            }
           },
         },
         {
@@ -426,7 +595,39 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please contact me with your current skill level and any specific goals you have before placing an order.",
-            thankYou: "Thank you for choosing my gig!"
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Beginner, intermediate, or advanced lessons",
+                  "Online lessons via Zoom or Skype",
+                  "Customized lesson plans"
+                ],
+                price: 60.00
+              },
+              standard: {
+                services: [
+                  "Beginner, intermediate, or advanced lessons",
+                  "Online lessons via Zoom or Skype",
+                  "Customized lesson plans",
+                  "Progress tracking and feedback",
+                  "Access to exclusive resources"
+                ],
+                price: 100.00
+              },
+              premium: {
+                services: [
+                  "Beginner, intermediate, or advanced lessons",
+                  "Online lessons via Zoom or Skype",
+                  "Customized lesson plans",
+                  "Progress tracking and feedback",
+                  "Access to exclusive resources",
+                  "One-on-One Q&A sessions",
+                  "Group workshops"
+                ],
+                price: 175.00
+              }
+            }
           },
         },
         {
@@ -478,7 +679,40 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please message me with your fitness goals and any specific preferences you have before placing an order.",
-            thankYou: "Thank you for choosing my gig!"
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom workout routines",
+                  "Nutrition guidance",
+                  "Weekly check-ins to track progress"
+                ],
+                price: 150.00
+              },
+              standard: {
+                services: [
+                  "Custom workout routines",
+                  "Nutrition guidance",
+                  "Weekly check-ins to track progress",
+                  "Monthly fitness assessments",
+                  "Access to a members-only online community"
+                ],
+                price: 230.00
+              },
+              premium: {
+                services: [
+                  "Custom workout routines",
+                  "Nutrition guidance",
+                  "Weekly check-ins to track progress",
+                  "Monthly fitness assessments",
+                  "Access to a members-only online community",
+                  "Personalized coaching sessions",
+                  "Customized meal prep guides",
+                  "Exclusive access to workshops and events"
+                ],
+                price: 450.00
+              }
+            }
           },
         },
         {
@@ -529,7 +763,40 @@ function _createGigs() {
               "100% satisfaction guarantee"
             ],
             note: "Please provide the document and specify the language pair before placing an order.",
-            thankYou: "Thank you for choosing my gig!"
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Translation of documents (business, academic, legal, etc.)",
+                  "Fast turnaround",
+                  "Proofreading and editing"
+                ],
+                price: 80.00
+              },
+              standard: {
+                services: [
+                  "Translation of documents (business, academic, legal, etc.)",
+                  "Fast turnaround",
+                  "Proofreading and editing",
+                  "Translation of websites and marketing materials",
+                  "Terminology management"
+                ],
+                price: 200.00
+              },
+              premium: {
+                services: [
+                  "Translation of documents (business, academic, legal, etc.)",
+                  "Fast turnaround",
+                  "Proofreading and editing",
+                  "Translation of websites and marketing materials",
+                  "Terminology management",
+                  "Localization services",
+                  "Dedicated project manager",
+                  "Post-project support"
+                ],
+                price: 500.00
+              }
+            }
           },
         },
       ];
