@@ -19,6 +19,7 @@ import { UserMsg } from './cmps/UserMsg.jsx'
 import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
+import {Orders} from './pages/Orders.jsx'
 
 export function RootCmp() {
     return (
@@ -36,6 +37,7 @@ export function RootCmp() {
                         <Route path="vision" element={<AboutVision />} />
                     </Route>
                     <Route path="gigs" element={<GigIndex />} />
+                    <Route path="orders" element={<Orders/>}/>
                     <Route path="gigs/:gigTag" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="gig/:gigId/checkout" element={<GigCheckout/>} />

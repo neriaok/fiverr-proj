@@ -49,8 +49,8 @@ export function AppHeader() {
 							{appHeaderSvgs.envelope}
 							{appHeaderSvgs.heart}
 						</div>
-						<label className='orders-font'>Orders</label>
-						{user.isAdmin && <NavLink to="/admin">Admin</NavLink>}
+						<NavLink to="/orders"><label className='orders-font'>Orders</label></NavLink>
+						{/* {user.isAdmin && <NavLink to="/admin">Admin</NavLink>} */}
 
 						<div className="user-info">
 							<div className='user-letter' onClick={toggleMenu}>
@@ -78,7 +78,6 @@ export function AppHeader() {
 					<div className="log-out-container">
 						<div className="labels-container">
 							<label ><NavLink className='gray' to="gigs">Explore</NavLink></label>
-							<label>Become a Seller</label>
 							<label>Sign in</label>
 						</div>
 						<NavLink to="login" className="login-link">Join</NavLink>

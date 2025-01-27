@@ -1,10 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { filterBarSvgs } from './Svgs';
 
 export function FilterBar({ filterBy, setFilterBy }) {
     const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy));
     const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
+    const filterBarRef = useRef(null);
+
+    // Add sticky detection on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            if (filterBarRef.current) {
+                const isSticky = filterBarRef.current.getBoundingClientRect().top <= 0;
+                if (isSticky) {
+                    filterBarRef.current.classList.add('is-sticky');
+                } else {
+                    filterBarRef.current.classList.remove('is-sticky');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleBudgetMenu = () => {
         setIsBudgetMenuOpen(prevState => !prevState);
@@ -55,28 +73,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
         });
     }
 
-    // Function to display selected filters
-    function displaySelectedFilters() {
-        const selectedFilters = [];
-
-        if (filterToEdit.price) {
-            selectedFilters.push(`Price: ${filterToEdit.price}`);
-        }
-        if (filterToEdit.deliveryTime) {
-            selectedFilters.push(`Delivery time: ${filterToEdit.deliveryTime}`);
-        }
-        if (filterToEdit.txt) {
-            selectedFilters.push(`Search text: ${filterToEdit.txt}`);
-        }
-        if (filterToEdit.tag) {
-            selectedFilters.push(`Tag: ${filterToEdit.tag}`);
-        }
-
-        return selectedFilters.length ? selectedFilters.join(' | ') : 'No filters selected';
-    }
-
     return (
-        <section className="gig-filterbar">
+        <section className="gig-filterbar" ref={filterBarRef}>
             <div className="label-bar">
                 <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
                 <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>
@@ -155,18 +153,6 @@ export function FilterBar({ filterBy, setFilterBy }) {
                     </div>
                 )}
             </div>
-
-            <div className="selected-filters">
-                <h4>Selected Filters</h4>
-                <p>{displaySelectedFilters()}</p>
-            </div>
-
-            <button className="btn-clear" onClick={clearFilter}>
-                Clear All Filters
-            </button>
-            <button className="btn-clear" onClick={clearSort}>
-                Clear Sort
-            </button>
         </section>
     );
 }

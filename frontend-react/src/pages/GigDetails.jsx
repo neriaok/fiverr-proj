@@ -71,10 +71,13 @@ export function GigDetails() {
       <OrderGig gig={gig} />
       <div className="details-container">
         <div className='category-line'>
-          <NavLink to="/gigs"><a>{gigDetailsSvg.homeIcon}</a></NavLink>
+          <NavLink to="/gigs" className="home-icon-wrapper">
+            {gigDetailsSvg.homeIcon}
+          </NavLink>
           <span>/</span>
-          <p>{gig.tags[0]}</p>
+          <div>{gig.tags[0]}</div>
         </div>
+
         <h1 className="black">{gig.title}</h1>
         <div className="card-details">
           <img className="owner-img" src={gig.owner.imgUrl} alt={`${gig.owner.fullname} profile`} />
@@ -186,28 +189,27 @@ export function GigDetails() {
           {/* Example structure rendering */}
           <p>{gig.aboutThisGig?.overview}</p>
 
-          <h3>My Services:</h3>
           <ul>
+            <h4>My Services:</h4>
             {gig.aboutThisGig?.services?.map((service, index) => (
               <li key={index}>• {service}</li>
             ))}
           </ul>
 
-          <h3>You will get:</h3>
           <ul>
+            <h4>You will get:</h4>
             {gig.aboutThisGig?.deliverables?.map((deliverable, index) => (
               <li key={index}>• {deliverable}</li>
             ))}
           </ul>
 
-          <h3>Why me:</h3>
           <ul>
+            <h4>Why me:</h4>
             {gig.aboutThisGig?.whyMe?.map((reason, index) => (
               <li key={index}>• {reason}</li>
             ))}
           </ul>
 
-          <h3>Note:</h3>
           <p>{gig.aboutThisGig?.note}</p>
 
           <p>{gig.aboutThisGig?.thankYou}</p>

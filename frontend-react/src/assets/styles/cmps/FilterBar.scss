@@ -1,4 +1,17 @@
 .gig-filterbar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: -1px; /* Distance from the top of the viewport */
+    z-index: 10; /* Ensure the filter bar stays above other content */
+    background-color: white; /* Optional, to keep the background consistent */
+    padding: 15px;
+    margin-bottom: 20px; /* Give some space below the filter bar */
+
+     
+    &.is-sticky {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+    
     .label-bar {
         display: flex;
         gap: 10px;
