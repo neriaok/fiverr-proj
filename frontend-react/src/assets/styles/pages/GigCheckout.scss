@@ -172,16 +172,34 @@
 }
 
 
+// cta side
+
 .cta-container {
     grid-column: 2 / 3;
     width: 25.75em;
     justify-self: end;
+
+    // border: 1px solid #e5e5e7;
+    // padding: 2em 1.5em;
+    margin-block-end: auto;
 }
 
 .cta-container, .cta-buyer, .preview-container {
     padding-block-end: 1rem;
     margin-block-end: 0;
     // border-bottom: 1px solid #dadbdd;
+}
+
+.cta-container, .cta-buyer {
+    // background-color: #fafafa;
+    padding-block-end: 1rem;
+}
+
+.cta-buyer {
+    border-bottom: 1px solid #e5e5e7;
+    border: 1px solid #e5e5e7;
+    padding: 2em 1.5em;
+    background-color: #fafafa
 }
 
 .preview-container {
@@ -214,4 +232,102 @@
     align-items: center;
     gap: .5em;
     padding-block-end: .375rem;
+}
+
+.summary {
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    border-inline: 1px solid #dadbdd;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.summary-table {
+    padding-block-end: 1rem;
+    margin-block-end: 1rem;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.service-fee {
+    display: flex;
+    padding-block-end: .375rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.vat-fee {
+    display: flex;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.user-price {
+    display: flex;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding-block-end: .375rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.user-delivery {
+    display: flex;
+    padding-block-end: 1rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.purchase-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.purchase-btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: white;
+
+    height: 2.625rem;
+    width: 100%;
+
+    background-color: black;
+    padding: .625em 1em;
+    margin-block-end: .75em;
+    border-radius: .3125em;
+    border: none;
+}
+
+.purchase-btn:hover {
+    opacity: 70%;
+}
+
+.currency-options {
+    // max-width: 23.4375rem;
+    width: unset;
+
+    padding: 1rem 1.5rem;
+    background-color: #fafafa;
+    border-inline: 1px solid #dadbdd;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.currency-options span {
+    display: inline-block;
+    text-align: left;
+    font-size: .875rem;
+    line-height: 1.3125rem;
+    color: #95979d;
+    padding-inline: .25rem;
+    margin-block-start: .5rem;
+}
+
+.cta-container, .cta-buyer, .summary, .currency-options {
+    max-width: 23.4375rem;
+    width: unset;
 }

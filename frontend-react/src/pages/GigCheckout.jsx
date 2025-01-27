@@ -103,7 +103,36 @@ export function GigCheckout () {
                     </ul>
                 </article>
                 <div className="summary">
-
+                    <div className="summary-table">
+                        <div className="service-fee">
+                            <span className="service">Service fee</span>
+                            <span className="fee">$5.25</span>
+                        </div>
+                        <div className="vat-fee">
+                            <span className="vat">VAT</span>
+                            <span className="fee">$5.95</span>
+                        </div>
+                    </div>
+                    <div className="summary-footer">
+                        <div className="user-price">
+                            <span className="price">You'll pay</span>
+                            <span className="final-price">${gig.price + 5.25 + 5.95}</span>
+                        </div>
+                        <div className="user-delivery">
+                            <span>Total delivery time</span>
+                            <span>{gig.daysToMake} days</span>
+                        </div>
+                        <div className="purchase-container">
+                            <button className="purchase-btn">Pay in USD</button>
+                            <span>SSL Secure Payment</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="currency-options">
+                    <span>
+                        You will be charged ${gig.price + 5.25 + 5.95}. {'\n'}
+                        The order total is an estimation and does not include additional fees your bank may apply.
+                    </span>
                 </div>
             </section>
         </div>
