@@ -121,7 +121,7 @@ function _createGigs() {
           owner: {
             _id: 'u101',
             fullname: 'Dudu Da',
-            imgUrl: '/img/img1.jpg',
+            imgUrl: '/img/faces/Dudu Da.jpg',
             level: 'Level 2',
             rate: 4,
           },
@@ -174,7 +174,7 @@ function _createGigs() {
           owner: {
             _id: 'u103',
             fullname: 'Jane Doe',
-            imgUrl: '/img/img2.jpg',
+            imgUrl: '/img/faces/Jane Doe.jpg',
             level: 'Level 2',
             rate: 7,
           },
@@ -182,7 +182,7 @@ function _createGigs() {
           description: 'Get a high-quality, well-researched blog post that engages your audience.',
           avgResponseTime: 2,
           loc: 'USA',
-          imgUrls: ['/img/img2.jpg', '/img/img2second.jpg', '/img/img2third.jpg'],
+          imgUrls: [ '/img/img2second.jpg','/img/img2.jpg', '/img/img2third.jpg'],
           tags: ['Writing', 'Blogging'],
           likedByUsers: ['mini-user', 'user3'],
           reviews: [
@@ -227,7 +227,7 @@ function _createGigs() {
           owner: {
             _id: 'u105',
             fullname: 'Mark Twain',
-            imgUrl: '/img/img3.jpg',
+            imgUrl: '/img/faces/Mark Twain.jpg',
             level: 'Level 1',
             rate: 4.8,
           },
@@ -280,7 +280,7 @@ function _createGigs() {
           owner: {
             _id: 'u107',
             fullname: 'Lugas V',
-            imgUrl: '/img/img4.jpg',
+            imgUrl: '/img/faces/Lugas V.jpg',
             level: 'Top Rated',
             rate: 4.5,
           },

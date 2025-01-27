@@ -16,7 +16,6 @@
 @import "RootCmp";
 
 @import "pages/AboutUs";
-// @import "pages/HomePage";
 @import "pages/GigIndex";
 @import "pages/ReviewIndex";
 @import "pages/UserDetails";
@@ -25,6 +24,8 @@
 @import "pages/HomePage.scss";
 @import "pages/GigDetails.scss";
 @import "pages/GigCheckout.scss";
+@import "pages/Orders.scss";
+
 
 // Components
 @import "cmps/list";
@@ -39,7 +40,5 @@
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
-@import "cmps/GigDetails";
 @import "cmps/OrderGig";
-// @import "cmps/GigList";
 @import "cmps/GigPreview";
