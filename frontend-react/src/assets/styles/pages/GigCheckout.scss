@@ -4,5 +4,330 @@
     margin-top: 3.125rem;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: column;
-    // height: auto;
+    height: auto;
+}
+
+.payment-container {
+    grid-column: 1 / 2;
+    // border: .0625em solid #efeff0;
+    border-radius: .25em;
+    margin-bottom: 1.5em;
+    padding-block-end: 0;
+}
+
+.billing-container, .payment-options-container {
+    display: flex;
+    flex-direction: column;
+    border: 0.0625em solid #efeff0;
+    border-radius: .25em;
+    margin-bottom: 1.5em;
+}
+
+.billing-header, .payment-options-header{
+    line-height: 1.5rem;
+    padding: 1rem;
+    padding-top: 1.4375em;
+    padding-bottom: 1.4375em;
+    background-color: #fafafa;
+    border-bottom: 0.0625em solid #efeff0;
+}
+
+.billing-info-container {
+    color: #62646a;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-between;
+    line-height: 1.5em;
+    text-align: left;
+    padding: 1.25em;
+}
+
+.billing-header h3 {
+    font-size: 1rem;
+}
+
+.payment-options-container {
+    margin-bottom: 0;
+}
+
+.payment-options-header h3 {
+    font-size: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    padding: 1rem 1rem 0;
+    height: 3.9375em;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.payment-option label {
+    display: flex;
+    gap: .625em;
+    cursor: pointer;
+}
+
+.credit-card-container {
+    padding: 0 1.125em 1.5em;
+    border-bottom: 0.0625em solid #efeff0;
+}
+
+.cradit-card-details {
+    padding-right: 5.188rem;
+}
+
+.card-logo {
+    display: inline-block;
+    height: 1.3em;
+    width: 1.3em;
+    background: white no-repeat;
+    border: none;
+    background-position-y: center;
+    margin-left: 1rem;
+}
+
+.card-number-input {
+    width: 100%;
+    border: none;
+}
+
+.card-number-input-container {
+    display: flex;
+    flex-wrap: nowrap;
+    border: .0625em solid #e4e5e7;
+    border-radius: .25em;
+    flex-basis: 100%;
+    height: 2.625em;
+    align-items: center;
+}
+
+.card-number-input {
+    outline: none;
+    border: none;
+    padding: 0 .25em;
+    border-radius: .25em;
+    padding-left: 1rem;
+    color: #404145;
+    font-size: 1rem;
+    align-self: center;
+}
+
+.input {
+    outline: none;
+    padding: 0 .25em;
+    height: 2.625em;
+    border: .0625em solid #e4e5e7;
+    border-radius: .25em;
+    padding-left: 1rem;
+    margin-top: 8px;
+    color: #404145;
+    font-size: 1rem;
+}
+
+.card {
+    font-size: 11px;
+    margin-top: .5em;
+    margin-block-end: 1.125em;
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    // justify-content: space-between;
+}
+
+.expiration-date h4, .security-code h4, .card-holder-name h4 {
+    margin-block: 1.25em 0;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.card-holder-name {
+    width: 100%;
+}
+
+.card-holder-name input {
+    width: 100%;
+}
+
+.payment-option-1 {
+    display: flex;
+    padding: 1rem;
+    height: 3.9375em;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: none;
+}
+
+.payment-option-1 label {
+    display: flex;
+    gap: .625em;
+    cursor: pointer;
+    // align-items: center;
+}
+
+.payment-option-1 label input {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+
+// cta side
+
+.cta-container {
+    grid-column: 2 / 3;
+    width: 25.75em;
+    justify-self: end;
+
+    // border: 1px solid #e5e5e7;
+    // padding: 2em 1.5em;
+    margin-block-end: auto;
+}
+
+.cta-container, .cta-buyer, .preview-container {
+    padding-block-end: 1rem;
+    margin-block-end: 0;
+    // border-bottom: 1px solid #dadbdd;
+}
+
+.cta-container, .cta-buyer {
+    // background-color: #fafafa;
+    padding-block-end: 1rem;
+}
+
+.cta-buyer {
+    border-bottom: 1px solid #e5e5e7;
+    border: 1px solid #e5e5e7;
+    padding: 2em 1.5em;
+    background-color: #fafafa
+}
+
+.preview-container {
+    margin-bottom: .3125em;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: .9375em;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.package-heading {
+    padding: 1rem 0;
+    margin-block-end: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feature-list {
+    margin-block-end: 1.25em;
+}
+
+.feature-list li {
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+    color: #62646a;
+
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding-block-end: .375rem;
+}
+
+.summary {
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    border-inline: 1px solid #dadbdd;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.summary-table {
+    padding-block-end: 1rem;
+    margin-block-end: 1rem;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.service-fee {
+    display: flex;
+    padding-block-end: .375rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.vat-fee {
+    display: flex;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.user-price {
+    display: flex;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding-block-end: .375rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.user-delivery {
+    display: flex;
+    padding-block-end: 1rem;
+    justify-content: space-between;
+    color: #62646a;
+}
+
+.purchase-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.purchase-btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    // letter-spacing: -0.05em;
+    color: white;
+
+    height: 2.625rem;
+    width: 100%;
+
+    background-color: black;
+    padding: .625em 1em;
+    margin-block-end: .75em;
+    border-radius: .3125em;
+    border: none;
+}
+
+.purchase-btn:hover {
+    opacity: 70%;
+}
+
+.currency-options {
+    // max-width: 23.4375rem;
+    width: unset;
+
+    padding: 1rem 1.5rem;
+    background-color: #fafafa;
+    border-inline: 1px solid #dadbdd;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.currency-options span {
+    display: inline-block;
+    text-align: left;
+    font-size: .875rem;
+    line-height: 1.3125rem;
+    color: #95979d;
+    padding-inline: .25rem;
+    margin-block-start: .5rem;
+}
+
+.cta-container, .cta-buyer, .summary, .currency-options {
+    max-width: 23.4375rem;
+    width: unset;
 }

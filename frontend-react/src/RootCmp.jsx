@@ -25,7 +25,7 @@ export function RootCmp() {
     return (
         <div className='main-container'>
             <AppHeader />
-            <div className="buttom-line"></div>
+            {/* <div className="buttom-line"></div> */}
             <AppRoute />
             <UserMsg />
 
@@ -40,7 +40,7 @@ export function RootCmp() {
                     <Route path="orders" element={<Orders/>}/>
                     <Route path="gigs/:gigTag" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
-                    <Route path="gig/:gigId/checkout" element={<GigCheckout/>} />
+                    <Route path="gig/:gigId/:gigPackage/checkout" element={<GigCheckout/>} />
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
