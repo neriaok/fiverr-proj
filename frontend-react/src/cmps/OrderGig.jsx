@@ -4,21 +4,26 @@ import { useParams } from 'react-router-dom'
 import { orderGigSvgs } from "../cmps/Svgs"
 
 export function OrderGig({gig}) {
+    const [ selectedPackage, setSelectedPackage ] = useState("basic")
     const  gigToOrder = gig
-    console.log(gigToOrder);
+
+
+    const handlePackageChage = (level) => {
+        setSelectedPackage(level)
+    }
     
     return (
         <section className="order-main-container">
             <div className="order-container">
 
                 <div className="packages-container">
-                    <button className="package basic">
+                    <button className={"package basic" + (selectedPackage === "basic" ? ' selected' : '')} onClick={() => handlePackageChage("basic")}>
                         Basic
                     </button>
-                    <button className="package standard">
+                    <button className={"package standard" + (selectedPackage === "standard" ? ' selected' : '')} onClick={() => handlePackageChage("standard")}>
                         Standard
                     </button>
-                    <button className="package premium">
+                    <button className={"package premium" + (selectedPackage === "premium" ? ' selected' : '')} onClick={() => handlePackageChage("premium")}>
                         Premium
                     </button>
                 </div>
@@ -44,13 +49,6 @@ export function OrderGig({gig}) {
                             </p>
                         </div>
                         <ul className="features">
-                            {/* <li>{orderGigSvgs.check} <span>Functional website</span></li>
-                            <li>{orderGigSvgs.check} <span>5 pages</span></li>
-                            <li>{orderGigSvgs.check} <span>Responsive design</span></li>
-                            <li>{orderGigSvgs.check} <span>Content upload</span></li>
-                            <li>{orderGigSvgs.check} <span>5 plugins/extensions</span></li>
-                            <li>{orderGigSvgs.check} <span>E-commerce functionality</span></li>
-                            <li>{orderGigSvgs.check} <span>15 products</span></li> */}
                             {gig.aboutThisGig.services.map(service => (
                                  <li>{orderGigSvgs.check} <span>{service}</span></li>
                             ))}
