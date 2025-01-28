@@ -37,3 +37,18 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
+
+// /* For smaller screens */
+// @media (max-width: 768px) {
+//     .main-container {
+//       grid-template-columns: 1fr;  /* Stack all columns vertically */
+//     }
+//   }
+  
+//   /* For larger screens */
+//   @media (min-width: 1200px) {
+//     .main-container {
+//       grid-template-columns: minmax(2rem, 1fr) minmax(1em, 1400px) minmax(2rem, 1fr);
+//     }
+//   }
+  

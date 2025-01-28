@@ -83,9 +83,11 @@ async function addOrderMsg(orderId, txt) {
 function _createOrders() {
   let orders = loadFromStorage(ORDERS_STORAGE_KEY); // Use the new ORDERS_STORAGE_KEY for orders
   if (!orders || !orders.length) {
-    const orders = [
+    const orders = [ 
       {
         _id: 'o1230',
+        serialNumber: 'SN1230',
+        deliveryTime: '2',
         buyer: 'user6',
         seller: {
           name: 'David Smith',
@@ -104,6 +106,8 @@ function _createOrders() {
       },
       {
         _id: 'o1231',
+        serialNumber: 'SN1231',
+        deliveryTime: '4',
         buyer: 'user5',
         seller: {
           name: 'Emily Ray',
@@ -122,6 +126,8 @@ function _createOrders() {
       },
       {
         _id: 'o1232',
+        serialNumber: 'SN1232',
+        deliveryTime: '4',
         buyer: 'user8',
         seller: {
           name: 'John Miller',
@@ -140,6 +146,8 @@ function _createOrders() {
       },
       {
         _id: 'o1233',
+        serialNumber: 'SN1233',
+        deliveryTime: '2',
         buyer: 'mini-user',
         seller: {
           name: 'Dudu Da',
@@ -158,6 +166,8 @@ function _createOrders() {
       },
       {
         _id: 'o1234',
+        serialNumber: 'SN1234',
+        deliveryTime: '4',
         buyer: 'user2',
         seller: {
           name: 'Mark Twain',
@@ -176,6 +186,8 @@ function _createOrders() {
       },
       {
         _id: 'o1235',
+        serialNumber: 'SN1235',
+        deliveryTime: '1',
         buyer: 'user4',
         seller: {
           name: 'Lugas V',
@@ -194,6 +206,8 @@ function _createOrders() {
       },
       {
         _id: 'o1236',
+        serialNumber: 'SN1236',
+        deliveryTime: '4',
         buyer: 'user7',
         seller: {
           name: 'Saar Lee',
@@ -212,6 +226,8 @@ function _createOrders() {
       },
       {
         _id: 'o1237',
+        serialNumber: 'SN1237',
+        deliveryTime: '5',
         buyer: 'user3',
         seller: {
           name: 'Jane Doe',
@@ -229,6 +245,7 @@ function _createOrders() {
         status: 'Pending',
       },
     ];
+    
     
     
     

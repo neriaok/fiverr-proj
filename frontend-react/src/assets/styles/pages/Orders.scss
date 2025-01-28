@@ -1,3 +1,7 @@
+.orders-container {
+  grid-column: 2/3;
+}
+
 .table-container {
 
   background-color: #f9f9f9;
@@ -17,7 +21,7 @@
   display: table-row;
   border-bottom: 1px solid #ddd;
   padding: 10px;
-  font-size: medium;
+  font-size: large;
 }
 
 /* Header row, to differentiate from data rows */
@@ -29,17 +33,20 @@
 /* Individual header cells */
 .table-header {
   color: #7a7d85;
-  padding: 10px;
-  padding-inline-start: 20px;
+  padding: 0.5em 1em 0.5em 1em;
+  white-space: nowrap;
 }
 
 /* Individual table cells */
 .table-cell {
-  padding: 25px 25px 25px 20px;
+  padding: 1em 0.5em;
   display: table-cell;
   white-space: nowrap;
+  text-indent: initial;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
 
-  
+
   span {
     width: 100px;
     text-align: center;
@@ -48,7 +55,7 @@
     border-radius: .5rem;
     white-space: nowrap;
     min-width: 6.25rem;
-    
+
   }
 }
 
@@ -59,6 +66,11 @@
 .fulfill {
   background-color: #19a463;
 }
+
+.rejected {
+  background-color: brown;
+}
+
 /* Seller cell */
 .table-cell.seller {
   display: flex;
@@ -82,8 +94,8 @@
 }
 
 .order-img {
-  width: 50px;
-  height: 30px;
+  width: 25%;
+  height: 80%;
 }
 
 /* Pending status styling */
@@ -96,4 +108,90 @@
 
 .table-row:hover {
   background-color: #f1f1f1;
+}
+
+.order-above {
+  display: flex;
+  gap: 57.2em;
+}
+
+.view-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.view-buttons button {
+  display: flex;
+  justify-content: center;
+  background: none;
+  width: 40px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.view-buttons button img {
+  border-radius: 8px;
+}
+
+.card-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 2.5em;
+
+
+}
+
+.card-container {
+  background-color: gray;
+}
+
+.order-card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1.875rem;
+  margin-block-end: .3125rem;
+  background-color: #fff;
+}
+
+.card-row{
+  padding: 1em 0 1em 0;
+  border-bottom: 1px solid #dadbdd
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  height: .75rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-block-start: .5rem;
+}
+
+.progress-line {
+  width: 25px;
+  background-color: #c37e10d7;
+  height: 100%;
+}
+
+.card-pending {
+  color: #c37e10d7;
+}
+
+.card-fulfill {
+  color: #19a463;
+}
+
+.card-rejected {
+  color: brown;
+}
+
+.card-row.body{
+  display: flex;
+  gap: 5px;
+}
+
+.body-text p{
+  margin-bottom: 0;
 }
