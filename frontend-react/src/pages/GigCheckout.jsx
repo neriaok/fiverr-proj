@@ -5,8 +5,10 @@ import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
 import { gigCheckoutSvgs, orderGigSvgs } from "../cmps/Svgs.jsx"
 
 export function GigCheckout () {
-    const { gigId } = useParams()
+    const { gigId, gigPackage } = useParams()
     const clearGigId = gigId.replace(":", "")
+    const clearGigPackage = gigPackage.replace(":", "")
+    const packageToRender = String(clearGigPackage).charAt(0).toUpperCase() + String(clearGigPackage).slice(1)
     const gig = useSelector(storeState => storeState.gigModule.gig) 
     // const loading = useSelector(storeState => storeState.gigModule.loading)
     // const gig = loadGig(clearGigId)
@@ -89,34 +91,66 @@ export function GigCheckout () {
                         <span className="package-desc">{gig.description}</span>
                     </div>
                     <div className="package-heading">
-                        <h4 className="pack-title">Basic package</h4>
-                        <h4 className="pack-price">${gig.price}</h4>
+                        <h4 className="pack-title">{packageToRender} package</h4>
+                        <h4 className="pack-price">$
+                            {clearGigPackage === "basic" ? gig.price : null}
+                            {clearGigPackage === "standard" ? gig.aboutThisGig.packages.standard.price : null}
+                            {clearGigPackage === "premium" ? gig.aboutThisGig.packages.premium.price : null}
+                        </h4>
                     </div>
                     <ul className="feature-list">
-                        {gig.aboutThisGig.services.map(service => (
+                        {/* {gig.aboutThisGig.services.map(service => (
                             <li>{orderGigSvgs.check} <span>{service}</span></li>
-                        ))}
+                        ))} */}
+                        {clearGigPackage === "basic" ? gig.aboutThisGig.services.map(service => (
+                             <li>{orderGigSvgs.check} <span>{service}</span></li>
+                        )) : null }
+                        {clearGigPackage === "standard" ? gig.aboutThisGig.packages.standard.services.map(service => (
+                             <li>{orderGigSvgs.check} <span>{service}</span></li>
+                        )) : null }
+                        {clearGigPackage === "premium" ? gig.aboutThisGig.packages.premium.services.map(service => (
+                             <li>{orderGigSvgs.check} <span>{service}</span></li>
+                        )) : null }
                     </ul>
                 </article>
                 <div className="summary">
                     <div className="summary-table">
                         <div className="service-fee">
                             <span className="service">Service fee</span>
-                            <span className="fee">$5.25</span>
+                            <span className="fee">$
+                            {clearGigPackage === "basic" ? (gig.price * 0.055) : null}
+                            {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price * 0.055) : null}
+                            {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price * 0.055) : null}
+                            </span>
                         </div>
                         <div className="vat-fee">
                             <span className="vat">VAT</span>
-                            <span className="fee">$5.95</span>
+                            <span className="fee">$
+                            {clearGigPackage === "basic" ? (gig.price * 0.18) : null}
+                            {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price * 0.18) : null}
+                            {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price * 0.18) : null}
+                            </span>
                         </div>
                     </div>
                     <div className="summary-footer">
                         <div className="user-price">
                             <span className="price">You'll pay</span>
-                            <span className="final-price">${gig.price + 5.25 + 5.95}</span>
+                            {/* <span className="final-price">${gig.price + 5.25 + 5.95}</span> */}
+                            <span className="final-price">$
+                            {clearGigPackage === "basic" ? (gig.price + (gig.price * 0.055) + (gig.price * 0.18)) : null}
+                            {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price + (gig.aboutThisGig.packages.standard.price * 0.055) + (gig.aboutThisGig.packages.standard.price * 0.18)) : null}
+                            {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price + (gig.aboutThisGig.packages.premium.price * 0.055) + (gig.aboutThisGig.packages.premium.price * 0.18)) : null}
+                            </span>
                         </div>
                         <div className="user-delivery">
                             <span>Total delivery time</span>
-                            <span>{gig.daysToMake} days</span>
+                            <span> 
+                                {clearGigPackage === "basic" ? gig.daysToMake : null}
+                                {clearGigPackage === "standard" ? (gig.daysToMake + 2) : null}
+                                {clearGigPackage === "premium" ? (gig.daysToMake + 4) : null}
+                                {'\n'}
+                                days
+                            </span>
                         </div>
                         <div className="purchase-container">
                             <button className="purchase-btn">Confirm and pay</button>
@@ -126,7 +160,12 @@ export function GigCheckout () {
                 </div>
                 <div className="currency-options">
                     <span>
-                        You will be charged ${gig.price + 5.25 + 5.95}. {'\n'}
+                        You will be charged $
+                        {clearGigPackage === "basic" ? (gig.price + (gig.price * 0.055) + (gig.price * 0.18)) : null}
+                        {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price + (gig.aboutThisGig.packages.standard.price * 0.055) + (gig.aboutThisGig.packages.standard.price * 0.18)) : null}
+                        {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price + (gig.aboutThisGig.packages.premium.price * 0.055) + (gig.aboutThisGig.packages.premium.price * 0.18)) : null}
+                        . 
+                        {'\n'}
                         The order total is an estimation and does not include additional fees your bank may apply.
                     </span>
                 </div>
