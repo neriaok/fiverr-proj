@@ -1,22 +1,53 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service';
 import { logout } from '../store/actions/user.actions';
 import { GigFilter } from '../cmps/GigFilter';
 import { loadGigs } from '../store/actions/gig.actions';
 import { appHeaderSvgs } from './Svgs';
+import { HomePage } from '../pages/HomePage';
 
 export function AppHeader() {
 	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter());
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isSearchBar, setIsSearchBar] = useState(false)
+	const [isCategory, setIsCategory] = useState(false)
 	const user = useSelector(storeState => storeState.userModule.user);
 	const navigate = useNavigate();
+	const location = useLocation()
+	const isHomePage = location.pathname === '/' ? true : false
+	
 
 	useEffect(() => {
 		loadGigs(filterBy);
 	}, [filterBy]);
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
+
+	const handleScroll = () => {
+		if(isHomePage) {
+			if(window.scrollY > 435) {
+				setIsSearchBar(true)
+			}
+			if(window.scrollY > 713) {
+				setIsCategory(true)
+			}
+			if(window.scrollY < 435) {
+				setIsSearchBar(false)
+			}
+			if(window.scrollY < 713) {
+				setIsCategory(false)
+			}
+		}
+	}
 
 	const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
 
@@ -31,7 +62,7 @@ export function AppHeader() {
 	};
 
 	return (
-		<header className="app-header full">
+		<header className={"app-header full" + (isHomePage ? " sticky" : '')}>
 			{/* <header className="app-header full main-container"> */}
 			<nav>
 				<div className="right-header">
@@ -39,8 +70,9 @@ export function AppHeader() {
 					<NavLink to="/" className="logo">
 						Avnerr <span className='point'>.</span>
 					</NavLink>
-
-					<GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />
+					{isHomePage || <GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />}
+					{isSearchBar && <GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />}
+					
 				</div>
 				{user && (
 					<>

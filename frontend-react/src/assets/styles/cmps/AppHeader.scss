@@ -12,6 +12,7 @@
         padding: 10px 0 10px 0;
         position: relative;
         justify-content: space-between;
+        grid-column: 2;
        
         .right-header{
             display: flex;
@@ -195,10 +196,24 @@
     }
 }
 
-// .app-header.full {
-//     grid-column: 1 / -1;
-//     border-bottom: 0.8px solid rgb(209, 202, 202);
-// }
+.sticky {
+    position: sticky;
+    // grid-column: 2;
+    top: 0;
+    background-color: white;
+    z-index: 6;
+}
+
+.app-header.full {
+    grid-column: 1 / -1;
+    border-bottom: 0.8px solid rgb(209, 202, 202);
+    display: grid;
+    // grid-auto-flow: column;
+    // text-wrap: none;
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1400px) minmax(2rem, 1fr);
+    max-height: 76px;
+    min-height: 4.75rem;
+}
 
 /* Keyframe animation for smooth fading effect */
 @keyframes fadeIn {
