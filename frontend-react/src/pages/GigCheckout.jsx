@@ -119,7 +119,7 @@ export function GigCheckout () {
                             <span>{gig.daysToMake} days</span>
                         </div>
                         <div className="purchase-container">
-                            <button className="purchase-btn">Pay in USD</button>
+                            <button className="purchase-btn">Confirm and pay</button>
                             <span>SSL Secure Payment</span>
                         </div>
                     </div>
