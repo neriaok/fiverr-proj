@@ -8,7 +8,7 @@ import { logout } from '../store/actions/user.actions';
 import { GigFilter } from '../cmps/GigFilter';
 import { loadGigs } from '../store/actions/gig.actions';
 import { appHeaderSvgs } from './Svgs';
-import { HomePage } from '../pages/HomePage';
+import { HeaderCategories } from '../cmps/HeaderCategories.jsx';
 
 export function AppHeader() {
 	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter());
@@ -64,7 +64,7 @@ export function AppHeader() {
 	return (
 		<header className={"app-header full" + (isHomePage ? " sticky" : '')}>
 			{/* <header className="app-header full main-container"> */}
-			<nav>
+			<nav className='header-nav'>
 				<div className="right-header">
 					{/* Logo */}
 					<NavLink to="/" className="logo">
@@ -116,6 +116,8 @@ export function AppHeader() {
 					</div>
 				)}
 			</nav>
+			{isHomePage || <HeaderCategories />}
+			{isCategory && <HeaderCategories />}
 		</header>
 	);
 }
