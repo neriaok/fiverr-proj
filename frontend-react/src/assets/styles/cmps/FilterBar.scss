@@ -1,5 +1,6 @@
 .gig-filterbar {
     position: -webkit-sticky; /* For Safari */
+    height: 8em;
     position: sticky;
     top: -1px; /* Distance from the top of the viewport */
     z-index: 10; /* Ensure the filter bar stays above other content */
@@ -22,6 +23,7 @@
             display: flex;
             gap: 8px;
             align-items: center;
+            height: 50px;
             border: 1px solid #dadbdd;
             border-radius: 8px;
             font-size: 16px;
@@ -50,7 +52,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 265px;
             position: absolute;
-            // z-index: 10;
+            z-index: 1;
 
            
 
@@ -72,4 +74,44 @@
     .sort-delivery {
         right: 67%;
     }
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 3px;
+
+    background-color: #efeff0;
+    border: none;
+    border-radius: 56px;
+    color: #222325;
+    margin: 0 10px 10px 0;
+    padding: 4px 16px;
+    -webkit-transition: border-color .35s ease;
+    transition: border-color .35s ease
+}
+
+.filter-chip span {
+    font-size: 14px;
+    white-space: nowrap;
+    
+   
+}
+
+.clear-btn {
+    
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
 }

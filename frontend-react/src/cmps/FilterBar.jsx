@@ -3,47 +3,41 @@ import { filterBarSvgs } from './Svgs';
 
 export function FilterBar({ filterBy, setFilterBy }) {
     const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy));
+    const [activeFilters, setActiveFilters] = useState({}); // Initialize with empty object
     const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
     const filterBarRef = useRef(null);
 
-    // Add sticky detection on scroll
     useEffect(() => {
-        const handleScroll = () => {
-            if (filterBarRef.current) {
-                const isSticky = filterBarRef.current.getBoundingClientRect().top <= 0;
-                if (isSticky) {
-                    filterBarRef.current.classList.add('is-sticky');
-                } else {
-                    filterBarRef.current.classList.remove('is-sticky');
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const toggleBudgetMenu = () => {
-        setIsBudgetMenuOpen(prevState => !prevState);
-        setIsDeliveryMenuOpen(false); // Close delivery menu if it's open
-    };
-
-    const toggleDeliveryMenu = () => {
-        setIsDeliveryMenuOpen(prevState => !prevState);
-        setIsBudgetMenuOpen(false); // Close the budget menu if it's open
-    };
+        // Reset filter states when the page is refreshed
+        setFilterToEdit({
+            txt: '',
+            price: '',
+            tag: '',
+            deliveryTime: '',
+        });
+        setActiveFilters({});
+    }, []);  // Empty dependency array ensures this runs only once on mount
 
     useEffect(() => {
         setFilterBy(filterToEdit);  // Update the parent state with the selected filters
     }, [filterToEdit, setFilterBy]);
+
+    const toggleBudgetMenu = () => {
+        setIsBudgetMenuOpen(prevState => !prevState);
+        setIsDeliveryMenuOpen(false);
+    };
+
+    const toggleDeliveryMenu = () => {
+        setIsDeliveryMenuOpen(prevState => !prevState);
+        setIsBudgetMenuOpen(false);
+    };
 
     function handleChange(ev) {
         const type = ev.target.type;
         const field = ev.target.name;
         let value;
 
-        // Handle changes based on the type of input
         switch (type) {
             case 'radio':
                 value = ev.target.value;
@@ -52,24 +46,41 @@ export function FilterBar({ filterBy, setFilterBy }) {
                 value = ev.target.value;
         }
 
-        // Update the state with the new filter
         setFilterToEdit({ ...filterToEdit, [field]: value });
+
+        // Update active filter chips (display only values)
+        setActiveFilters(prevFilters => ({
+            ...prevFilters,
+            [field]: value, // Store only the selected value
+        }));
+    }
+
+    function removeFilter(field) {
+        // Remove the specific filter chip from the active filters
+        const newActiveFilters = { ...activeFilters };
+        delete newActiveFilters[field]; // Remove the filter chip by its field name
+
+        setActiveFilters(newActiveFilters);
+
+        // Reset the corresponding filter value in state
+        setFilterToEdit({ ...filterToEdit, [field]: '' });
     }
 
     function clearFilter() {
         setFilterToEdit({
             txt: '',
-            price: '', // Reset price to be blank
-            tag: '', // Reset tag to be blank
-            deliveryTime: '', // Reset deliveryTime to be blank
+            price: '',
+            tag: '',
+            deliveryTime: '',
         });
+        setActiveFilters({});
     }
 
     function clearSort() {
         setFilterToEdit({
             ...filterToEdit,
             sortField: '',
-            sortDir: 1, // Reset to default direction
+            sortDir: 1,
         });
     }
 
@@ -81,49 +92,47 @@ export function FilterBar({ filterBy, setFilterBy }) {
             </div>
 
             <div className="sort-field">
-                {/* Budget filter menu */}
                 {isBudgetMenuOpen && (
                     <div className="sort-budget">
                         <label>
                             <input
                                 type="radio"
-                                name="price" // Use 'price' for Budget filter
+                                name="price"
                                 value="value"
                                 checked={filterToEdit.price === 'value'}
                                 onChange={handleChange}
                             />
-                            <span>Value</span>
+                            <span>Value<span className='gray'> &nbsp; Under ₪495</span></span>
                         </label>
                         <label>
                             <input
                                 type="radio"
-                                name="price" // Same 'price' for Budget filter
+                                name="price"
                                 value="mid-range"
                                 checked={filterToEdit.price === 'mid-range'}
                                 onChange={handleChange}
                             />
-                            <span>Mid-range</span>
+                            <span>Mid-range <span className='gray'> &nbsp; ₪495 - ₪1332</span></span>
                         </label>
                         <label>
                             <input
                                 type="radio"
-                                name="price" // Same 'price' for Budget filter
+                                name="price"
                                 value="high-end"
                                 checked={filterToEdit.price === 'high-end'}
                                 onChange={handleChange}
                             />
-                            <span>High-end</span>
+                            <span>High-end <span className='gray'> &nbsp; ₪1332 & Above</span></span>
                         </label>
                     </div>
                 )}
 
-                {/* Delivery filter menu */}
                 {isDeliveryMenuOpen && (
                     <div className="sort-delivery">
                         <label>
                             <input
                                 type="radio"
-                                name="deliveryTime" // Use 'deliveryTime' for Delivery filter
+                                name="deliveryTime"
                                 value="up-to-3"
                                 checked={filterToEdit.deliveryTime === 'up-to-3'}
                                 onChange={handleChange}
@@ -133,7 +142,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
                         <label>
                             <input
                                 type="radio"
-                                name="deliveryTime" // Same 'deliveryTime' for Delivery filter
+                                name="deliveryTime"
                                 value="up-to-7"
                                 checked={filterToEdit.deliveryTime === 'up-to-7'}
                                 onChange={handleChange}
@@ -143,7 +152,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
                         <label>
                             <input
                                 type="radio"
-                                name="deliveryTime" // Same 'deliveryTime' for Delivery filter
+                                name="deliveryTime"
                                 value="anytime"
                                 checked={filterToEdit.deliveryTime === 'anytime'}
                                 onChange={handleChange}
@@ -152,6 +161,20 @@ export function FilterBar({ filterBy, setFilterBy }) {
                         </label>
                     </div>
                 )}
+            </div>
+            
+            <div className="active-filters">
+                {Object.entries(activeFilters).map(([field, filterValue]) => (
+                    <div className="filter-chip" key={field}>
+                        <span>{filterValue}</span>
+                        <button
+                            className="clear-btn"
+                            onClick={() => removeFilter(field)}
+                        >
+                            X
+                        </button>
+                    </div>
+                ))}
             </div>
         </section>
     );

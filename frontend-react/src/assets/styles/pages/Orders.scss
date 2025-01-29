@@ -1,7 +1,12 @@
 .orders-container {
   grid-column: 2/3;
 }
-
+.order-above{
+  height: 6em;
+  display: flex;
+  align-items: center;
+  gap: 57.2em;
+}
 .table-container {
 
   background-color: #f9f9f9;
@@ -11,6 +16,7 @@
 
 /* Table styles */
 .table {
+  background-color: white;
   border-collapse: collapse;
   border: 1px solid #dadbdd;
   width: 100%;
@@ -110,10 +116,7 @@
   background-color: #f1f1f1;
 }
 
-.order-above {
-  display: flex;
-  gap: 57.2em;
-}
+
 
 .view-buttons {
   display: flex;
