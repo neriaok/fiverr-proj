@@ -74,7 +74,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
     }
 
     return (
-        <section className="gig-filterbar" ref={filterBarRef}>
+        <section className="gig-filterbar main-container full" ref={filterBarRef}>
             <div className="label-bar">
                 <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
                 <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>

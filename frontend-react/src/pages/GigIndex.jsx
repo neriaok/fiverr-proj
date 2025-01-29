@@ -11,7 +11,7 @@ import { GigList } from '../cmps/GigList'
 export function GigIndex() {
     const { gigTag } = useParams() 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter());
+    const [filterBy, setFilterBy] = useState({tag: gigTag, txt: ''});
 
     useEffect(() => {
         loadGigs(filterBy);
@@ -23,7 +23,7 @@ export function GigIndex() {
 
 
     return (
-        <main className="gig-index">
+        <main className="gig-index main-container full">
             <FilterBar filterBy={filterBy} setFilterBy={setFilterBy} />
             <GigList gigs={gigs} />
         </main>

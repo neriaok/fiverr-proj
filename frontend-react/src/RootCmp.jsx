@@ -25,11 +25,10 @@ export function RootCmp() {
     return (
         <div className='main-container'>
             <AppHeader />
-            {/* <div className="buttom-line"></div> */}
-            <AppRoute />
+            {/* <AppRoute /> */}
             <UserMsg />
 
-            <main>
+            <main className='main-container full'>
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="about" element={<AboutUs />}>
