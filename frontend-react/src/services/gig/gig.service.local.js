@@ -799,6 +799,311 @@ function _createGigs() {
             }
           },
         },
+        {
+          _id: "g109",
+          title: "I will design a professional business card for you",
+          price: 75.00,
+          owner: {
+            _id: "u117",
+            fullname: "Sophia Adams",
+            imgUrl: "/img/faces/Sophia Adams.jpg",
+            level: "Level 1",
+            rate: 4.9
+          },
+          daysToMake: 3,
+          description: "A custom-designed, high-quality business card to represent your brand.",
+          avgResponseTime: 1,
+          loc: "UK",
+          imgUrls: ["/img/img9.jpg", "/img/img9second.jpg"],
+          tags: ["Design", "Business Card"],
+          likedByUsers: ["user10"],
+          reviews: [
+            {
+              id: "r109",
+              txt: "Sophia's design was perfect! Exactly what I was looking for.",
+              rate: 5,
+              by: {
+                _id: "u118",
+                fullname: "James Thompson",
+                imgUrl: "https://via.placeholder.com/50",
+                location: "USA"
+              }
+            }
+          ],
+          aboutThisGig: {
+            overview: "Get a professional business card that will leave a lasting impression.",
+            services: [
+              "Custom business card design",
+              "Two-sided card layout",
+              "Print-ready files"
+            ],
+            deliverables: [
+              "Business card design",
+              "File package (AI, JPG, PNG, PDF)"
+            ],
+            whyMe: [
+              "Experienced designer",
+              "Fast delivery",
+              "High-quality work"
+            ],
+            note: "Please send your logo and design preferences before placing an order.",
+            thankYou: "Thanks for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom business card design",
+                  "Two-sided design"
+                ],
+                price: 75.00
+              },
+              standard: {
+                services: [
+                  "Custom business card design",
+                  "Two-sided design",
+                  "Print-ready files"
+                ],
+                price: 100.00
+              },
+              premium: {
+                services: [
+                  "Custom business card design",
+                  "Two-sided design",
+                  "Print-ready files",
+                  "Unlimited revisions"
+                ],
+                price: 150.00
+              }
+            }
+          }
+        },
+        {
+          _id: "g110",
+          title: "I will create a stunning video intro for your YouTube channel",
+          price: 120.00,
+          owner: {
+            _id: "u119",
+            fullname: "Mark Edwards",
+            imgUrl: "/img/faces/Mark Edwards.jpg",
+            level: "Level 2",
+            rate: 4.8
+          },
+          daysToMake: 5,
+          description: "Enhance your YouTube channel with a custom video intro that grabs attention.",
+          avgResponseTime: 2,
+          loc: "Canada",
+          imgUrls: ["/img/img10.jpg", "/img/img10second.jpg"],
+          tags: ["Video Editing", "YouTube", "Intro"],
+          likedByUsers: ["user11"],
+          reviews: [
+            {
+              id: "r110",
+              txt: "The intro was exactly what I envisioned for my channel. Great work!",
+              rate: 5,
+              by: {
+                _id: "u120",
+                fullname: "Liam Johnson",
+                imgUrl: "https://via.placeholder.com/50",
+                location: "Australia"
+              }
+            }
+          ],
+          aboutThisGig: {
+            overview: "A custom video intro to make your YouTube channel more engaging and professional.",
+            services: [
+              "Custom video intro design",
+              "High-quality animation",
+              "Branded to fit your channel style"
+            ],
+            deliverables: [
+              "15-second video intro",
+              "File formats (MP4, MOV)"
+            ],
+            whyMe: [
+              "Experienced video editor",
+              "Fast turnaround",
+              "High-quality animations"
+            ],
+            note: "Please provide your logo and channel details to get started.",
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom video intro design",
+                  "High-quality animation"
+                ],
+                price: 120.00
+              },
+              standard: {
+                services: [
+                  "Custom video intro design",
+                  "High-quality animation",
+                  "Branded to fit your channel"
+                ],
+                price: 180.00
+              },
+              premium: {
+                services: [
+                  "Custom video intro design",
+                  "High-quality animation",
+                  "Branded to fit your channel",
+                  "Additional revisions"
+                ],
+                price: 250.00
+              }
+            }
+          }
+        },
+        {
+          _id: "g111",
+          title: "I will design a beautiful e-book cover",
+          price: 90.00,
+          owner: {
+            _id: "u121",
+            fullname: "Natalie Ward",
+            imgUrl: "/img/faces/Natalie Ward.jpg",
+            level: "Level 1",
+            rate: 4.6
+          },
+          daysToMake: 4,
+          description: "Stand out with a beautifully designed e-book cover tailored to your genre.",
+          avgResponseTime: 1,
+          loc: "USA",
+          imgUrls: ["/img/img11.jpg", "/img/img11second.jpg"],
+          tags: ["Design", "E-book", "Book Cover"],
+          likedByUsers: ["user12"],
+          reviews: [
+            {
+              id: "r111",
+              txt: "Natalie did an amazing job on my e-book cover. It truly captured the essence of my story.",
+              rate: 5,
+              by: {
+                _id: "u122",
+                fullname: "Emily Davis",
+                imgUrl: "https://via.placeholder.com/50",
+                location: "UK"
+              }
+            }
+          ],
+          aboutThisGig: {
+            overview: "I will design a professional and eye-catching e-book cover that fits your book's genre and theme.",
+            services: [
+              "Custom e-book cover design",
+              "High-quality graphics",
+              "Creative design approach"
+            ],
+            deliverables: [
+              "E-book cover design",
+              "File formats (JPEG, PNG, PDF)"
+            ],
+            whyMe: [
+              "Experienced designer",
+              "Fast turnaround",
+              "High-quality work"
+            ],
+            note: "Please provide book details and any preferences for the design.",
+            thankYou: "Thank you for choosing my gig!",
+            packages: {
+              basic: {
+                services: [
+                  "Custom e-book cover design",
+                  "High-quality graphics"
+                ],
+                price: 90.00
+              },
+              standard: {
+                services: [
+                  "Custom e-book cover design",
+                  "High-quality graphics",
+                  "Creative design approach"
+                ],
+                price: 130.00
+              },
+              premium: {
+                services: [
+                  "Custom e-book cover design",
+                  "High-quality graphics",
+                  "Creative design approach",
+                  "Unlimited revisions"
+                ],
+                price: 180.00
+              }
+            }
+          }
+        },
+        {
+          _id: "g112",
+          title: "I will provide voiceover services for your project",
+          price: 150.00,
+          owner: {
+            _id: "u123",
+            fullname: "Olivia Scott",
+            imgUrl: "/img/faces/Olivia Scott.jpg",
+            level: "Level 2",
+            rate: 4.7
+          },
+          daysToMake: 4,
+          description: "Professional voiceover services for any project including ads, videos, and audiobooks.",
+          avgResponseTime: 1,
+          loc: "Canada",
+          imgUrls: ["/img/img12.jpg", "/img/img12second.jpg"],
+          tags: ["Voiceover", "Audio", "Commercial"],
+          likedByUsers: ["user13"],
+          reviews: [
+            {
+              id: "r112",
+              txt: "Olivia delivered fantastic voiceover work for my project! Very professional.",
+              rate: 5,
+              by: {
+                _id: "u124",
+                fullname: "Joshua Martin",
+                imgUrl: "https://via.placeholder.com/50",
+                location: "Australia"
+              }
+            }
+          ],
+          aboutThisGig: {
+            overview: "I will record a high-quality voiceover for your commercials, explainer videos, or any other project.",
+            services: [
+              "Voiceovers for commercials, explainer videos, audiobooks, and more",
+              "Professional audio recording",
+              "Multiple voice styles to choose from"
+            ],
+            deliverables: [
+              "Voiceover audio file",
+              "File formats (MP3, WAV)"
+            ],
+            whyMe: [
+              "Experienced voice artist",
+              "Fast delivery",
+              "High-quality sound"
+            ],
+            note: "Please provide your script and specify the voice style you're looking for.",
+            thankYou: "Thank you for choosing my voiceover services!",
+            packages: {
+              basic: {
+                services: [
+                  "Voiceover for 1-minute project"
+                ],
+                price: 150.00
+              },
+              standard: {
+                services: [
+                  "Voiceover for 3-minute project",
+                  "Professional audio recording"
+                ],
+                price: 200.00
+              },
+              premium: {
+                services: [
+                  "Voiceover for 5-minute project",
+                  "Professional audio recording",
+                  "Multiple revisions"
+                ],
+                price: 300.00
+              }
+            }
+          }
+        }
       ];
       
       saveToStorage(STORAGE_KEY, gigs);
