@@ -1,7 +1,12 @@
 .orders-container {
   grid-column: 2/3;
 }
-
+.order-above{
+  height: 6em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .table-container {
 
   background-color: #f9f9f9;
@@ -11,6 +16,7 @@
 
 /* Table styles */
 .table {
+  background-color: white;
   border-collapse: collapse;
   border: 1px solid #dadbdd;
   width: 100%;
@@ -45,6 +51,12 @@
   text-indent: initial;
   vertical-align: inherit;
   unicode-bidi: isolate;
+  max-width: 250px;         /* Maximum width of the cell */
+  white-space: normal;      /* Allow text to wrap */
+  overflow: hidden;         /* Hide any overflow content */
+  text-overflow: ellipsis;  /* Add ellipsis if the text is too long */
+  line-height: 1.4;         /* Adjust line height for better readability */
+  word-wrap: break-word;
 
 
   span {
@@ -110,10 +122,7 @@
   background-color: #f1f1f1;
 }
 
-.order-above {
-  display: flex;
-  gap: 57.2em;
-}
+
 
 .view-buttons {
   display: flex;

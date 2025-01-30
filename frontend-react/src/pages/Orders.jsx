@@ -116,9 +116,10 @@ export function Orders() {
   };
 
   return (
-    <div className="orders-container full">
+    <div className="gray-background main-container full">
+    <div className="orders-container">
       <div className="order-above">
-        <h2>Orders</h2>
+        <h2>ORDERS</h2>
 
         {/* Buttons to switch between table and card view */}
         <div className="view-buttons">
@@ -133,6 +134,7 @@ export function Orders() {
 
       {/* Conditionally render the view */}
       {view === 'table' ? renderTableView() : renderCardView()}
+    </div>
     </div>
   );
 }

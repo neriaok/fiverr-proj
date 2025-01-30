@@ -292,7 +292,7 @@ function _createGigs() {
         },
         {
           _id: 'g103',
-          title: 'I will help you with your social media strategy',
+          title: 'I will help you with your social media',
           price: 400.00,  // Updated price: High-end
           owner: {
             _id: 'u105',
@@ -645,7 +645,7 @@ function _createGigs() {
           description: 'Personalized fitness plan for your specific goals, from beginner to advanced.',
           avgResponseTime: 1,
           loc: 'Australia',
-          imgUrls: ['/img/img7.jpg', '/img/img7second.jpg', '/img/img7third.jpg'],
+          imgUrls: [ '/img/img7second.jpg', '/img/img7.jpg','/img/img7third.jpg'],
           tags: ['Fitness', 'Personal Trainer'],
           likedByUsers: ['user8', 'user6'],
           reviews: [

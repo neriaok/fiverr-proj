@@ -1,6 +1,7 @@
 .app-header {
     min-height: 3.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 2em; /// if we have categories line cancel margin
 
     .header-nav {
         display: flex;
@@ -36,7 +37,15 @@
                 font-family: 'emoji';
                 color: green;
             }
+
+            
         }
+        .explore{
+            position: absolute;
+            font-size: large;
+            left: 71%;
+            top: 36%;
+            }
 
         .login-link {
             margin-inline-start: auto;

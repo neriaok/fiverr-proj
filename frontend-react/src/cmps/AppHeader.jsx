@@ -19,7 +19,7 @@ export function AppHeader() {
 	const navigate = useNavigate();
 	const location = useLocation()
 	const isHomePage = location.pathname === '/' ? true : false
-	
+
 
 	useEffect(() => {
 		loadGigs(filterBy);
@@ -33,17 +33,17 @@ export function AppHeader() {
 	}, [])
 
 	const handleScroll = () => {
-		if(isHomePage) {
-			if(window.scrollY > 435) {
+		if (isHomePage) {
+			if (window.scrollY > 435) {
 				setIsSearchBar(true)
 			}
-			if(window.scrollY > 713) {
+			if (window.scrollY > 713) {
 				setIsCategory(true)
 			}
-			if(window.scrollY < 435) {
+			if (window.scrollY < 435) {
 				setIsSearchBar(false)
 			}
-			if(window.scrollY < 713) {
+			if (window.scrollY < 713) {
 				setIsCategory(false)
 			}
 		}
@@ -72,10 +72,11 @@ export function AppHeader() {
 					</NavLink>
 					{isHomePage || <GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />}
 					{isSearchBar && <GigFilter user={user} filterBy={filterBy} setFilterBy={setFilterBy} />}
-					
+
 				</div>
 				{user && (
 					<>
+						<label ><NavLink className='explore black' to="gigs">Explore</NavLink></label>
 						<div className='header-svgs'>
 							{appHeaderSvgs.bell}
 							{appHeaderSvgs.envelope}
