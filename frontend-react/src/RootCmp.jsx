@@ -20,6 +20,7 @@ import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 import {Orders} from './pages/Orders.jsx'
+import { UserProfile } from './pages/UserProfile.jsx'
 
 export function RootCmp() {
     return (
@@ -41,6 +42,7 @@ export function RootCmp() {
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="gig/:gigId/:gigPackage/checkout" element={<GigCheckout/>} />
                     <Route path="user/:id" element={<UserDetails />} />
+                    <Route path="user/profile" element={<UserProfile />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />

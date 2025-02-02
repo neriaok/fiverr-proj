@@ -1,0 +1,96 @@
+.user-profile-container {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    gap: 3.125rem;
+}
+
+.user-card {
+    border: 1px solid #dadbdd;
+    padding: 1.875rem;
+    margin-block-start: 3.125rem;
+    min-width: 300px;
+    width: 25rem;
+    font-size: .875rem;
+    line-height: 130%;
+    color: #62646a;
+    background-color: white;
+}
+
+.manage-orders-header {
+    margin-block-start: 3.125rem;
+}
+
+.orders-table {
+    border-collapse: collapse;
+    border: 1px solid #dadbdd;
+    width: 100%;
+}
+
+.orders-table thead {
+    border: inherit;
+}
+
+.orders-table thead td {
+    padding: 10px;
+    padding-inline-start: 20px;
+}
+
+.orders-table tbody {
+    border: inherit;
+}
+
+.orders-table tbody tr {
+    border: inherit;
+}
+
+.orders-table tbody td {
+    padding:  1.25rem;
+}
+
+.user-with-img {
+    display: flex;
+    align-items: center;
+}
+
+.user-with-img img {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    margin-inline-end: 10px;
+}
+
+.order-title{
+    display: flex;
+    align-items: center;
+}
+
+.order-status {
+    display: flex;
+    min-height: 5em;
+    align-items: center;
+    gap: .3125rem;
+    justify-content: space-between;
+    letter-spacing: .2px;
+}
+
+.label {
+    text-align: center;
+    padding: .125rem .3125rem;
+    border-radius: .5rem;
+    word-spacing: nowrap;
+    min-width: 6.25rem;
+    color: white;
+}
+
+.Fulfilled {
+    background-color: #19a462;
+}
+
+.Pending {
+    background-color: #c37e10d7;
+}
+
+.Rejected {
+    background-color: #4a4b50;
+}

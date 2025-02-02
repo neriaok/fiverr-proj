@@ -92,6 +92,7 @@ function _createOrders() {
         seller: {
           name: 'David Smith',
           imgUrl: '/img/faces/david smith.jpg',
+          id: "gZtWO"
         },
         order: {
           _id: 'g106',
@@ -112,6 +113,7 @@ function _createOrders() {
         seller: {
           name: 'Emily Ray',
           imgUrl: '/img/faces/Emily Ray.jpg',
+          id: "gZtWO"
         },
         order: {
           _id: 'g107',
@@ -132,6 +134,7 @@ function _createOrders() {
         seller: {
           name: 'John Miller',
           imgUrl: '/img/faces/John Miller.jpg',
+          id: "gZtWO"
         },
         order: {
           _id: 'g108',
@@ -152,6 +155,7 @@ function _createOrders() {
         seller: {
           name: 'Dudu Da',
           imgUrl: '/img/faces/Dudu Da.jpg',
+          id: "gZtWO"
         },
         order: {
           _id: 'g101',

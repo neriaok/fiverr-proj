@@ -96,7 +96,7 @@ export function AppHeader() {
 										<div className="white-triangle"></div>
 									</div>
 									<ul>
-										<li><a href="#">Profile</a></li>
+										<li><NavLink to="user/profile">Profile</NavLink></li>
 										<li><a href="#">Setting</a></li>
 										<li><a onClick={onLogout} href="#">Logout</a></li>
 									</ul>
