@@ -23,6 +23,8 @@ async function query(filterBy = { txt: '' }) {
         const sort = _buildSort(filterBy)
 
 		const collection = await dbService.getCollection('gig')
+		console.log(collection);
+		
 		var gigCursor = await collection.find(criteria, { sort })
 
 		if (filterBy.pageIdx !== undefined) {
