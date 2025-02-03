@@ -17,6 +17,17 @@
     background-color: white;
 }
 
+.user-profile-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // font-size: .875rem;
+}
+
+.manage-orders {
+    width: 100%;
+}
+
 .manage-orders-header {
     margin-block-start: 3.125rem;
 }
@@ -42,6 +53,11 @@
 
 .orders-table tbody tr {
     border: inherit;
+}
+
+.orders-table tbody tr:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
 }
 
 .orders-table tbody td {

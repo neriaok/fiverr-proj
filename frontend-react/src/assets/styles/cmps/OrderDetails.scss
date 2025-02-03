@@ -1,0 +1,97 @@
+
+.order-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0006;
+    backdrop-filter: blur(3px);
+    z-index: 100;
+}
+
+.order-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    max-height: 80vh;
+    background-color: white;
+    border: 1px solid #dadbdd;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px #0006;
+    z-index: 101;
+    overflow: hidden;
+    text-align: center;
+}
+
+.order-modal header {
+    display: flex;
+    color: #fff;
+    background-color: #1dbf73;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.modal-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.mini-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mini-user img {
+    width: 2.8125rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mini-user p {
+    margin: 0;
+}
+
+.mini-user button {
+    font-size: .875rem;
+    line-height: .875rem;
+    padding: 10px 28px;
+    background-color: #1dbf73;
+    font-weight: 600;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-block-end: .5rem;
+}
+
+.order-info {
+    margin-block: .5rem;
+    padding-block: .625rem;
+    text-align: center;
+    border-top: 1px solid #dadbdd;
+}
+
+.order-info h4{
+    color: #1dbf73;
+    margin-block-end: .5rem;
+    font-size: 1.125rem;
+}
+
+.order-info ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: .9375rem;
+}
+
+.order-info ul li {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    color: #62646a;
+    font-weight: 700;
+}

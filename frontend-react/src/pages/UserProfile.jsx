@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { userService } from "../services/user/user.service.local.js"
 import { orderService } from "../services/order/order.service.local.js"
+import { OrderDetails } from "../cmps/OrderDetails.jsx"
 
 export function UserProfile() {
     const user = userService.getLoggedinUser()
     const [userOrders, setUserOrders] = useState([])
+    const [ isModal, setIsModal ] = useState(false) // continue here 
     const PHUserOrders = []
     const orders = orderService.query().then(orders => {
         const findUserOrders = orders.filter(order => order.seller.id === user._id)
@@ -15,6 +17,10 @@ export function UserProfile() {
         setUserOrders(PHUserOrders)
         
     })
+
+    const openModal = () => {
+        // return <OrderDetails order={order} />
+    }
     
     // const findUserOrders = (orders) => {
     //     const userOrders = orders.filter(order => order.seller.id === user._id)
@@ -31,8 +37,8 @@ export function UserProfile() {
                         <img src={user.imgUrl} alt="" />
                     </div>
                     <div className="user-profile-label">
-                        {user.fullname}
-                        @{user.username}
+                        <span>{user.fullname}</span>
+                        <span>@{user.username}</span>
                     </div>
                     <div className="user-stats">
                         <ul className="user-stats-list">
@@ -59,7 +65,7 @@ export function UserProfile() {
                         </thead>
                         <tbody>
                            {userOrders.map(order => (
-                            <tr key={order._id}>
+                            <tr key={order._id} onClick={() => openModal(order)}>
                                 <td>
                                     <div className="user-with-img">
                                         <img src={`${order.seller.imgUrl}`} alt="" />
