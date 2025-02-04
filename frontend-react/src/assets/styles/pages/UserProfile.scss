@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #404145;
     // font-size: .875rem;
 }
 
@@ -30,6 +31,7 @@
 
 .manage-orders-header {
     margin-block-start: 3.125rem;
+    color: #404145;
 }
 
 .orders-table {
@@ -67,6 +69,7 @@
 .user-with-img {
     display: flex;
     align-items: center;
+    // color: #404145;
 }
 
 .user-with-img img {
@@ -74,6 +77,47 @@
     height: 1.875rem;
     border-radius: 50%;
     margin-inline-end: 10px;
+}
+
+.user-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #404145;
+    margin-block-end: 15px;
+}
+
+.user-img img {
+    width: 9.375rem;
+    height: 9.375rem;
+}
+
+.user-profile-label .fullname {
+    font-weight: 700;
+    color: #222325;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.user-profile-label {
+    border-bottom: 1px solid #dadbdd;
+}
+
+.user-profile-label .username {
+    font-size: 16px;
+    line-height: 24px;
+    color: #7a7d85;
+    margin-block-end: 24px;
+}
+
+.user-stats-list li {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 20px;
+}
+
+.user-stats-list li .loc,  .user-stats-list li .date{
+    font-weight: bold;
 }
 
 .order-title{

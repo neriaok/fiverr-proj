@@ -6,14 +6,15 @@
     width: 100%;
     height: 100%;
     background-color: #0006;
+    color: #404145;
     backdrop-filter: blur(3px);
     z-index: 100;
 }
 
 .order-modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 25%;
     width: 50vw;
     max-height: 80vh;
     background-color: white;
@@ -34,6 +35,10 @@
     padding: 8px;
 }
 
+.order-modal header h3{
+    margin: 0;
+}
+
 .modal-content {
     padding: 20px;
     text-align: left;
@@ -43,6 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    // flex-direction: column;
 }
 
 .mini-user img {
@@ -53,9 +59,20 @@
 
 .mini-user p {
     margin: 0;
+    padding-inline-start: .5rem;
 }
 
-.mini-user button {
+.mini-user p span {
+    font-weight: 600;
+}
+
+.contact-buyer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-buyer button {
     font-size: .875rem;
     line-height: .875rem;
     padding: 10px 28px;

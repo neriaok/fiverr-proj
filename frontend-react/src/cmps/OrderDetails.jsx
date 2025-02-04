@@ -12,8 +12,11 @@ export function OrderDetails({order}) {
                 <div className="modal-content">
                     <div className="mini-user">
                         <img src={order.seller.imgUrl} alt="" />
-                        <p>ordered the {order.package} package from you for {order.order.price}</p>
-                        <button>Contact</button>
+                        <p>ordered the <span>{order.package}</span> package from you for <span>${order.order.price}</span></p>
+                        
+                    </div>
+                    <div className="contact-buyer">
+                    <button>Contact</button>
                     </div>
                     <div className="order-info">
                         <h4>Order Information</h4>
