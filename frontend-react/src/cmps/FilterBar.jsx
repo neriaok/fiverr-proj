@@ -158,6 +158,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
                 </div>
             </section>
             <div className="active-filters">
+                {!Object.entries(activeFilters).length? <div style={{height: '2em'}}></div>:''}
                 {Object.entries(activeFilters).map(([field, filterValue]) => (
                     <div className="filter-chip" key={field}>
                         <span>{filterValue}</span>
