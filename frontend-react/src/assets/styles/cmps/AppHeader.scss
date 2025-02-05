@@ -1,7 +1,8 @@
 .app-header {
     min-height: 3.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-bottom: 2em; /// if we have categories line cancel margin
+
 
     .header-nav {
         display: flex;
@@ -14,13 +15,12 @@
         position: relative;
         justify-content: space-between;
         grid-column: 2;
-       
-        .right-header{
+
+        .left-header {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.4em
-
         }
 
 
@@ -38,14 +38,20 @@
                 color: green;
             }
 
-            
+
         }
-        .explore{
+
+        .regular-font {
+            font-size: medium;
+            font-weight: bold;
+
+        }
+
+        .explore {
             position: absolute;
-            font-size: large;
             left: 71%;
             top: 36%;
-            }
+        }
 
         .login-link {
             margin-inline-start: auto;
@@ -86,8 +92,6 @@
 
         .orders-font {
             margin-left: 1em;
-            font-family: math;
-            font-size: large;
             color: gray;
         }
 
@@ -147,6 +151,7 @@
             width: 265px;
             border-radius: 3px;
             z-index: 14;
+            font-size: small;
 
             .triangle-border {
                 display: flex;

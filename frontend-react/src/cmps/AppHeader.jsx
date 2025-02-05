@@ -65,7 +65,7 @@ export function AppHeader() {
 		<header className={"app-header full" + (isHomePage ? " sticky" : '')}>
 			{/* <header className="app-header full main-container"> */}
 			<nav className='header-nav'>
-				<div className="right-header">
+				<div className="left-header">
 					{/* Logo */}
 					<NavLink to="/" className="logo">
 						Avnerr <span className='point'>.</span>
@@ -76,13 +76,13 @@ export function AppHeader() {
 				</div>
 				{user && (
 					<>
-						<label ><NavLink className='explore black' to="gigs">Explore</NavLink></label>
+						<label ><NavLink className='regular-font explore gray' to="gigs">Explore</NavLink></label>
 						<div className='header-svgs'>
 							{appHeaderSvgs.bell}
 							{appHeaderSvgs.envelope}
 							{appHeaderSvgs.heart}
 						</div>
-						<NavLink to="/orders"><label className='orders-font'>Orders</label></NavLink>
+						<NavLink to="/orders"><label className='regular-font orders-font'>Orders</label></NavLink>
 						{/* {user.isAdmin && <NavLink to="/admin">Admin</NavLink>} */}
 
 						<div className="user-info">
@@ -110,8 +110,8 @@ export function AppHeader() {
 				{!user && (
 					<div className="log-out-container">
 						<div className="labels-container">
-							<label ><NavLink className='gray' to="gigs">Explore</NavLink></label>
-							<label><NavLink className='gray' to="/login/signup">Sign in</NavLink></label>
+							<label ><NavLink className='regular-font gray' to="gigs">Explore</NavLink></label>
+							<label><NavLink className='regular-font gray' to="/login/signup">Sign in</NavLink></label>
 						</div>
 						<NavLink to="login" className="login-link">Join</NavLink>
 					</div>

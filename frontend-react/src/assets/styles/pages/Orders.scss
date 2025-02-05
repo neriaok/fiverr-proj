@@ -27,7 +27,9 @@
   display: table-row;
   border-bottom: 1px solid #ddd;
   padding: 10px;
-  font-size: large;
+  font-size: medium;
+ 
+
 }
 
 /* Header row, to differentiate from data rows */
@@ -39,24 +41,24 @@
 /* Individual header cells */
 .table-header {
   color: #7a7d85;
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 0.5em 0.5em;
   white-space: nowrap;
+
 }
 
 /* Individual table cells */
 .table-cell {
-  padding: 1em 0.5em;
+  padding: 0.5em 0.5em;
   display: table-cell;
   white-space: nowrap;
   text-indent: initial;
-  vertical-align: inherit;
-  unicode-bidi: isolate;
-  max-width: 250px;         /* Maximum width of the cell */
   white-space: normal;      /* Allow text to wrap */
   overflow: hidden;         /* Hide any overflow content */
   text-overflow: ellipsis;  /* Add ellipsis if the text is too long */
   line-height: 1.4;         /* Adjust line height for better readability */
   word-wrap: break-word;
+
+  
 
 
   span {
@@ -106,7 +108,7 @@
 }
 
 .order-img {
-  width: 25%;
+  width: 15%;
   height: 80%;
 }
 
@@ -203,4 +205,13 @@
 
 .body-text p{
   margin-bottom: 0;
+}
+
+.last{
+  text-align: end;
+
+}
+
+.table-header.last{
+padding-right: 1em;
 }

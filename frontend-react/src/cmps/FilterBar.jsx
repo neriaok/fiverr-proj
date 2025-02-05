@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+
+import { useState, useEffect, useRef , React } from 'react';
 import { filterBarSvgs } from './Svgs';
+
 
 export function FilterBar({ filterBy, setFilterBy }) {
     const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy));
@@ -8,16 +10,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
     const filterBarRef = useRef(null);
 
-    useEffect(() => {
-        // Reset filter states when the page is refreshed
-        setFilterToEdit({
-            txt: '',
-            price: '',
-            tag: '',
-            deliveryTime: '',
-        });
-        setActiveFilters({});
-    }, []);  // Empty dependency array ensures this runs only once on mount
+
 
     useEffect(() => {
         setFilterBy(filterToEdit);  // Update the parent state with the selected filters
@@ -85,84 +78,85 @@ export function FilterBar({ filterBy, setFilterBy }) {
     }
 
     return (
-        <section className="gig-filterbar main-container full" ref={filterBarRef}>
-            <div className="label-bar">
-                <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
-                <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>
-            </div>
+        <>
+            <section className="gig-filterbar main-container full" ref={filterBarRef}>
+                <div className="label-bar">
+                    <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
+                    <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>
+                </div>
 
-            <div className="sort-field">
-                {isBudgetMenuOpen && (
-                    <div className="sort-budget">
-                        <label>
-                            <input
-                                type="radio"
-                                name="price"
-                                value="value"
-                                checked={filterToEdit.price === 'value'}
-                                onChange={handleChange}
-                            />
-                            <span>Value<span className='gray'> &nbsp; Under ₪495</span></span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="price"
-                                value="mid-range"
-                                checked={filterToEdit.price === 'mid-range'}
-                                onChange={handleChange}
-                            />
-                            <span>Mid-range <span className='gray'> &nbsp; ₪495 - ₪1332</span></span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="price"
-                                value="high-end"
-                                checked={filterToEdit.price === 'high-end'}
-                                onChange={handleChange}
-                            />
-                            <span>High-end <span className='gray'> &nbsp; ₪1332 & Above</span></span>
-                        </label>
-                    </div>
-                )}
+                <div className="sort-field">
+                    {isBudgetMenuOpen && (
+                        <div className="sort-budget">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="price"
+                                    value="value"
+                                    checked={filterToEdit.price === 'value'}
+                                    onChange={handleChange}
+                                />
+                                <span>Value<span className='gray'> &nbsp; Under ₪495</span></span>
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="price"
+                                    value="mid-range"
+                                    checked={filterToEdit.price === 'mid-range'}
+                                    onChange={handleChange}
+                                />
+                                <span>Mid-range <span className='gray'> &nbsp; ₪495 - ₪1332</span></span>
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="price"
+                                    value="high-end"
+                                    checked={filterToEdit.price === 'high-end'}
+                                    onChange={handleChange}
+                                />
+                                <span>High-end <span className='gray'> &nbsp; ₪1332 & Above</span></span>
+                            </label>
+                        </div>
+                    )}
 
-                {isDeliveryMenuOpen && (
-                    <div className="sort-delivery">
-                        <label>
-                            <input
-                                type="radio"
-                                name="deliveryTime"
-                                value="up-to-3"
-                                checked={filterToEdit.deliveryTime === 'up-to-3'}
-                                onChange={handleChange}
-                            />
-                            <span>Up to 3 days</span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="deliveryTime"
-                                value="up-to-7"
-                                checked={filterToEdit.deliveryTime === 'up-to-7'}
-                                onChange={handleChange}
-                            />
-                            <span>Up to 7 days</span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="deliveryTime"
-                                value="anytime"
-                                checked={filterToEdit.deliveryTime === 'anytime'}
-                                onChange={handleChange}
-                            />
-                            <span>Anytime</span>
-                        </label>
-                    </div>
-                )}
-            </div>
-            
+                    {isDeliveryMenuOpen && (
+                        <div className="sort-delivery">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="deliveryTime"
+                                    value="up-to-3"
+                                    checked={filterToEdit.deliveryTime === 'up-to-3'}
+                                    onChange={handleChange}
+                                />
+                                <span>Up to 3 days</span>
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="deliveryTime"
+                                    value="up-to-7"
+                                    checked={filterToEdit.deliveryTime === 'up-to-7'}
+                                    onChange={handleChange}
+                                />
+                                <span>Up to 7 days</span>
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="deliveryTime"
+                                    value="anytime"
+                                    checked={filterToEdit.deliveryTime === 'anytime'}
+                                    onChange={handleChange}
+                                />
+                                <span>Anytime</span>
+                            </label>
+                        </div>
+                    )}
+                </div>
+            </section>
             <div className="active-filters">
                 {Object.entries(activeFilters).map(([field, filterValue]) => (
                     <div className="filter-chip" key={field}>
@@ -176,6 +170,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
                     </div>
                 ))}
             </div>
-        </section>
+        </>
+
     );
+
 }

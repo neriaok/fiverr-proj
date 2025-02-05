@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react'
 import { appHeaderSvgs } from './Svgs'
+import { useParams } from 'react-router-dom' // 
+import {loadGigs } from '../store/actions/gig.actions' // loadgigs
+
+
 
 export function GigFilter({ user, filterBy, setFilterBy }) {
+    const { gigTag } = useParams()
+
     const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy))
     const [inputWidth, setInputWidth] = useState('25em')
-    // var setWidth = user? "currentFill" : '25em'
 
     useEffect(() => {
         handleWidth();
     }, [user]);
-  
+
     useEffect(() => {
         setFilterBy(filterToEdit)
     }, [filterToEdit])

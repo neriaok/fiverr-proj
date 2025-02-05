@@ -29,13 +29,13 @@ export function Orders() {
       <table className="table">
         <thead>
           <tr className="table-row">
-            <td className="table-header">SELLER</td>
-            <td className="table-header">GIG</td>
-            <td className="table-header">PACKAGE</td>
-            <td className="table-header">CATEGORY</td>
-            <td className="table-header">DUE ON</td>
-            <td className="table-header">TOTAL</td>
-            <td className="table-header">STATUS</td>
+            <td className="table-header">Seller</td>
+            <td className="table-header">Gig</td>
+            <td className="table-header">Packege</td>
+            <td className="table-header">Category</td>
+            <td className="table-header">Due on</td>
+            <td className="table-header">Total</td>
+            <td className="table-header last">Status</td>
           </tr>
         </thead>
         <tbody>
@@ -65,7 +65,7 @@ export function Orders() {
               <td className="table-cell">{order.category}</td>
               <td className="table-cell">{new Date(order.orderDate).toLocaleDateString()}</td>
               <td className="table-cell">₪{order.order.price}</td>
-              <td className="table-cell">
+              <td className="table-cell last">
                 <span className={`${order.status === 'Pending' ? 'pending' : order.status === 'Rejected' ? 'rejected' : 'fulfill'}`}>
                   {order.status}
                 </span>
@@ -119,7 +119,7 @@ export function Orders() {
     <div className="gray-background main-container full">
     <div className="orders-container">
       <div className="order-above">
-        <h2>ORDERS</h2>
+        <h3>ORDERS</h3>
 
         {/* Buttons to switch between table and card view */}
         <div className="view-buttons">

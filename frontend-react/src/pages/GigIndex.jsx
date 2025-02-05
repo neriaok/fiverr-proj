@@ -17,9 +17,9 @@ export function GigIndex() {
         loadGigs(filterBy);
     }, [filterBy]);
 
-    // useEffect(() => {
-    //     loadGigs({ tag: gigTag })
-    // }, [gigTag])
+    useEffect(() => {
+        loadGigs({ tag: gigTag })
+    }, [gigTag])
 
 
     return (
