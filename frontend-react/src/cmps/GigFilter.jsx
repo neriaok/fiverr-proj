@@ -1,68 +1,49 @@
-import { useState, useEffect } from 'react'
-import { appHeaderSvgs } from './Svgs'
-import { useParams } from 'react-router-dom' // 
-import {loadGigs } from '../store/actions/gig.actions' // loadgigs
+import { useState, useEffect } from 'react';
+import { appHeaderSvgs } from './Svgs';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter, clearFilter } from '../store/actions/filter.actions'; // actions
 
+export function GigFilter({ user }) {
+    const dispatch = useDispatch();
 
+    const currentFilter = useSelector(state => state.filterModule.filterBy);
 
-export function GigFilter({ user, filterBy, setFilterBy }) {
-    const { gigTag } = useParams()
-
-    const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy))
-    const [inputWidth, setInputWidth] = useState('25em')
+    const [inputWidth, setInputWidth] = useState(user ? '40em' : '23em');
 
     useEffect(() => {
-        handleWidth();
+        setInputWidth(user ? '40em' : '23em');
     }, [user]);
 
-    useEffect(() => {
-        setFilterBy(filterToEdit)
-    }, [filterToEdit])
-
-    const handleWidth = () => {
-        setInputWidth(user ? '40em' : '23em');
+    const filterHandler = (newFilter) => {
+        dispatch(setFilter(newFilter));
     };
 
     function handleChange(ev) {
-        const type = ev.target.type
-        const field = ev.target.name
-        let value
-
-        switch (type) {
-            case 'text':
-            case 'radio':
-                value = field === 'sortDir' ? +ev.target.value : ev.target.value
-                if (!filterToEdit.sortDir) filterToEdit.sortDir = 1
-                break
-            case 'number':
-                value = +ev.target.value || ''
-                break
-        }
-        setFilterToEdit({ ...filterToEdit, [field]: value })
+        const { name, value } = ev.target;
+        filterHandler({ ...currentFilter, [name]: value });
     }
 
-    function clearFilter() {
-        setFilterToEdit({ ...filterToEdit, txt: '', price: '', maxPrice: '' })
-    }
+    const clearFilterHandler = () => {
+        dispatch(clearFilter());
+    };
 
-    function clearSort() {
-        setFilterToEdit({ ...filterToEdit, sortField: '', sortDir: '' })
-    }
-
-    return <section className="gig-filter">
-        <input
-            style={{ width: inputWidth }}
-            className='filter-input'
-            type="text"
-            name="txt"
-            value={filterToEdit.txt}
-            placeholder="What service are you looking for today?"
-            onChange={handleChange}
-            required
-        />
-        <div className='search-svg'>
-            {appHeaderSvgs.magnifyingGlass}
-        </div>
-
-    </section>
+    return (
+        <section className="gig-filter">
+            {/* Filter input field */}
+            <input
+                style={{ width: inputWidth }}
+                className="filter-input"
+                type="text"
+                name="txt"  
+                value={currentFilter.txt || ''}
+                placeholder="What service are you looking for today?"
+                onChange={handleChange}
+                required
+            />
+            <div className="search-svg">
+                {appHeaderSvgs.magnifyingGlass}
+            </div>
+        </section>
+    );
 }

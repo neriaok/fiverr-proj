@@ -3,9 +3,12 @@ import { useState, useEffect, useRef , React } from 'react';
 import { filterBarSvgs } from './Svgs';
 
 
+
 export function FilterBar({ filterBy, setFilterBy }) {
-    const [filterToEdit, setFilterToEdit] = useState(structuredClone(filterBy));
-    const [activeFilters, setActiveFilters] = useState({}); // Initialize with empty object
+    const [filterToEdit, setFilterToEdit] = useState(filterBy);
+    console.log(filterBy, 'filterbar');
+    
+    const [activeFilters, setActiveFilters] = useState({}); 
     const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
     const filterBarRef = useRef(null);
@@ -14,7 +17,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
 
     useEffect(() => {
         setFilterBy(filterToEdit);  // Update the parent state with the selected filters
-    }, [filterToEdit, setFilterBy]);
+    }, [filterToEdit]);
 
     const toggleBudgetMenu = () => {
         setIsBudgetMenuOpen(prevState => !prevState);
