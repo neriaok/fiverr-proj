@@ -88,11 +88,11 @@ export function UserProfile() {
                     <table className="orders-table">
                         <thead>
                             <tr>
-                                <td>BUYER</td>
-                                <td>GIG</td>
-                                <td>DUE ON</td>
-                                <td>TOTAL</td>
-                                <td>STATUS</td> 
+                                <td>Buyer</td>
+                                <td>Gig</td>
+                                <td>Due on</td>
+                                <td>Total</td>
+                                <td>Status</td> 
                             </tr>
                         </thead>
                         <tbody>

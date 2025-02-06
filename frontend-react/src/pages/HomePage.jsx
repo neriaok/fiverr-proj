@@ -29,9 +29,10 @@ export function HomePage() {
                     const cardWidth = 200
                     const newVisibleCards = Math.floor(containerWidth / cardWidth)
                     setVisibleCards(newVisibleCards)
+                    
                 }
             }
-
+            
             updateVisibleCards()
             window.addEventListener('resize', updateVisibleCards)
             return () => window.removeEventListener('resize', updateVisibleCards)
@@ -89,7 +90,7 @@ export function HomePage() {
                 <h2>Popular services</h2>
 
 
-                <ul className="popular-services-carrousel">
+                <ul className="popular-services-carrousel" >
                     {cards.slice(currentIndex, currentIndex + visibleCards).map(card => (
                         <div className="card" key={card.id}>
                             {card.content}
@@ -109,8 +110,8 @@ export function HomePage() {
                     <li><button className="populer-services-btn btn-12"><span>Video Editing</span> <img src="/img/video-editing.jpg" alt="" /></button></li> */}
                 </ul>
 
-                <button className="carrousel-nav next" onClick={nextCard}>{homePageSvgs.carrouselNext}</button>
-                <button className="carrousel-nav previous" onClick={prevCard}>{homePageSvgs.carrouselPrev}</button>
+                <button className={"carrousel-nav next" + ((currentIndex >=5 && currentIndex <= 7) ? " hide" : '')} onClick={nextCard}>{homePageSvgs.carrouselNext}</button>
+                <button className={"carrousel-nav previous" + (currentIndex === 0 ? " hide" : '')} onClick={prevCard}>{homePageSvgs.carrouselPrev}</button>
             </div>
 
             <div className="logo-maker-container">
