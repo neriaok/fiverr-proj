@@ -5,7 +5,8 @@ export const gigService = {
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg,
+    defaultFilter
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
@@ -32,4 +33,13 @@ async function save(gig) {
 async function addGigMsg(gigId, txt) {
     const savedMsg = await httpService.post(`gig/${gigId}/msg`, {txt})
     return savedMsg
+}
+
+function defaultFilter() {
+	return {
+        txt: '',
+            price: '',
+            tag: '',
+            deliveryTime: ''
+        }
 }

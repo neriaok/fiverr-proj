@@ -1,50 +1,42 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom' // 
+import { useLocation, useParams } from 'react-router-dom' // 
 
 import { loadGigs } from '../store/actions/gig.actions' // loadgigs
-import {setFilter,clearFilter} from '../store/actions/filter.actions'
-import { useDispatch} from 'react-redux';
 
-import { gigService } from '../services/gig'
+
+
+import { gigService } from '../services/gig/gig.service.local'
 import { userService } from '../services/user'
 import { FilterBar } from '../cmps/FilterBar'
 import { GigList } from '../cmps/GigList'
 
 export function GigIndex() {
-    const dispatch = useDispatch();
-    const currentFilter = useSelector(state => state.filterModule.filterBy);
-    console.log(currentFilter , 'gig index filterstore');
+
+ 
 
     const { gigTag } = useParams()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    const [filterBy, setFilterBy] = useState(currentFilter);
-    
-    const filterHandler = (newCurrentFilter) => {
-        dispatch(setFilter(newCurrentFilter));
-    };
-
-
-    const clearFilterHandler = () => {
-        dispatch(clearFilter());
-    };
+    const [filterBy, setFilterBy] = useState(gigService.defaultFilter());
+    const location = useLocation() // new
+    const isGigIndex = location.pathname === '/gigs' ? true : false
 
     
-    useEffect(() => {
-        setFilterBy(currentFilter)
-    }, [currentFilter])
+    
+    function filterHandler(filerBy)  {        
+        setFilterBy(filerBy)
+    }
 
     useEffect(() => {
-        console.log(filterBy,'filterbynew');
-        
+        console.log('USE EFFECT 2');
+
         loadGigs(filterBy);
-        filterHandler(filterBy)
         
     }, [filterBy]);
 
     useEffect(() => {
-        console.log('gigtag');
-        
+        console.log('GIG TAG');
+    
         var newFilterBy = filterBy
         newFilterBy.tag = gigTag
 
@@ -55,7 +47,7 @@ export function GigIndex() {
 
     return (
         <main className="gig-index main-container full">
-            <FilterBar filterBy={filterBy} setFilterBy={setFilterBy} />
+            <FilterBar filterBy={filterBy} setFilterBy={filterHandler} />
             <GigList gigs={gigs} />
         </main>
     )

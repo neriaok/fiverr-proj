@@ -2,7 +2,6 @@
 import { storageService } from '../async-storage.service'
 import { makeId , loadFromStorage , saveToStorage } from '../util.service'
 import { userService } from '../user'
-// localStorage.clear()
 const STORAGE_KEY = 'gig'
 
 _createGigs()
@@ -13,7 +12,8 @@ export const gigService = {
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg,
+    defaultFilter
 }
 window.cs = gigService
 
@@ -108,6 +108,15 @@ async function addGigMsg(gigId, txt) {
     await storageService.put(STORAGE_KEY, gig)
 
     return msg
+}
+
+function defaultFilter() {
+	return {
+        txt: '',
+            price: '',
+            tag: '',
+            deliveryTime: ''
+        }
 }
 
 function _createGigs() {

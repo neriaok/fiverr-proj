@@ -16,7 +16,7 @@
     grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1400px) minmax(2rem, 1fr);
     align-content: center;
 
-    position: fixed;
+    position: sticky;
     top: 75px;
 }
 .header-categories-container.absolute {

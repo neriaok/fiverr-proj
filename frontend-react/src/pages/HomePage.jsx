@@ -23,6 +23,8 @@ export function HomePage() {
         ]
 
         useEffect (() => {
+            console.log('im here');
+            
             const updateVisibleCards = () => {
                 if(containerRef.current) {
                     const containerWidth = containerRef.current.offsetWidth
@@ -37,6 +39,28 @@ export function HomePage() {
             window.addEventListener('resize', updateVisibleCards)
             return () => window.removeEventListener('resize', updateVisibleCards)
         }, [cards.length])
+
+
+        
+        
+        // useEffect (() => {
+        //     console.log('im here');
+        //     const updateVisibleCards = () => {
+        //         if(containerRef.current) {
+        //             const containerWidth = containerRef.current.offsetWidth
+        //             const cardWidth = 200
+        //             const newVisibleCards = Math.floor(containerWidth / cardWidth)
+        //             setVisibleCards(newVisibleCards)
+                    
+        //         }
+        //     }
+            
+        //     window.addEventListener('resize', updateVisibleCards)
+            
+        //     updateVisibleCards()
+  
+        //     return () => window.removeEventListener('resize', updateVisibleCards)
+        // }, [])
 
         // const nextCard = () => {
         //     setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length)
@@ -54,7 +78,7 @@ export function HomePage() {
 
 
     return (
-        <section>
+        <section className="home-page-container">
             <div className="search-container">
                 <img src="/img/Home-page-green.jpg" alt="" className="green-background-img"/>
                 <div className="on-pic">
@@ -110,7 +134,7 @@ export function HomePage() {
                     <li><button className="populer-services-btn btn-12"><span>Video Editing</span> <img src="/img/video-editing.jpg" alt="" /></button></li> */}
                 </ul>
 
-                <button className={"carrousel-nav next" + ((currentIndex >=5 && currentIndex <= 7) ? " hide" : '')} onClick={nextCard}>{homePageSvgs.carrouselNext}</button>
+                <button className={"carrousel-nav next" + ((currentIndex >=5 && currentIndex <= 12) ? " hide" : '')} onClick={nextCard}>{homePageSvgs.carrouselNext}</button>
                 <button className={"carrousel-nav previous" + (currentIndex === 0 ? " hide" : '')} onClick={prevCard}>{homePageSvgs.carrouselPrev}</button>
             </div>
 

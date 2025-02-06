@@ -1,18 +1,19 @@
+import { gigService } from "../../services/gig/gig.service.remote";
+
 const initialState = {
-    filterBy: {
-        txt: '',
-        price: '',
-        tag: '',
-        deliveryTime: '',
-    }
+    filterBy: gigService.defaultFilter()
 };
 
 export const filterReducer = (state = initialState, action) => {
+    console.log('STORE:');
+    
+    console.log('action:', action);
+    
     switch (action.type) {
         case 'SET_FILTER':
-            return {
+            return { 
                 ...state,
-                filterBy: action.filterBy,
+                filterBy: {...state.filterBy, ...action.filterBy},
             };
         case 'CLEAR_FILTER':
             return {

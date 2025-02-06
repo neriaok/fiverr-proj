@@ -5,16 +5,16 @@ import { filterBarSvgs } from './Svgs';
 
 
 export function FilterBar({ filterBy, setFilterBy }) {
-    const [filterToEdit, setFilterToEdit] = useState(filterBy);
-    console.log(filterBy, 'filterbar');
+    console.log('FROM BAR:', filterBy);
+    
+    const [filterToEdit, setFilterToEdit] = useState({...filterBy});
+
     
     const [activeFilters, setActiveFilters] = useState({}); 
     const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
-    const filterBarRef = useRef(null);
 
-
-
+    
     useEffect(() => {
         setFilterBy(filterToEdit);  // Update the parent state with the selected filters
     }, [filterToEdit]);
@@ -43,7 +43,6 @@ export function FilterBar({ filterBy, setFilterBy }) {
         }
 
         setFilterToEdit({ ...filterToEdit, [field]: value });
-
         // Update active filter chips (display only values)
         setActiveFilters(prevFilters => ({
             ...prevFilters,
@@ -82,7 +81,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
 
     return (
         <>
-            <section className="gig-filterbar main-container full" ref={filterBarRef}>
+            <section className="gig-filterbar main-container full" >
                 <div className="label-bar">
                     <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
                     <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>

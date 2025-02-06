@@ -9,9 +9,12 @@ import { GigFilter } from '../cmps/GigFilter';
 import { loadGigs } from '../store/actions/gig.actions';
 import { appHeaderSvgs } from './Svgs';
 import { HeaderCategories } from '../cmps/HeaderCategories.jsx';
+import { gigService } from '../services/gig/gig.service.local.js';
+import { useDispatch } from 'react-redux';
+import {setFilter,clearFilter} from '../store/actions/filter.actions'
 
 export function AppHeader() {
-	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter());
+	const [filterBy, setFilterBy] = useState(gigService.defaultFilter());
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isSearchBar, setIsSearchBar] = useState(false)
 	const [isCategory, setIsCategory] = useState(false)
@@ -63,10 +66,8 @@ export function AppHeader() {
 
 	return (
 		<header className={"app-header full" + (isHomePage ? " sticky" : '')}>
-			{/* <header className="app-header full main-container"> */}
 			<nav className='header-nav'>
 				<div className="left-header">
-					{/* Logo */}
 					<NavLink to="/" className="logo">
 						Avnerr <span className='point'>.</span>
 					</NavLink>
@@ -83,7 +84,6 @@ export function AppHeader() {
 							{appHeaderSvgs.heart}
 						</div>
 						<NavLink to="/orders"><label className='regular-font orders-font'>Orders</label></NavLink>
-						{/* {user.isAdmin && <NavLink to="/admin">Admin</NavLink>} */}
 
 						<div className="user-info">
 							<div className='user-letter' onClick={toggleMenu}>

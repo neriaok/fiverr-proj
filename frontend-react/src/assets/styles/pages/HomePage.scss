@@ -4,6 +4,13 @@ section {
     font: 400 16px / 24px "Macan-regular", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+.home-page-container {
+    // grid-column: 1 / -1;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1400px);
+}
+
 .font-face-dd {
     font-family: "DomaineDisplay";
     font-style: italic;
@@ -62,11 +69,14 @@ section {
 
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 38.5rem;
 }
 
 .gig-search-container input {
     // width: 616px;
-    width: 38.5rem;
+    max-width: 38.5rem;
+    width: 100%;
     // height: 60px;
     height: 3.75rem;
 
@@ -120,7 +130,7 @@ section {
     // bottom: 50px;
     bottom: 3.125rem;
     // width: 649px;
-    width: 40.563rem;
+    // width: 40.563rem;
     // height: 24px;
     height: 1.5rem;
     
@@ -144,7 +154,7 @@ section {
 
 .trusted-by img {
     object-fit: cover;
-    overflow: visible;
+    // overflow: visible;
 }
 
 .green-background-img{
@@ -157,7 +167,7 @@ section {
 
 .categories-container {
     display: flex;
-
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
@@ -176,6 +186,8 @@ section {
     height: 8.063rem;
     // width: 129px;
     width: 8.063rem;
+    // max-width: 8.063rem;
+    // width: 100%;
 
     background-color: white;
 
@@ -226,12 +238,15 @@ section {
     flex-direction: column;
     // max-width: 1400px;
     // min-width: 300px;
-    width: 87.5rem;
+    // max-width: 100%; // fix---------------
+    min-width: 200px;
+    // width: 100%;
+    // width: 100%;
     // max-height: 400px;
     max-height: 25rem;
 
     align-self: center;
-    justify-self: center;
+    // justify-self: center;
     justify-items: center;
 
     // margin-top: calc(86px);
@@ -257,9 +272,9 @@ section {
     // gap: 28px;
     gap: 1.75rem;
     // margin: 15px;
-    // width: 100%;
+    width: 100%;
     // overflow: hidden;
-    max-width: 87.5rem;
+    // max-width: 87.5rem;
     overflow-x: hidden;
 }
 
@@ -412,12 +427,13 @@ ul {
 .logo-maker-container {
     display: flex;
     // width: 1400px;
-    width: 87.5rem;
+    max-width: 87.5rem; // fix---------------
+    width: 100%;
     // height: 545px;
     height: 34.063rem;
 
     // margin-inline: 59px;
-    margin-inline: 3.688rem;
+    // margin-inline: 3.688rem;
     // padding-inline: 32px;
     // padding-inline: 2rem;
     
@@ -433,7 +449,8 @@ ul {
     background-color: #fff6f2;
 
     // width: 1336px;
-    width: 83.5rem;
+    // max-width: 83.5rem; // fix---------------
+    // width: 100%;
     // height: 465px;
     height: 29.063rem;
 
@@ -515,7 +532,8 @@ em {
     background-color: #fff6f2;
     
     // width: 1336px;
-    width: 83.5rem;
+    // max-width: 83.5rem; // fix---------------
+    // width: 100%;
     // height: 465px;
     height: 29.063rem;
 
@@ -532,7 +550,7 @@ em {
 
 .logo-maker-img img {
     // width: 540px;
-    width: 33.75rem;
+    // max-width: 33.75rem; // maybe fix---------------
     // height: 364px;
     height: 22.75rem;
     object-fit: cover;
