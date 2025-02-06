@@ -15,7 +15,7 @@ export function GigList({ gigs}) {
     // <div>{gigs[0]._id}</div>
     // <div>gig list</div>
 
-    <section>
+    <section className='gig-list-container'>
         <div className='results'>{gigs.length} results</div>
         <ul className="list">
             {gigs.map(gig =>
