@@ -36,7 +36,7 @@ export function Login() {
             <div className="login-card">
                 <div className="login-card-img">
                     {/* Replace with the image URL of your choice */}
-                    <img src="/img/login2.jpg" alt="Login Illustration" />
+                    <img src="/img/login.jpg" alt="Login Illustration" />
                 </div>
                 <div className="login-card-content">
                     <form className="login-form" onSubmit={onLogin}>
