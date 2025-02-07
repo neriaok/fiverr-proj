@@ -5,12 +5,15 @@
     max-width: 414px;
     height: 850px;
 
-    position: fixed;
+    // position: fixed;////
     margin-top: 100px;
     // align-self: start;
     grid-column: 3;
     justify-self: end;
     
+    position: sticky;
+    top: -1px; 
+    z-index: 10; 
     
     // max-height: 850px;
 
