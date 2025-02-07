@@ -1,0 +1,74 @@
+// Login.scss
+$card-radius: 12px;
+$button-bg: #007bff;
+$button-bg-hover: #0056b3;
+$button-text-color: #fff;
+$button-padding: 10px;
+$select-padding: 10px;
+$border-color: #ddd;
+$bg-color: #f0f0f0;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.login-card {
+  display: flex;
+  background-color: white;
+  border-radius: $card-radius;
+  overflow: hidden;
+  width: 70%;
+  height: 30em;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .login-card-img {
+    width: 50%;
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: $card-radius 0 0 $card-radius; // Rounded corners on left side
+    }
+  }
+
+  .login-card-content {
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+
+    .login-form  {
+      display: flex;
+      flex-direction: column;
+
+      select,
+      button {
+        padding: $select-padding;
+        margin-bottom: 15px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid $border-color;
+        background-color: #fff;
+      }
+
+      select {
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: $button-bg;
+        color: $button-text-color;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $button-bg-hover;
+        }
+      }
+    }
+  }
+}

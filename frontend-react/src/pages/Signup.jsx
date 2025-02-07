@@ -36,7 +36,14 @@ export function Signup() {
     }
 
     return (
-        <form className="signup-form" onSubmit={onSignup}>
+        <div className="login-container">
+        <div className="login-card">
+            <div className="login-card-img">
+                {/* Replace with the image URL of your choice */}
+                <img src="/img/login2.jpg" alt="Login Illustration" />
+            </div>
+            <div className="login-card-content">
+                <form className="signup-form" onSubmit={onSignup}>
             <input
                 type="text"
                 name="fullname"
@@ -64,5 +71,9 @@ export function Signup() {
             <ImgUploader onUploaded={onUploaded} />
             <button>Signup</button>
         </form>
+            </div>
+        </div>
+    </div>
+      
     )
 }

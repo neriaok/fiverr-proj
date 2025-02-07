@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
-
 import { userService } from '../services/user'
 import { login } from '../store/actions/user.actions'
 
 export function Login() {
     const [users, setUsers] = useState([])
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
-
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -32,17 +30,27 @@ export function Login() {
         const value = ev.target.value
         setCredentials({ ...credentials, [field]: value })
     }
-    
+
     return (
-        <form className="login-form" onSubmit={onLogin}>
-            <select
-                name="username"
-                value={credentials.username}
-                onChange={handleChange}>
-                    <option value="">Select User</option>
-                    {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-            </select>
-            <button>Login</button>
-        </form>
+        <div className="login-container">
+            <div className="login-card">
+                <div className="login-card-img">
+                    {/* Replace with the image URL of your choice */}
+                    <img src="/img/login2.jpg" alt="Login Illustration" />
+                </div>
+                <div className="login-card-content">
+                    <form className="login-form" onSubmit={onLogin}>
+                        <select
+                            name="username"
+                            value={credentials.username}
+                            onChange={handleChange}>
+                            <option value="">Select User</option>
+                            {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                        </select>
+                        <button>Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     )
 }

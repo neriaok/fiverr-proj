@@ -1,11 +1,22 @@
-.login-form,
 .signup-form {
-	display: grid;
-	width: min(80%, 300px);
-	margin: auto;
 
 	padding: 1em;
-	background-color: $clr4;
+
+	input,
+	button {
+		padding: 5px;
+		font-size: 16px;
+		border-radius: 6px;
+		border: 1px solid $border-color;
+		background-color: #fff;
+	}
+
+	button {
+		background-color: #007bff;
+		color: #fff;
+		transition: background-color 0.3s;
+		width: 100%
+	}
 }
 
 .signup-form {
@@ -13,15 +24,15 @@
 		width: 100%;
 	}
 
-    .admin-toggle {
-        display: flex;
-        align-items: center;
-        justify-self: start;
+	.admin-toggle {
+		display: flex;
+		align-items: center;
+		justify-self: start;
 
-        span {
-            font-size: .8em;
-        }
-    }
+		span {
+			font-size: .8em;
+		}
+	}
 }
 
 .login-page nav {
@@ -40,6 +51,7 @@
 			color: $clr1;
 		}
 	}
+
 	a.active {
 		text-decoration: underline;
 		color: $clr2;
