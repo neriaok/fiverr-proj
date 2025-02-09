@@ -17,26 +17,27 @@ export function GigIndex() {
 
     const { gigTag } = useParams()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    const [filterBy, setFilterBy] = useState(gigService.defaultFilter());
+    const [filterBy, setFilterBy] = useState({
+            txt: '',
+            price: '',
+            tag: gigTag,
+            deliveryTime: ''
+        });
     const location = useLocation() // new
     const isGigIndex = location.pathname === '/gigs' ? true : false
 
     
     
-    function filterHandler(filerBy)  {        
-        setFilterBy(filerBy)
+    function filterHandler(filterBy)  {        
+        setFilterBy(filterBy)
     }
 
     useEffect(() => {
-        console.log('USE EFFECT 2');
-
         loadGigs(filterBy);
         
     }, [filterBy]);
 
     useEffect(() => {
-        console.log('GIG TAG');
-    
         var newFilterBy = filterBy
         newFilterBy.tag = gigTag
 

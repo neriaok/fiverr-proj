@@ -5,7 +5,7 @@ import { filterBarSvgs } from './Svgs';
 
 
 export function FilterBar({ filterBy, setFilterBy }) {
-    console.log('FROM BAR:', filterBy);
+    // console.log('FROM BAR:', filterBy);
     
     const [filterToEdit, setFilterToEdit] = useState({...filterBy});
 
@@ -16,7 +16,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
 
     
     useEffect(() => {
-        setFilterBy(filterToEdit);  // Update the parent state with the selected filters
+        setFilterBy(filterToEdit);
+          // Update the parent state with the selected filters
     }, [filterToEdit]);
 
     const toggleBudgetMenu = () => {
