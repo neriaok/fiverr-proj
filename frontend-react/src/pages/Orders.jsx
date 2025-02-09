@@ -63,7 +63,7 @@ export function Orders() {
               </td>
               <td className="table-cell">{order.package} package</td>
               <td className="table-cell">{order.category}</td>
-              <td className="table-cell">{new Date(order.orderDate).toLocaleDateString()}</td>
+              <td className="table-cell">{order.orderDate}</td>
               <td className="table-cell">₪{order.order.price}</td>
               <td className="table-cell last">
                 <span className={`${order.status === 'Pending' ? 'pending' : order.status === 'Rejected' ? 'rejected' : 'fulfill'}`}>
