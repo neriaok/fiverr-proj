@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { appHeaderSvgs } from './Svgs';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter, clearFilter } from '../store/actions/filter.actions'; // actions
 
-export function GigFilter({ user }) {
-    const dispatch = useDispatch();
-
-    const currentFilter = useSelector(state => state.filterModule.filterBy);
+export function GigFilter({ user, filterBy, setFilterBy }) {    
+    const currentFilter = filterBy;
 
     const [inputWidth, setInputWidth] = useState(user ? '40em' : '23em');
 
@@ -16,7 +14,8 @@ export function GigFilter({ user }) {
     }, [user]);
 
     const filterHandler = (newFilter) => {
-        dispatch(setFilter(newFilter));
+        setFilterBy(newFilter)
+        
     };
 
     function handleChange(ev) {
