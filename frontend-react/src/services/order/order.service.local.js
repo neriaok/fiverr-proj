@@ -42,26 +42,55 @@ async function remove(orderId) {
   await storageService.remove(ORDERS_STORAGE_KEY, orderId)
 }
 
-async function save(order) {
+async function save(gig, clearGigPackage) {
   var savedOrder
-  if (order._id) {
+  // if (order._id) {
+  //   const orderToSave = {
+  //     _id: order._id,
+  //     price: order.price,
+  //     speed: order.speed,
+  //   }
+  //   savedOrder = await storageService.put(ORDERS_STORAGE_KEY, orderToSave)
+  // } else {
+    // const orderToSave = {
+    //   owner: order.owner.fullname,
+    //   price: order.price,
+    //   speed: order.speed,
+    //   // Later, owner is set by the backend
+    //   owner: userService.getLoggedinUser(),
+    //   msgs: []
+    // }
     const orderToSave = {
-      _id: order._id,
-      price: order.price,
-      speed: order.speed,
+      _id: makeId(),
+      buyer: userService.getLoggedinUser().usename,
+      category: gig.tags[0],
+      order: {
+          img: gig.imgUrls[0],
+          title: gig.title,
+          _id: gig._id
+      },
+      orderDate: new Date().toISOString().split('T')[0],
+      package: clearGigPackage,
+      seller: {
+          id: gig.owner._id,
+          imgUrl: gig.owner.imgUrl,
+          name: gig.owner.fullname,
+      },
+      status: "Pending"
     }
-    savedOrder = await storageService.put(ORDERS_STORAGE_KEY, orderToSave)
-  } else {
-    const orderToSave = {
-      owner: order.owner.fullname,
-      price: order.price,
-      speed: order.speed,
-      // Later, owner is set by the backend
-      owner: userService.getLoggedinUser(),
-      msgs: []
+    if(clearGigPackage === "basic") {
+      orderToSave.deliveryTime = gig.daysToMake
+      orderToSave.order.price = gig.price
+    }
+    if(clearGigPackage === "standard") {
+      orderToSave.deliveryTime = gig.daysToMake + 2
+      orderToSave.order.price = gig.aboutThisGig.packages.standard.price
+    }
+    if(clearGigPackage === "premium") {
+      orderToSave.deliveryTime = gig.daysToMake + 4
+      orderToSave.order.price = gig.aboutThisGig.packages.premium.price
     }
     savedOrder = await storageService.post(ORDERS_STORAGE_KEY, orderToSave)
-  }
   return savedOrder
 }
 

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react"
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadGig, addGigMsg } from '../store/actions/gig.actions.js'
 import { gigCheckoutSvgs, orderGigSvgs } from "../cmps/Svgs.jsx"
+import { orderService } from "../services/order/order.service.local.js"
 
 export function GigCheckout () {
     const { gigId, gigPackage } = useParams()
@@ -16,6 +17,10 @@ export function GigCheckout () {
     useEffect(() => {
         loadGig(clearGigId)
     }, [clearGigId, gig])
+
+    const onComfirmOrder = () => {
+        orderService.save(gig, clearGigPackage)
+    }
 
     return (
         <div className="checkout-container">
@@ -153,7 +158,7 @@ export function GigCheckout () {
                             </span>
                         </div>
                         <div className="purchase-container">
-                            <button className="purchase-btn">Confirm and pay</button>
+                            <button className="purchase-btn" onClick={() => onComfirmOrder()}><NavLink to={"/orders"}>Confirm and pay</NavLink></button>
                             <span>SSL Secure Payment</span>
                         </div>
                     </div>
