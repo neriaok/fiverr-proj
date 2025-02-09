@@ -139,7 +139,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: 'Ghana',
           imgUrls: ['/img/img1.jpg', '/video/video1.mp4', '/img/img1second.jpg'],
-          tags: ['Arts And Crafts', 'Logo Design'],
+          tags: ['graphics&design'],
           likedByUsers: ['mini-user'],
           reviews: [
             {
@@ -227,7 +227,7 @@ function _createGigs() {
           avgResponseTime: 2,
           loc: 'USA',
           imgUrls: [ '/img/img2second.jpg','/img/img2.jpg', '/img/img2third.jpg'],
-          tags: ['Writing', 'Blogging'],
+          tags: ['writing&translation'],
           likedByUsers: ['mini-user', 'user3'],
           reviews: [
             {
@@ -315,7 +315,7 @@ function _createGigs() {
           avgResponseTime: 3,
           loc: 'UK',
           imgUrls: ['/img/img3.jpg', '/img/img3second.jpg'],
-          tags: ['Marketing', 'Social Media'],
+          tags: ['Marketing', 'business'],
           likedByUsers: ['user4', 'mini-user'],
           reviews: [
             {
@@ -403,7 +403,7 @@ function _createGigs() {
           avgResponseTime: 2,
           loc: 'Australia',
           imgUrls: ['/img/img4.jpg', '/video/video4.mp4', '/img/img4second.jpg'],
-          tags: ['Marketing', 'Video Editing', 'YouTube'],
+          tags: ['Marketing', 'video&animation', 'music&audio'],
           likedByUsers: ['user5'],
           reviews: [
             {
@@ -487,7 +487,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: 'Canada',
           imgUrls: ['/img/img5.jpg', '/img/img5second.jpg'],
-          tags: ['Web Development', 'Design', 'Marketing'],
+          tags: ['business', 'graphics&design', 'Marketing' , "programing&tech"],
           likedByUsers: ['user2', 'user4'],
           reviews: [
             {
@@ -571,7 +571,7 @@ function _createGigs() {
           avgResponseTime: 2,
           loc: 'USA',
           imgUrls: ['/img/img6.jpg', '/video/video6.mp4'],
-          tags: ['Music', 'Guitar Lessons'],
+          tags: ['music&audio', 'consulting'],
           likedByUsers: ['mini-user', 'user5'],
           reviews: [
             {
@@ -655,7 +655,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: 'Australia',
           imgUrls: [ '/img/img7second.jpg', '/img/img7.jpg','/img/img7third.jpg'],
-          tags: ['Fitness', 'Personal Trainer'],
+          tags: ['consulting'],
           likedByUsers: ['user8', 'user6'],
           reviews: [
             {
@@ -740,7 +740,7 @@ function _createGigs() {
           avgResponseTime: 3,
           loc: 'Germany',
           imgUrls: ['/img/img8.jpg', '/img/img8second.jpg'],
-          tags: ['Translation', 'Language'],
+          tags: ['consulting', 'writing&translation' , 'business'],
           likedByUsers: ['user3', 'user7'],
           reviews: [
             {
@@ -824,7 +824,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: "UK",
           imgUrls: ["/img/img9.jpg", "/img/img9second.jpg"],
-          tags: ["Design", "Business Card"],
+          tags: ["graphics&design", "business" , "consulting","programing&tech"],
           likedByUsers: ["user10"],
           reviews: [
             {
@@ -901,7 +901,7 @@ function _createGigs() {
           avgResponseTime: 2,
           loc: "Canada",
           imgUrls: ["/img/img10.jpg", "/img/img10second.jpg"],
-          tags: ["Video Editing", "YouTube", "Intro"],
+          tags: ["video&animation", "business", "ai-services","Marketing"],
           likedByUsers: ["user11"],
           reviews: [
             {
@@ -978,7 +978,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: "USA",
           imgUrls: ["/img/img11.jpg", "/img/img11second.jpg"],
-          tags: ["Design", "E-book", "Book Cover"],
+          tags: ["graphics&design", "Marketing", "writing&translation"],
           likedByUsers: ["user12"],
           reviews: [
             {
@@ -1055,7 +1055,7 @@ function _createGigs() {
           avgResponseTime: 1,
           loc: "Canada",
           imgUrls: ["/img/img12.jpg", "/img/img12second.jpg"],
-          tags: ["Voiceover", "Audio", "Commercial"],
+          tags: ["business", "music&audio", "video&animation"],
           likedByUsers: ["user13"],
           reviews: [
             {
