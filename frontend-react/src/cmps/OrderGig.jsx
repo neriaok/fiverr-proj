@@ -36,9 +36,9 @@ export function OrderGig({gig}) {
                             {selectedPackage === "premium" ? 'Premium Package' : null}
                             <div className="price-wrap">
                                 {/* {'₪' + gigToOrder.price} {orderGigSvgs.exclamationMark} */}
-                                {selectedPackage === "basic" ? ('$' + gigToOrder.price) : null}
-                                {selectedPackage === "standard" ? ('$' + gigToOrder.aboutThisGig.packages.standard.price) : null}
-                                {selectedPackage === "premium" ? ('$' + gigToOrder.aboutThisGig.packages.premium.price) : null}
+                                {selectedPackage === "basic" ? ('₪' + gigToOrder.price) : null}
+                                {selectedPackage === "standard" ? ('₪' + gigToOrder.aboutThisGig.packages.standard.price) : null}
+                                {selectedPackage === "premium" ? ('₪' + gigToOrder.aboutThisGig.packages.premium.price) : null}
                                 {orderGigSvgs.exclamationMark}
                             </div>
                         </h3>

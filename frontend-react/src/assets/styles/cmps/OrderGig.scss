@@ -45,9 +45,9 @@
     font-size: 1em;
 }
 
-.selected {
+.basic {
     border-left: none;
-    border-bottom: 3px solid #222325;
+    color: #74767e;
 }
 
 .standard {
@@ -59,6 +59,12 @@
 .premium {
     border-right: none;
     color: #74767e;
+}
+
+.selected {
+    // border-left: none;
+    border-bottom: 3px solid #222325;
+    color: black;
 }
 
 .order-details {
