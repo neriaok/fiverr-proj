@@ -18,7 +18,7 @@ export function Orders() {
       }
     }
     fetchOrders();
-  }, []);
+  }, [orders]);
 
   if (error) {
     return <div className="error">{error}</div>;
@@ -62,7 +62,8 @@ export function Orders() {
                 </div>
               </td>
               <td className="table-cell">{order.package} package</td>
-              <td className="table-cell">{order.category}</td>
+              {/* <td className="table-cell">{order.category}</td> */}
+              <td className="table-cell">{order.category.includes('&') ? order.category.split('&').map(word => word.trim()).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('\n') : order.category }</td>
               <td className="table-cell">{order.orderDate}</td>
               <td className="table-cell">₪{order.order.price}</td>
               <td className="table-cell last">

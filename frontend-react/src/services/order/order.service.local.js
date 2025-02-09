@@ -69,7 +69,7 @@ async function save(gig, clearGigPackage) {
           title: gig.title,
           _id: gig._id
       },
-      orderDate: new Date().toISOString().split('T')[0],
+      orderDate: formatDate(),
       package: clearGigPackage,
       seller: {
           id: gig.owner._id,
@@ -90,8 +90,20 @@ async function save(gig, clearGigPackage) {
       orderToSave.deliveryTime = gig.daysToMake + 4
       orderToSave.order.price = gig.aboutThisGig.packages.premium.price
     }
-    savedOrder = await storageService.post(ORDERS_STORAGE_KEY, orderToSave)
+    savedOrder = await storageService.postUnshift(ORDERS_STORAGE_KEY, orderToSave)
   return savedOrder
+}
+
+function formatDate() {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const date = new Date()
+
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  
+  return `${month} ${day}, ${year}`;
 }
 
 async function addOrderMsg(orderId, txt) {
