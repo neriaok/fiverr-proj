@@ -111,7 +111,7 @@ export function UserProfile() {
                                     {order.orderDate}
                                 </td>
                                 <td className="order-total">
-                                    ${order.order.price}
+                                    ₪{order.order.price}
                                 </td>
                                 <td className="order-status">
                                     <span className={`label ${order.status}`}>{order.status}</span>

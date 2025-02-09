@@ -92,7 +92,7 @@ export function GigCheckout () {
                     </div>
                     <div className="package-heading">
                         <h4 className="pack-title">{packageToRender} package</h4>
-                        <h4 className="pack-price">$
+                        <h4 className="pack-price">₪
                             {clearGigPackage === "basic" ? gig.price : null}
                             {clearGigPackage === "standard" ? gig.aboutThisGig.packages.standard.price : null}
                             {clearGigPackage === "premium" ? gig.aboutThisGig.packages.premium.price : null}
@@ -117,7 +117,7 @@ export function GigCheckout () {
                     <div className="summary-table">
                         <div className="service-fee">
                             <span className="service">Service fee</span>
-                            <span className="fee">$
+                            <span className="fee">₪
                             {clearGigPackage === "basic" ? (gig.price * 0.055) : null}
                             {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price * 0.055) : null}
                             {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price * 0.055) : null}
@@ -125,7 +125,7 @@ export function GigCheckout () {
                         </div>
                         <div className="vat-fee">
                             <span className="vat">VAT</span>
-                            <span className="fee">$
+                            <span className="fee">₪
                             {clearGigPackage === "basic" ? (gig.price * 0.18) : null}
                             {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price * 0.18) : null}
                             {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price * 0.18) : null}
@@ -136,7 +136,7 @@ export function GigCheckout () {
                         <div className="user-price">
                             <span className="price">You'll pay</span>
                             {/* <span className="final-price">${gig.price + 5.25 + 5.95}</span> */}
-                            <span className="final-price">$
+                            <span className="final-price">₪
                             {clearGigPackage === "basic" ? (gig.price + (gig.price * 0.055) + (gig.price * 0.18)) : null}
                             {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price + (gig.aboutThisGig.packages.standard.price * 0.055) + (gig.aboutThisGig.packages.standard.price * 0.18)) : null}
                             {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price + (gig.aboutThisGig.packages.premium.price * 0.055) + (gig.aboutThisGig.packages.premium.price * 0.18)) : null}
@@ -160,7 +160,7 @@ export function GigCheckout () {
                 </div>
                 <div className="currency-options">
                     <span>
-                        You will be charged $
+                        You will be charged ₪
                         {clearGigPackage === "basic" ? (gig.price + (gig.price * 0.055) + (gig.price * 0.18)) : null}
                         {clearGigPackage === "standard" ? (gig.aboutThisGig.packages.standard.price + (gig.aboutThisGig.packages.standard.price * 0.055) + (gig.aboutThisGig.packages.standard.price * 0.18)) : null}
                         {clearGigPackage === "premium" ? (gig.aboutThisGig.packages.premium.price + (gig.aboutThisGig.packages.premium.price * 0.055) + (gig.aboutThisGig.packages.premium.price * 0.18)) : null}
