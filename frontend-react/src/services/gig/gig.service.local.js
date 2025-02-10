@@ -811,7 +811,7 @@ function _createGigs() {
       {
         _id: "g109",
         title: "I will design a professional business card for you",
-        price: 500.00,
+        price: 300.00,
         owner: {
           _id: "u117",
           fullname: "Sophia Adams",
@@ -863,7 +863,7 @@ function _createGigs() {
                 "Custom business card design",
                 "Two-sided design"
               ],
-              price: 75.00
+              price: 300.00
             },
             standard: {
               services: [
@@ -873,7 +873,7 @@ function _createGigs() {
                 "3D mockup or animated preview",
                 "Design consultation to tailor the card to your needs"
               ],
-              price: 100.00
+              price: 350.00
             },
             premium: {
               services: [
@@ -885,7 +885,7 @@ function _createGigs() {
                 "Design consultation to tailor the card to your needs",
                 "Multiple design concepts to choose from"
               ],
-              price: 150.00
+              price: 500.00
             }
           }
         }
