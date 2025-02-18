@@ -1,23 +1,14 @@
-
-import { useState, useEffect, useRef , React } from 'react';
+import { useState, useEffect, useRef, React } from 'react';
 import { filterBarSvgs } from './Svgs';
 
-
-
 export function FilterBar({ filterBy, setFilterBy }) {
-    // console.log('FROM BAR:', filterBy);
-    
-    const [filterToEdit, setFilterToEdit] = useState({...filterBy});
-
-    
+    const [filterToEdit, setFilterToEdit] = useState({ ...filterBy });
     const [activeFilters, setActiveFilters] = useState({}); 
     const [isBudgetMenuOpen, setIsBudgetMenuOpen] = useState(false);
     const [isDeliveryMenuOpen, setIsDeliveryMenuOpen] = useState(false);
 
-    
     useEffect(() => {
-        setFilterBy(filterToEdit);
-          // Update the parent state with the selected filters
+        setFilterBy(filterToEdit); // Update the parent state with the selected filters
     }, [filterToEdit]);
 
     const toggleBudgetMenu = () => {
@@ -43,16 +34,19 @@ export function FilterBar({ filterBy, setFilterBy }) {
                 value = ev.target.value;
         }
 
+        // Storing the data-variable instead of the value
+        const variable = ev.target.dataset.variable;
+
         setFilterToEdit({ ...filterToEdit, [field]: value });
-        // Update active filter chips (display only values)
+
+        // Update active filters with the data-variable for display
         setActiveFilters(prevFilters => ({
             ...prevFilters,
-            [field]: value, // Store only the selected value
+            [field]: variable, // Store the data-variable value
         }));
     }
 
     function removeFilter(field) {
-        // Remove the specific filter chip from the active filters
         const newActiveFilters = { ...activeFilters };
         delete newActiveFilters[field]; // Remove the filter chip by its field name
 
@@ -82,7 +76,7 @@ export function FilterBar({ filterBy, setFilterBy }) {
 
     return (
         <>
-            <section className="gig-filterbar main-container full" >
+            <section className="gig-filterbar main-container full">
                 <div className="label-bar">
                     <label onClick={toggleBudgetMenu}>Budget {filterBarSvgs.arrowDown}</label>
                     <label onClick={toggleDeliveryMenu}>Delivery time {filterBarSvgs.arrowDown}</label>
@@ -98,8 +92,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                     value="value"
                                     checked={filterToEdit.price === 'value'}
                                     onChange={handleChange}
+                                    data-variable="Under ₪495"
                                 />
-                                <span>Value<span className='gray'> &nbsp; Under ₪495</span></span>
+                                <span>Value <span className="gray"> &nbsp; Under ₪495</span></span>
                             </label>
                             <label>
                                 <input
@@ -108,8 +103,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                     value="mid-range"
                                     checked={filterToEdit.price === 'mid-range'}
                                     onChange={handleChange}
+                                    data-variable="₪495 - ₪1332"
                                 />
-                                <span>Mid-range <span className='gray'> &nbsp; ₪495 - ₪1332</span></span>
+                                <span>Mid-range <span className="gray"> &nbsp; ₪495 - ₪1332</span></span>
                             </label>
                             <label>
                                 <input
@@ -118,8 +114,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                     value="high-end"
                                     checked={filterToEdit.price === 'high-end'}
                                     onChange={handleChange}
+                                    data-variable="₪1332 & Above"
                                 />
-                                <span>High-end <span className='gray'> &nbsp; ₪1332 & Above</span></span>
+                                <span>High-end <span className="gray"> &nbsp; ₪1332 & Above</span></span>
                             </label>
                         </div>
                     )}
@@ -130,8 +127,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="deliveryTime"
-                                    value="up-to-3"
-                                    checked={filterToEdit.deliveryTime === 'up-to-3'}
+                                    data-variable="Up to 3 days"
+                                    value="3"
+                                    checked={filterToEdit.deliveryTime === '3'}
                                     onChange={handleChange}
                                 />
                                 <span>Up to 3 days</span>
@@ -140,8 +138,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="deliveryTime"
-                                    value="up-to-7"
-                                    checked={filterToEdit.deliveryTime === 'up-to-7'}
+                                    data-variable="Up to 7 days"
+                                    value="7"
+                                    checked={filterToEdit.deliveryTime === '7'}
                                     onChange={handleChange}
                                 />
                                 <span>Up to 7 days</span>
@@ -150,8 +149,9 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="deliveryTime"
-                                    value="anytime"
-                                    checked={filterToEdit.deliveryTime === 'anytime'}
+                                    data-variable="Anytime"
+                                    value="0"
+                                    checked={filterToEdit.deliveryTime === '0'}
                                     onChange={handleChange}
                                 />
                                 <span>Anytime</span>
@@ -160,22 +160,18 @@ export function FilterBar({ filterBy, setFilterBy }) {
                     )}
                 </div>
             </section>
+
             <div className="active-filters">
-                {!Object.entries(activeFilters).length? <div style={{height: '2em'}}></div>:''}
-                {Object.entries(activeFilters).map(([field, filterValue]) => (
+                {!Object.entries(activeFilters).length ? <div style={{ height: '2em' }}></div> : ''}
+                {Object.entries(activeFilters).map(([field, filterVariable]) => (
                     <div className="filter-chip" key={field}>
-                        <span>{filterValue}</span>
-                        <button
-                            className="clear-btn"
-                            onClick={() => removeFilter(field)}
-                        >
+                        <span>{filterVariable}</span> {/* Display the data-variable */}
+                        <button className="clear-btn" onClick={() => removeFilter(field)}>
                             X
                         </button>
                     </div>
                 ))}
             </div>
         </>
-
     );
-
 }
