@@ -89,8 +89,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="price"
-                                    value="value"
-                                    checked={filterToEdit.price === 'value'}
+                                    value="1"
+                                    checked={filterToEdit.price === '1'}
                                     onChange={handleChange}
                                     data-variable="Under ₪495"
                                 />
@@ -100,8 +100,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="price"
-                                    value="mid-range"
-                                    checked={filterToEdit.price === 'mid-range'}
+                                    value="495"
+                                    checked={filterToEdit.price === '495'}
                                     onChange={handleChange}
                                     data-variable="₪495 - ₪1332"
                                 />
@@ -111,8 +111,8 @@ export function FilterBar({ filterBy, setFilterBy }) {
                                 <input
                                     type="radio"
                                     name="price"
-                                    value="high-end"
-                                    checked={filterToEdit.price === 'high-end'}
+                                    value="1332"
+                                    checked={filterToEdit.price === '1332'}
                                     onChange={handleChange}
                                     data-variable="₪1332 & Above"
                                 />
