@@ -58,7 +58,7 @@ export function GigDetails() {
     }
   }
 
-  if (loading) return <div>Loading...</div>
+  // if (loading) return <div>Loading...</div>
 
   if (!gig) return <div>Wait a second..</div>
 
